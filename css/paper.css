@@ -1,0 +1,64 @@
+﻿#viewSR,#viewCB,#viewJD,#viewBF,#viewSA
+{
+    padding:10px;
+}
+.viewTitle
+{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight:bold;
+}
+.viewContent
+{
+    margin-top: 10px;
+    text-align: center;
+    clear: both;
+    font-size: 14px;
+}
+.viewBottom
+{
+    margin-top: 40px;
+    text-align: center;
+}
+#sumtable
+{
+    text-align: center;
+    border: solid 1px #333333;
+}
+#sumtable th
+{
+    color: Green;
+}
+.leftitem
+{
+    color: Blue;
+}
+#bottom
+{
+    width: auto;
+    margin-left: 325px;
+}
+.topitem
+{
+    margin-top: 10px;
+}
+.itemfont
+{
+    font-weight: bold;
+    font-size: 16px;
+    color: #433210;
+    font-family: @华文新魏;
+}
+.assigntop
+{
+    width: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.assignbottom
+{
+    width: auto;
+    margin-top: 20px;
+    margin-left: 250px;
+}

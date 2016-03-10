@@ -1,0 +1,58 @@
+﻿body
+{
+    font-size:12px;
+    background-color:white;
+    padding:1px;
+    margin:1px;
+    color:#686868;
+    font-family: 'Microsoft Yahei', 微软雅黑, Tahoma, Aria;
+}
+table.table
+{
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 18px;
+}
+.table th, .table td
+{
+    padding: 2px;
+    line-height: 18px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+}
+.table_head th,.table_head td
+{
+    font-size:14px;
+    padding:5px;
+}
+#box
+{
+    height: 460px;
+    overflow: auto;
+}
+#box_top
+{
+    background: #fafafa;
+    height:30px;
+    font-weight:bold;
+    padding-left:3px;
+}
+#box_middle
+{
+}
+#pp
+{
+    position: fixed;
+    bottom: 1px;
+    width:100%;
+}
+#addtable
+{
+    margin:0px auto;
+    margin-top:10px;
+    font-family: 'Microsoft Yahei', 微软雅黑, Tahoma, Aria;
+    font-size:14px;
+}

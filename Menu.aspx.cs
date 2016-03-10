@@ -1,0 +1,119 @@
+﻿using System;
+using System.Configuration;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using Util;
+using BLL;
+using Model;
+using System.Text;
+
+public partial class _Default : BasePage
+{
+    tbUser user;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        user = (tbUser)Session[Constant.User];
+
+        if (!String.IsNullOrEmpty(hfPageIndex.Value))
+        {
+            pageIndex = Convert.ToInt32(hfPageIndex.Value);
+        }
+        if (!String.IsNullOrEmpty(hfPageSize.Value))
+        {
+            pageSize = Convert.ToInt32(hfPageSize.Value);
+        }
+
+        if (!IsPostBack)
+        {
+            BindData();
+
+            Label1.Text = user.loginname;
+            Label2.Text = user.realname;
+            Label3.Text = DateTime.Now.ToString();
+            Label4.Text = Request.UserHostAddress;
+
+            lblRealName.Text = user.realname;
+            switch (user.usertype)
+            {                
+                case 1: lblRole.Text = "管理员"; menu1.Visible = true; menu2.Visible = true; menu3.Visible = false;
+                    menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
+                    menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    Image1.ImageUrl = "~/images/admin.jpg"; break;
+                case 2: lblRole.Text = "教师"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = true;
+                    menu4.Visible = true; menu5.Visible = true; menu6.Visible = true;
+                    menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    Image1.ImageUrl = "~/images/tea.jpg"; break;
+                case 3: lblRole.Text = "学生"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = false;
+                    menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
+                    menu7.Visible = true; menu8.Visible = true; menu9.Visible = false;
+                    Image1.ImageUrl = "~/images/stu.jpg"; break;
+                case 4: lblRole.Text = "超级管理员"; menu1.Visible = true; menu2.Visible = true; menu3.Visible = false;
+                    menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
+                    menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    Image1.ImageUrl = "~/images/admin.jpg"; break;
+            }
+        }
+    }
+
+    protected void BindData()
+    {
+        pageTotal = MyUtil.GetCount("tbMessage,tbUser", "tbMessage.userid=tbUser.id", GetWhereSql());
+        gvwData.DataSource = MyUtil.GetListByIndex(5, pageIndex, "tbMessage.*,tbUser.realname", "tbMessage,tbUser", "tbMessage.userid=tbUser.id", GetWhereSql(), "tbMessage.id desc");
+        gvwData.DataKeyNames = new String[] { "id" };
+        gvwData.DataBind();
+    }
+
+    private String GetWhereSql()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(" 1=1 ");
+        tbUser user = (tbUser)Session[Constant.User];
+        if (user.usertype == 2)  
+        {
+            //教师（管理员的公告）
+            sb.Append(" and usertype=1 ");
+        }
+        if (user.usertype == 3)
+        {
+            //学生(管理员和教师的公告)
+            sb.Append(" and (usertype=1 or userid in (select distinct userid from tbUser,tbGrant where tbUser.classid=tbGrant.classid and tbUser.id="+user.id+"))");
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 分页事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void btnHide_Click(object sender, EventArgs e)
+    {
+        BindData();
+    }
+
+    protected void lbtnEdit_Click(object sender, EventArgs e)
+    {
+        Session[Constant.User] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+
+    /// <summary>
+    /// 截取字符串
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
+    protected String GetSmallTitle(String str)
+    {
+        if (str.Length > 25)
+        {
+            return str.Substring(0, 25) + "……";
+        }
+        return str;
+    }
+}

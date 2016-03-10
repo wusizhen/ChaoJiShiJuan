@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="master_admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/js/themes/gray/easyui.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/js/themes/icon.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/css/all.css" rel="stylesheet" type="text/css" runat="server" />
+
+    <script src='<%=ResolveClientUrl("~/js/jquery-1.8.0.min.js") %>' type="text/javascript"></script>
+
+    <script src='<%=ResolveClientUrl("~/js/jquery.easyui.min.js") %>' type="text/javascript"></script>
+
+    <script src='<%=ResolveClientUrl("~/js/easyui-lang-zh_CN.js") %>' type="text/javascript"></script>
+
+    <script src='<%=ResolveClientUrl("~/js/site.js") %>' type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
