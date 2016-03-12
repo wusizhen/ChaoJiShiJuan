@@ -92,6 +92,18 @@ color:#3CB371;
 color:#3CB371;
 }
 
+ul.nav.ace-nav{
+background-color:#3CB371;
+border-color:#3CB371;
+}
+    ul.nav.ace-nav  li {
+        border-color:#3CB371;
+    }
+.tab-content {
+   border-left:0;
+   border-right:0;
+   border-bottom:0;
+}
 
 /* exam.apsx*/
 
@@ -171,9 +183,6 @@ background-color:#FFFFFF;
   font-family:SimHei;
  }
 
-ul.nav.ace-nav{
-background-color:#66CC99;
-}
 
 
 /* ChangePwd.aspx*/
