@@ -50,7 +50,12 @@
                 $('#tabs').addtabs({monitor:'.nav'});                
             })
         </script>
-    
+        <style>
+            td {    
+              padding-right:20px;
+            }
+           
+        </style>
 
 </head>
 <body runat="server">
@@ -74,29 +79,61 @@
                 <ul class="nav ace-nav">
                     <li class="light-blue">
                         <a id="bbb" data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <span class="glyphicon glyphicon-user"></span>                            
+                            <span class="glyphicon glyphicon-user"></span>   
+                            <span>您好,<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></span>                         
                                                                             
                             <i class="icon-caret-down"></i>
                         </a>
 
                         <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                            <li >
-                              <span style="color:#000000"> 用户：</span> <asp:Label ID="lblRealName" runat="server" Text="" Font-Bold="true" ForeColor="Green"></asp:Label>
+                            <li class="panel-body" >
+                              <div class="row">
+							    <div  class="col-xs-4 ListColAndRow">
+									<asp:Image ID="Image1" CssClass="img-circle" runat="server" Width="100px" Height="100px" />
+							    </div>
+								<div  class="col-xs-8 ListColAndRow" style="font-size:xx-small">								   							 
+									 <h4 class="myH4"><asp:Label ID="lblRealName" runat="server" Text=""></asp:Label>·<asp:Label ID="lblRole" runat="server" Text="" ></asp:Label>
+									   <div class="col-xs-12 ListColAndRow">
+										<span style="color:#808080"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
+									   </div>
+									  </div> 
+									  <div  class="row ListColAndRow ListColAndRow2">
+                                        <table>
+										  <tr>
+                                            <td>   
+											本次登录时间:
+										    </td>
+										    <td>
+											<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                            </td>
+										  </tr>									  
+										  <tr>
+                                            <td>
+											本次登录IP:
+										    </td>
+										    <td>
+											<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                                            </td>
+										</tr>
+									  </table>
+								   </div>
+								</div>
+							 
+                            </li>
+                            <li class="panel-footer" style="height:100%;">
+							  <div class="col-xs-4">
+							  <a href="#"  data-addtab="修改密码" url="person/ChangePwd.aspx" class="btn btn-default myStyleBtn">修改密码</a>
+							  </div>
+							  <div class="col-xs-4 col-xs-offset-4">
+							 <asp:LinkButton ID="lbtnEdit" runat="server" CssClass="btn btn-default myStyleBtn" OnClick="lbtnEdit_Click">注销</asp:LinkButton>
+							  </div>
                             </li>
 
-                            <li>
-                              <span style="color:#000000"> 角色：</span> <asp:Label ID="lblRole" runat="server" Text="" Font-Bold="true" ForeColor="Red"></asp:Label>
-                            </li>
 
-                            <li class="divider"></li>
 
-                            <li>
-                                                                   
-                                   <asp:LinkButton ID="lbtnEdit" runat="server" data-options="plain:true,iconCls:'icon-undo'"
-                            OnClick="lbtnEdit_Click"><span class="glyphicon glyphicon-off"></span>注销</asp:LinkButton>
-                                </a>
-                            </li>
+                          
                         </ul>
+                    
                     </li>
                 </ul><!-- /.ace-nav -->
             </div><!-- /.navbar-header -->
@@ -448,50 +485,8 @@
                                    <!--主页内容-->
                                        
                 <div style=" padding-left:20px;padding-top:5px;">
-                    <h3>
-                        基本信息</h3>
-                    <div style="padding-left:10px;">
-                        <div style="float: left; width: 200px; height: 150px; text-align: center; vertical-align: middle;">
-                            <asp:Image ID="Image1" runat="server" Width="150px" Height="150px" />
-                        </div>
-                        <div style="float: left; width: 300px; height: 150px; vertical-align: middle;
-                            font-size: 14px;padding-left:20px;">
-                            <table cellspacing="12">
-                                <tr>
-                                    <td>
-                                        登录名：
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        真实名：
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        本次登陆时间：
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        本次登陆IP：
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                   
+                    
                     <div style="clear: both;padding-top:10px;">
                         <h3>
                             通知公告</h3>

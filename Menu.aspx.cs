@@ -34,9 +34,10 @@ public partial class _Default : BasePage
             BindData();
 
             Label1.Text = user.loginname;
-            Label2.Text = user.realname;
+            //Label2.Text = user.realname;
             Label3.Text = DateTime.Now.ToString();
             Label4.Text = Request.UserHostAddress;
+            Label5.Text = user.realname;
 
             lblRealName.Text = user.realname;
             switch (user.usertype)
@@ -100,7 +101,7 @@ public partial class _Default : BasePage
     protected void lbtnEdit_Click(object sender, EventArgs e)
     {
         Session[Constant.User] = null;
-        Response.Redirect("~/Default.aspx");
+        Response.Redirect("~/login.aspx");
     }
 
     /// <summary>

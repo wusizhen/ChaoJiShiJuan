@@ -3,6 +3,48 @@
   background-color:#3CB371;
 }
 
+.user-menu{
+ width:350px;  /*2016.3.15*/
+}
+.user-menu>li:last-child{
+ background-color:#FFFFFF; /*2016.3.15*/
+}
+.dropdown-menu{
+padding-top:0; /*2016.3.15*/
+
+}
+.myCol-xs-4{/*2016.3.15*/
+margin-top:10%;
+height:100%;
+margin-right:0;
+}
+.myCol-xs-8{/*2016.3.15*/
+color:#000000;
+margin-left:0;
+}
+.myH4{/*2016.3.15*/
+ margin-bottom:0;
+}
+.ListColAndRow{
+padding:0;
+margin:0;
+line-height:15px!important;
+color:#000000;
+}
+.ListColAndRow2{
+margin-top:15px;
+}
+.myStyleBtn{/*2016.3.15*/
+
+background-color:#FFFFFF!important;
+color:#000000!important;
+border:1px solid #e6e6e6;
+}
+.myStyleBtn:hover{/*2016.3.15*/
+background-color:#99CC33!important;
+color:#FFFFFF!important;
+border-color:#FFFFFF;
+}
 .user-menu>li{
   padding-left:20px;
 }
@@ -91,18 +133,17 @@ color:#3CB371;
 .menu-min .nav-list>li:hover>a{
 color:#3CB371;
 }
-
 ul.nav.ace-nav{
 background-color:#3CB371;
 border-color:#3CB371;
 }
-    ul.nav.ace-nav  li {
-        border-color:#3CB371;
-    }
-.tab-content {
-   border-left:0;
-   border-right:0;
-   border-bottom:0;
+ul.nav.ace-nav li{
+  border-color:#3CB371;
+}
+.tab-content{
+    border-bottom:0;
+    border-left:0;
+    border-right:0;
 }
 
 /* exam.apsx*/
@@ -190,3 +231,32 @@ background-color:#FFFFFF;
 .myInput:focus{
  border-color:#4cae4c;
 }
+
+/*Login.html*/
+  .myA{
+    color:#00BFFF;/*2016.3.15*/
+  }
+  .myA:hover{
+   color:#00BFFF;/*2016.3.15*/
+  }
+    .exm{
+   background-color:rgba(0,0,0,0);
+   border:none;
+  }
+    .myrow{
+  position:absolute;
+  bottom:0;
+  }
+  .myCols{/*2016.3.19*/
+   height:34px;
+   padding-top:6px;
+  }
+  .myRows{/*2016.3.19*/
+   margin-top:20px;
+   margin-bottom:20px;
+  }
+
+/* score、paper、Library、person、message*/
+ .marginRight{
+ margin-right:5px;
+ }
