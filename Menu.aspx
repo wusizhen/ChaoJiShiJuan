@@ -92,8 +92,9 @@
 									<asp:Image ID="Image1" CssClass="img-circle" runat="server" Width="100px" Height="100px" />
 							    </div>
 								<div  class="col-xs-8 ListColAndRow" style="font-size:xx-small">								   							 
-									 <h4 class="myH4"><asp:Label ID="lblRealName" runat="server" Text=""></asp:Label>·<asp:Label ID="lblRole" runat="server" Text="" ></asp:Label>
-									   <div class="col-xs-12 ListColAndRow">
+									 <h4 class="myH4"><asp:Label ID="lblRealName" runat="server" Text=""></asp:Label>·<asp:Label ID="lblRole" runat="server" Text="" ></asp:Label></h4>
+									<div class="row ListColAndRow">  
+                                     <div class="col-xs-12 ListColAndRow">
 										<span style="color:#808080"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
 									   </div>
 									  </div> 
@@ -118,7 +119,7 @@
 									  </table>
 								   </div>
 								</div>
-							 
+							 </div>
                             </li>
                             <li class="panel-footer" style="height:100%;">
 							  <div class="col-xs-4">

@@ -35,7 +35,7 @@ public partial class _Default : BasePage
 
             Label1.Text = user.loginname;
             //Label2.Text = user.realname;
-            Label3.Text = DateTime.Now.ToString();
+            Label3.Text = DateTime.Now.ToString("yyyy年MM月d日");
             Label4.Text = Request.UserHostAddress;
             Label5.Text = user.realname;
 
