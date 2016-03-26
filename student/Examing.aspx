@@ -1,16 +1,84 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/admin.master" AutoEventWireup="true"
-    CodeFile="Examing.aspx.cs" Inherits="student_Examing" Title="无标题页" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Examing.aspx.cs"
+    Inherits="student_Examing" Title="无标题页" %>
 
 <%@ Import Namespace="Model" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <style type="text/css">
-        #span1
-        {
+<!doctype html>
+<html lang="en">
+<head runat="server"> 
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--禁止缩放，启动响应式-->
+    <link rel="stylesheet" href="demo/bootstrap/css/bootstrap.min.css">
+    <!-- mystyle.css-->
+    <link rel="stylesheet" href="demo/assets/css/mystyle.css" />
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="demo/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!--[if lt IE 9]>
+		<script src="demo/assets/js/html5shiv.js"></script>
+		<script src="demo/assets/js/respond.min.js"></script>
+		<![endif]-->
+
+    <!--conutdown-->
+
+    <title>在线考试</title>
+    <style>
+        body {
+            position: relative;
+            padding-top: 70px;
+        }
+
+
+        .timer {
+            text-align: center;
+            margin: 30px auto 0;
+            padding: 0 0 10px;
+            border-bottom: 2px solid #99CC33;
+        }
+
+            .timer .table-cell {
+                display: inline-block;
+                margin: 0 5px;
+                width: 50px;
+                background: url(demo/countdown/images/timer.png) no-repeat 0 0;
+            }
+
+                .timer .table-cell .tab-val {
+                    font-size: 35px;
+                    color: #99CC33;
+                    height: 81px;
+                    line-height: 81px;
+                    margin: 0 0 5px;
+                }
+
+                .timer .table-cell .tab-metr {
+                    font-family: Arial;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+
+        #simple_timer.timer .table-cell.day,
+        #periodic_timer_days.timer .table-cell.hour {
+            width: 120px;
+            background-image: url(demo/countdown/images/timer_long.png);
+        }
+
+        #span1 {
             float: left;
             padding-top: 10px;
         }
-        #oe_box
-        {
+
+        #oe_box {
             margin: 0px auto;
             font-size: 16px;
             line-height: 20px;
@@ -20,14 +88,14 @@
             width: 90%;
             color: Black;
         }
-        .paperTitle
-        {
+
+        .paperTitle {
             font-weight: bold;
             text-align: center;
             width: 100%;
         }
-        #timer
-        {
+
+        #timer {
             position: fixed;
             top: 250px;
             right: 5px;
@@ -40,45 +108,45 @@
             text-align: center;
             width: auto;
         }
-        .questionZone
-        {
+
+        .questionZone {
         }
-        .oe_title
-        {
+
+        .oe_title {
             color: #333333;
             font-weight: bold;
             margin-left: 0px;
             line-height: 35px;
         }
-        .oe_item
-        {
+
+        .oe_item {
             margin-top: 10px;
             margin-left: 18px;
         }
-        .tda, .tdb
-        {
+
+        .tda, .tdb {
             padding-left: 25px;
             line-height: 28px;
         }
-        .tda:hover, .tdb:hover
-        {
-            font-weight: 100;
-            cursor: pointer;
-        }
-        .oe_bfText
-        {
+
+            .tda:hover, .tdb:hover {
+                font-weight: 100;
+                cursor: pointer;
+            }
+
+        .oe_bfText {
             border-left-width: 0px;
             border-right-width: 0px;
             border-top-width: 0px;
             border-bottom: solid 1px #333333;
         }
-        .oe_filter
-        {
+
+        .oe_filter {
             background: #A1A1A1;
             filter: Alpha(Opacity=50);
         }
-        #submiting
-        {
+
+        #submiting {
             width: 200px;
             background-color: White;
             position: fixed;
@@ -88,81 +156,79 @@
             text-align: center;
         }
     </style>
-
-    <script type="text/jscript">   
-        var maxtime=5;
-        function setTimer(i)
-        {
-           maxtime=i*60;
+    <script type="text/jscript">
+        var maxtime = 5;
+        function setTimer(i) {
+            maxtime = i * 60;
         }
-        function Pause(obj,iMinSecond){
-　　     if (window.eventList==null) window.eventList=new Array();
-　　     var ind=-1;
-　　     for (var i=0;i<window.eventList.length;i++){
-　　      if (window.eventList[i]==null) {
-　　       window.eventList[i]=obj;
-　　       ind=i;
-　　       break;
-　　      }
-　　     }    　　 
-　　     if (ind==-1){
-　　      ind=window.eventList.length;
-　　      window.eventList[ind]=obj;
-　　     }
-　　     setTimeout("GoOn(" + ind + ")",3000);
-　　    }
-       function GoOn(ind){
-　　     var obj=window.eventList[ind];
-　　     window.eventList[ind]=null;
-　　     if (obj.NextStep) obj.NextStep();
-　　     else obj();
-　　    }
-        function CountDown(){   
-            if(maxtime>=0){   
-                minutes = Math.floor(maxtime/60);   
-                seconds = Math.floor(maxtime%60); 
-                if(seconds<10)
-                   seconds="0"+seconds; 
-                if(minutes<10)
-                   minutes="0"+minutes; 
-                msg ="剩余时间<BR/>"+ minutes+":"+seconds;   
-                document.getElementById("timer").innerHTML=msg;   
-                if(maxtime == 5*60)
-                {
-                   document.getElementById("timer").style.color="Red"
-                }   
-                --maxtime;   
-            }else{   
-               clearInterval(timer);   
-               document.getElementById("main").className="oe_filter";
-               document.getElementById("submiting").style.display="block";
-               Pause(this,3000);
-　　             this.NextStep=function(){
-                   document.getElementById('<%=btnAuto.ClientID %>').click();　　              
-　　           }               
-            }   
-        } 
-        function manual()
-        {
-           if(confirm('你确定要交卷吗？'))
-           {
-               clearInterval(timer);   
-               document.getElementById("main").className="oe_filter";
-               document.getElementById("submiting").style.display="block";
-                Pause(this,3000);
-　　             this.NextStep=function(){
-                   return true;             
-　　             }    
-           }else
-           {
+        function Pause(obj, iMinSecond) {
+            if (window.eventList == null) window.eventList = new Array();
+            var ind = -1;
+            for (var i = 0; i < window.eventList.length; i++) {
+                if (window.eventList[i] == null) {
+                    window.eventList[i] = obj;
+                    ind = i;
+                    break;
+                }
+            }
+            if (ind == -1) {
+                ind = window.eventList.length;
+                window.eventList[ind] = obj;
+            }
+            setTimeout("GoOn(" + ind + ")", 3000);
+        }
+        function GoOn(ind) {
+            var obj = window.eventList[ind];
+            window.eventList[ind] = null;
+            if (obj.NextStep) obj.NextStep();
+            else obj();
+        }
+        function CountDown() {
+            if (maxtime >= 0) {
+                minutes = Math.floor(maxtime / 60);
+                seconds = Math.floor(maxtime % 60);
+                if (seconds < 10)
+                    seconds = "0" + seconds;
+                if (minutes < 10)
+                    minutes = "0" + minutes;
+                msg = "剩余时间<BR/>" + minutes + ":" + seconds;
+                document.getElementById("timer").innerHTML = msg;
+                if (maxtime == 5 * 60) {
+                    document.getElementById("timer").style.color = "Red"
+                }
+                --maxtime;
+            } else {
+                clearInterval(timer);
+                document.getElementById("main").className = "oe_filter";
+                document.getElementById("submiting").style.display = "block";
+                Pause(this, 3000);
+                this.NextStep = function () {
+                    document.getElementById('<%=btnAuto.ClientID %>').click();
+}
+           }
+       }
+       function manual() {
+           if (confirm('你确定要交卷吗？')) {
+               clearInterval(timer);
+               document.getElementById("main").className = "oe_filter";
+               document.getElementById("submiting").style.display = "block";
+               Pause(this, 3000);
+               this.NextStep = function () {
+                   return true;
+               }
+           } else {
                return false;
            }
-        }  
-        timer = setInterval("CountDown()",1000);
+       }
+       timer = setInterval("CountDown()", 1000);
     </script>
+</head>
 
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+
     <div id="oe_box">
         <div id="timer">
         </div>
@@ -177,7 +243,7 @@
             </div>
 
             <script type="text/jscript">
-                          setTimer(<%=paper.durationtime %>);
+                setTimer(<%=paper.durationtime %>);
             </script>
 
         </div>
@@ -349,7 +415,7 @@
             </asp:Repeater>
         </div>
         <div style="text-align: center;">
-            <asp:LinkButton ID="lbtnSubmit" runat="server" CssClass="easyui-linkbutton" data-options="iconCls:'icon-ok'"
+            <asp:LinkButton ID="lbtnSubmit" runat="server" CssClass="easyui-linkbutton" 
                 OnClick="btnSubmit_Click" OnClientClick="return manual();">交卷</asp:LinkButton>
         </div>
         <div style="display: none;">
@@ -371,4 +437,7 @@
         //$(function(){ $("body").attr("onselectstart","return false");$("body").attr("oncontextmenu","self.event.returnValue=false");});            
     </script>
 
-</asp:Content>
+</div>
+    </form>
+</body>
+</html>

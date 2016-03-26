@@ -49,6 +49,62 @@
             $(function(){
                 $('#tabs').addtabs({monitor:'.nav'});                
             })
+
+            //是否可以close的重新绑定
+            function CanClose() {
+                $('#tabs').addtabs({
+                    close: true,
+                })
+            };
+            function NoClose() {
+                $('#tabs').addtabs({
+                    close: false,
+                })
+            };
+
+            function myAddTab(title, url) {
+                CanClose();
+                Addtabs.add({
+                    id: title,
+                    title: title,
+                    content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
+                    url: url,
+                    ajax: $(this).attr('ajax') ? true : false
+                })
+
+            };
+             //myexam页面的进入考试按钮
+            function addTabNoClose(title, url) {
+                NoClose();
+                Addtabs.add({
+                    id: title,
+                    title: title,
+                    content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
+                    url: url,
+                    ajax: $(this).attr('ajax') ? true : false
+                });
+            };
+            function myClose(id) {
+                var tabid = "tab_" + id;
+                Addtabs.close(tabid);
+            };
+             //关闭我的考试
+            function closeMyExam()
+            {
+                myClose('tab_我的考试');
+            }
+             //关闭练习
+            function closeExercise()
+            {
+                myClose('tab_正在练习');
+
+            }
+		     //考试提交
+            function closeExam() {
+                myClose('正在考试');
+                myAddTab('我的成绩', 'student/MyScore.aspx');
+            }
+
         </script>
         <style>
             td {    
@@ -519,7 +575,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="操作">
                                     <ItemTemplate>
-                                        <a  data-options="plain:true" onclick="return addTab('查看公告','message/MessageShow.aspx?id=<%#Eval("id") %>')">
+                                        <a  data-options="plain:true" onclick="return myAddTab('查看公告','message/MessageShow.aspx?id=<%#Eval("id") %>')">
                                             查看</a>
                                     </ItemTemplate>
                                     <HeaderStyle HorizontalAlign="Center" />
