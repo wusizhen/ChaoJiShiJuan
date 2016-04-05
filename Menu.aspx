@@ -430,21 +430,7 @@
                         </ul>
                     </li>
 
-                    <li runat="server" id="menu8">
-                        <a href="#" class="dropdown-toggle">
-                            <span class="glyphicon glyphicon-heart"></span>
-                            <span class="menu-text">个人管理 </span>
 
-                            <b class="arrow icon-angle-down"></b>
-                        </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx">修改密码　
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- /.nav-list -->
 
@@ -506,31 +492,31 @@
                                                 欢迎进入 <strong>超级试卷</strong>在线考试系统
                                             </div>
 
-                                            <div class="row Int hanheiSCText" runat="server" id="studentInt">
+                                            <div class="row Int" runat="server" id="studentInt">
                                                 <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>我的练习</span></a>
+                                                    <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>我的练习</span></a>
                                                 </div>
                                                 <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>我的考试</span></a>
+                                                    <a href="#" data-addtab="我的考试" url="student/MyExam.aspx" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>我的考试</span></a>
                                                 </div>
                                                 <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>我的成绩</span></a>
-                                                </div>
-                                            </div>
-                                            <div class="row Int hanheiSCText" runat="server" id="teacherInt">
-                                                <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>练习管理</span></a>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>考试管理</span></a>
-                                                </div>
-                                                <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>学生成绩</span></a>
+                                                    <a href="#" data-addtab="我的成绩" url="student/MyScore.aspx" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>我的成绩</span></a>
                                                 </div>
                                             </div>
-                                            <div class="row Int hanheiSCText" runat="server" id="adminInt">
+                                            <div class="row Int" runat="server" id="teacherInt">
                                                 <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>发布公告</span></a>
+                                                    <a href="#" data-addtab="发布公告" url="person/ChangePwd.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>发布公告</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" data-addtab="考试管理" url="arrange/ExamList.aspx" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>考试管理</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>学生成绩</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="row Int" runat="server" id="adminInt">
+                                                <div class="col-xs-4">
+                                                    <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>发布公告</span></a>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>授课管理</span></a>
@@ -539,62 +525,43 @@
                                                     <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>班级管理</span></a>
                                                 </div>
                                             </div>
-                                            <div class="row Int hanheiSCText" runat="server" id="oeadminInt">
+                                            <div class="row Int" runat="server" id="oeadminInt">
                                                 <div class="col-xs-4">
                                                     <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>用户管理</span></a>
                                                 </div>
                                                 <div class="col-xs-4">
-                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>发布公告</span></a>
+                                                    <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>发布公告</span></a>
                                                 </div>
                                                 <div class="col-xs-4">
                                                     <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>公告列表</span></a>
                                                 </div>
                                             </div>
-                                            <div style="clear: both; padding-top: 10px;">
-                                                <h3>通知公告</h3>
-                                                <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                                                    HorizontalAlign="Center">
-                                                    <Columns>
-                                                        <asp:TemplateField HeaderText="">
-                                                            <ItemTemplate>
-                                                                <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
-                                                            </ItemTemplate>
-                                                            <ItemStyle CssClass="table_head" />
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="标题">
-                                                            <ItemTemplate>
-                                                                &nbsp;&nbsp;<%# GetSmallTitle(Eval("messagetitle").ToString())%>
-                                                            </ItemTemplate>
-                                                            <ItemStyle HorizontalAlign="Left" />
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="发布者">
-                                                            <ItemTemplate>
-                                                                <%# Eval("realname")%>
-                                                            </ItemTemplate>
-                                                            <HeaderStyle HorizontalAlign="Center" />
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="时间">
-                                                            <ItemTemplate>
-                                                                <%# Eval("createtime")%>
-                                                            </ItemTemplate>
-                                                            <HeaderStyle HorizontalAlign="Center" />
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="操作">
-                                                            <ItemTemplate>
-                                                                <a data-options="plain:true" onclick="return myAddTab('查看公告','message/MessageShow.aspx?id=<%#Eval("id") %>')">查看</a>
-                                                            </ItemTemplate>
-                                                            <HeaderStyle HorizontalAlign="Center" />
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                    <EmptyDataTemplate>
-                                                        没有返回任何数据！
-                                                    </EmptyDataTemplate>
-                                                    <HeaderStyle CssClass="table_head" />
-                                                    <RowStyle HorizontalAlign="Center" />
-                                                    <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
-                                                </asp:GridView>
-                                                <div style="background: #efefef; border: 1px solid #ccc;"
-                                                    data-options="  
+                                            <div class="row my_row">
+                                                <div class="col-xs-12">
+                                                    <div class="page-header myPage-header">
+                                                        <h3 style="font-family: SimHei">通知公告</h3>
+                                                        <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table table-striped"
+                                                            GridLines="None" ShowHeader="false">
+                                                            <Columns>
+                                                                <asp:TemplateField HeaderText="">
+                                                                    <ItemTemplate>
+                                                                        <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %> <span><%# Eval("realname")%></span><i class="glyphicon glyphicon-volume-up"></i><a href="#" onclick="return myAddTab('查看公告','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a><span>(<%# Eval("createtime")%>)</span>
+                                                                    </ItemTemplate>
+                                                                    <ItemStyle />
+                                                                </asp:TemplateField>
+
+
+                                                            </Columns>
+                                                            <EmptyDataTemplate>
+                                                                没有返回任何数据！
+                                                            </EmptyDataTemplate>
+                                                            <HeaderStyle CssClass="table_head" />
+                                                            <RowStyle HorizontalAlign="Center" />
+                                                            <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
+                                                        </asp:GridView>
+                                                  <!--     
+                                                         <div style="background: #efefef; border: 1px solid #ccc;"
+                                                            data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
                                      $('#<%=hfPageIndex.ClientID %>').val(pageIndex);
@@ -606,6 +573,8 @@
                                 pageNumber:<%=pageIndex %>,
                                 pageSize:5  
                             ">
+                                                            -->
+                                                        </div>
                                                 </div>
                                                 <div style="display: none;">
                                                     <asp:HiddenField ID="hfPageIndex" runat="server" />
@@ -613,17 +582,17 @@
                                                     <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                 </div>
                                             </div>
-                                        </div>
-
-
                                     </div>
-                                </div>
 
+
+                                </div>
                             </div>
 
+                        </div>
 
 
-                            <!-- PAGE CONTENT ENDS -->
+
+                        <!-- PAGE CONTENT ENDS -->
                         </div>
                         <!-- /.col -->
                     </div>

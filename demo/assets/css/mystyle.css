@@ -1,7 +1,7 @@
 ﻿/*  Menu.aspx*/
 
 @font-face {
-	font-family:'HanHei SC';
+	font-family:'HanHei SC Thin';
 	font-style:normal;
 	font-weight:300;
 	src:local('â˜ºï¸Ž'), url("/demo/assets/font/HanHei-SC-thin.woff") format("woff"), url("/demo/assets/font/HanHei-SC-thin.ttf") format("truetype");
@@ -11,30 +11,30 @@
 @font-face {
 	font-family:'HanHei SC 300';
 	src:url("/demo/assets/font/HanHei-SC-thin.eot");
-	/* Copyright Â© 2015 Apple Inc. All rights reserved. */
+	
 }
 
 @font-face {
-	font-family:'HanHei SC';
+	font-family:'HanHei SC semibold';
 	font-style:normal;
 	font-weight:600;
 	src:local('â˜ºï¸Ž'), url("/demo/assets/font/HanHei-SC-semibold.woff") format("woff"), url("/demo/assets/font/HanHei-SC-semibold.ttf") format("truetype");
-	/* Copyright Â© 2015 Apple Inc. All rights reserved. */
+	
 }
 
 @font-face {
 	font-family:'HanHei SC 600';
 	src:url("/demo/assets/font/HanHei-SC-semibold.eot");
-	/* Copyright Â© 2015 Apple Inc. All rights reserved. */
+	
 }
 
 @font-face {
-	font-family:'HanHei SC';
+	font-family:'HanHei SC text';
 	font-style:normal;
 	font-weight:400;
 	src:url("/demo/assets/font/HanHei-SC-text.eot");
 	src:local('â˜ºï¸Ž'), url("/demo/assets/font/HanHei-SC-text.woff") format("woff"), url("/demo/assets/font/HanHei-SC-text.ttf") format("truetype");
-	/* Copyright Â© 2015 Apple Inc. All rights reserved. */
+	
 }
 
 .navbar {
@@ -152,7 +152,7 @@
     }
 
 .Int .col-xs-4 a {
-    font-family: "HanHei SC 600";
+    font-family: "HanHei SC semibold";
     font-size: 30px;
     padding-top: 14px;
     padding-left: 14px;
@@ -496,4 +496,8 @@ h4 {
 /* MessageShow  */
 .myFont {
     font-size: 20px !important;
+}
+
+body{
+    font-family:"HanHei SC Thin";
 }
