@@ -45,18 +45,22 @@ public partial class _Default : BasePage
                 case 1: lblRole.Text = "管理员"; menu1.Visible = true; menu2.Visible = true; menu3.Visible = false;
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    studentInt.Visible = false; teacherInt.Visible = false; adminInt.Visible = true; oeadminInt.Visible = false;
                     Image1.ImageUrl = "~/images/admin.jpg"; break;
                 case 2: lblRole.Text = "教师"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = true;
                     menu4.Visible = true; menu5.Visible = true; menu6.Visible = true;
                     menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    studentInt.Visible = false; teacherInt.Visible = true; adminInt.Visible = false; oeadminInt.Visible = false;
                     Image1.ImageUrl = "~/images/tea.jpg"; break;
                 case 3: lblRole.Text = "学生"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = false;
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = true; menu8.Visible = true; menu9.Visible = false;
+                    studentInt.Visible = true; teacherInt.Visible = false; adminInt.Visible = false; oeadminInt.Visible = false;
                     Image1.ImageUrl = "~/images/stu.jpg"; break;
                 case 4: lblRole.Text = "超级管理员"; menu1.Visible = true; menu2.Visible = true; menu3.Visible = false;
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = false; menu8.Visible = true; menu9.Visible = true;
+                    studentInt.Visible = false; teacherInt.Visible = false; adminInt.Visible = false; oeadminInt.Visible = true;
                     Image1.ImageUrl = "~/images/admin.jpg"; break;
             }
         }

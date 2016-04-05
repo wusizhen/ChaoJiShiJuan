@@ -6,10 +6,7 @@
 <html lang="en">
 <head runat="server"> 
     <meta charset="UTF-8">
-    <meta name="Generator" content="EditPlus®">
-    <meta name="Author" content="">
-    <meta name="Keywords" content="">
-    <meta name="Description" content="">
+    `
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!--禁止缩放，启动响应式-->
     <link rel="stylesheet" href="demo/bootstrap/css/bootstrap.min.css">
@@ -191,10 +188,10 @@
                     seconds = "0" + seconds;
                 if (minutes < 10)
                     minutes = "0" + minutes;
-                msg = "剩余时间<BR/>" + minutes + ":" + seconds;
-                document.getElementById("timer").innerHTML = msg;
+                msg = minutes + ":" + seconds;
+                document.getElementById("time_show").innerHTML = msg;
                 if (maxtime == 5 * 60) {
-                    document.getElementById("timer").style.color = "Red"
+                    document.getElementById("time_show").style.color = "Red"
                 }
                 --maxtime;
             } else {
@@ -249,6 +246,7 @@
         </div>
         <div style="height: 10px;">
         </div>
+        <!--从此处开始添加-->
         <div class="questionZone">
             <asp:Repeater ID="rptSR" runat="server">
                 <HeaderTemplate>

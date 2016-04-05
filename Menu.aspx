@@ -2,205 +2,208 @@
 
 <!DOCTYPE html >
 <html lang="'en">
-<head   runat="server">
+<head runat="server">
     <meta charset="utf-8" />
     <title>高校在线考试系统</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
-		<link rel="shortcut icon" href="demo/LG.png">
-		<link rel="stylesheet" href="demo/assets/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap-addtabs.css" type="text/css" media="screen" />
-		<!--[if IE 7]>
+    <link rel="shortcut icon" href="demo/LG.png">
+    <link rel="stylesheet" href="demo/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap-addtabs.css" type="text/css" media="screen" />
+    <!--[if IE 7]>
 		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
-		<!-- page specific plugin styles -->
+    <!-- page specific plugin styles -->
 
 
-		<!-- ace styles -->
+    <!-- ace styles -->
 
-		<link rel="stylesheet" href="demo/assets/css/ace.min.css" />
-	    <link rel="stylesheet" href="demo/assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="demo/assets/css/ace-skins.min.css" />
-        <!-- mystyle.css-->
-         <link rel="stylesheet" href="demo/assets/css/mystyle.css" />
+    <link rel="stylesheet" href="demo/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="demo/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="demo/assets/css/ace-skins.min.css" />
+    <!-- mystyle.css-->
+    <link rel="stylesheet" href="demo/assets/css/mystyle.css" />
 
-		<!--[if lte IE 8]>
+    <!--[if lte IE 8]>
 		  <link rel="stylesheet" href="demo/assets/css/ace-ie.min.css" />
 		<![endif]-->
 
-		<!-- inline styles related to this page -->
+    <!-- inline styles related to this page -->
 
-		<!-- ace settings handler -->
+    <!-- ace settings handler -->
 
-		<script src="demo/assets/js/ace-extra.min.js"></script>
+    <script src="demo/assets/js/ace-extra.min.js"></script>
 
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
-		<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 		<script src="demo/assets/js/html5shiv.js"></script>
 		<script src="demo/assets/js/respond.min.js"></script>
 		<![endif]-->
-        <script src="demo/assets/js/jquery.min.js"></script>
-        <script src="demo/assets/js/bootstrap.min.js"></script>
-        <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
-		 <script type="text/javascript">
-            $(function(){
-                $('#tabs').addtabs({monitor:'.nav'});                
+    <script src="demo/assets/js/jquery.min.js"></script>
+    <script src="demo/assets/js/bootstrap.min.js"></script>
+    <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#tabs').addtabs({ monitor: '.nav' });
+        })
+
+        //是否可以close的重新绑定
+        function CanClose() {
+            $('#tabs').addtabs({
+                close: true,
+            })
+        };
+        function NoClose() {
+            $('#tabs').addtabs({
+                close: false,
+            })
+        };
+
+        function myAddTab(title, url) {
+            CanClose();
+            Addtabs.add({
+                id: title,
+                title: title,
+                content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
+                url: url,
+                ajax: $(this).attr('ajax') ? true : false
             })
 
-            //是否可以close的重新绑定
-            function CanClose() {
-                $('#tabs').addtabs({
-                    close: true,
-                })
-            };
-            function NoClose() {
-                $('#tabs').addtabs({
-                    close: false,
-                })
-            };
+        };
+        //myexam页面的进入考试按钮
+        function addTabNoClose(title, url) {
+            NoClose();
+            Addtabs.add({
+                id: title,
+                title: title,
+                content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
+                url: url,
+                ajax: $(this).attr('ajax') ? true : false
+            });
+        };
+        function myClose(id) {
+            var tabid = "tab_" + id;
+            Addtabs.close(tabid);
+        };
+        //关闭我的考试
+        function closeMyExam() {
+            myClose('tab_我的考试');
+        }
+        //关闭练习
+        function closeExercise() {
+            myClose('tab_正在练习');
 
-            function myAddTab(title, url) {
-                CanClose();
-                Addtabs.add({
-                    id: title,
-                    title: title,
-                    content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
-                    url: url,
-                    ajax: $(this).attr('ajax') ? true : false
-                })
+        }
+        //考试提交
+        function closeExam() {
+            myClose('正在考试');
+            myAddTab('我的成绩', 'student/MyScore.aspx');
+        }
 
-            };
-             //myexam页面的进入考试按钮
-            function addTabNoClose(title, url) {
-                NoClose();
-                Addtabs.add({
-                    id: title,
-                    title: title,
-                    content: Addtabs.options.content ? Addtabs.options.content : $(this).attr('content'),
-                    url: url,
-                    ajax: $(this).attr('ajax') ? true : false
-                });
-            };
-            function myClose(id) {
-                var tabid = "tab_" + id;
-                Addtabs.close(tabid);
-            };
-             //关闭我的考试
-            function closeMyExam()
-            {
-                myClose('tab_我的考试');
-            }
-             //关闭练习
-            function closeExercise()
-            {
-                myClose('tab_正在练习');
-
-            }
-		     //考试提交
-            function closeExam() {
-                myClose('正在考试');
-                myAddTab('我的成绩', 'student/MyScore.aspx');
-            }
-
-        </script>
-        <style>
-            td {    
-              padding-right:20px;
-            }
-           
-        </style>
+    </script>
+    <style>
+        td {
+            padding-right: 20px;
+        }
+    </style>
 
 </head>
 <body runat="server">
     <form id="form1" runat="server">
-    <div class="navbar navbar-inverse" id="navbar">
-        <script type="text/javascript">
-            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
-        </script>
+        <div class="navbar navbar-inverse" id="navbar">
+            <script type="text/javascript">
+                try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+            </script>
 
-        <div class="navbar-container" id="navbar-container">
-            <div class="row">
-                <div class="col-xs-8">
-            <div class="navbar-header pull-left">
-                <a href="#" class="navbar-brand"style="display:inline-block;padding-top:0;padding-left:10px;" >
-                    <img src="demo/logo.png"/>
-                </a><!-- /.brand -->
-            </div><!-- /.navbar-header -->
+            <div class="navbar-container" id="navbar-container">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="navbar-header pull-left">
+                            <a href="#" class="navbar-brand" style="display: inline-block; padding-top: 0; padding-left: 10px;">
+                                <img src="demo/logo.png" />
+                            </a>
+                            <!-- /.brand -->
+                        </div>
+                        <!-- /.navbar-header -->
                     </div>
-            <div class="col-xs-4">
-            <div class="navbar-header pull-right" role="navigation">
-                <ul class="nav ace-nav">
-                    <li class="light-blue">
-                        <a id="bbb" data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <span class="glyphicon glyphicon-user"></span>   
-                            <span>您好,<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></span>                         
-                                                                            
-                            <i class="icon-caret-down"></i>
-                        </a>
+                    <div class="col-xs-4">
+                        <div class="navbar-header pull-right" role="navigation">
+                            <ul class="nav ace-nav">
+                                <li class="light-blue">
+                                    <a id="bbb" data-toggle="dropdown" href="#" class="dropdown-toggle">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        <span>您好,<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label></span>
 
-                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                            <li class="panel-body" >
-                              <div class="row">
-							    <div  class="col-xs-4 ListColAndRow">
-									<asp:Image ID="Image1" CssClass="img-circle" runat="server" Width="100px" Height="100px" />
-							    </div>
-								<div  class="col-xs-8 ListColAndRow" style="font-size:xx-small">								   							 
-									 <h4 class="myH4"><asp:Label ID="lblRealName" runat="server" Text=""></asp:Label>·<asp:Label ID="lblRole" runat="server" Text="" ></asp:Label></h4>
-									<div class="row ListColAndRow">  
-                                     <div class="col-xs-12 ListColAndRow">
-										<span style="color:#808080"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
-									   </div>
-									  </div> 
-									  <div  class="row ListColAndRow ListColAndRow2">
-                                        <table>
-										  <tr>
-                                            <td>   
-											本次登录时间:
-										    </td>
-										    <td>
-											<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-                                            </td>
-										  </tr>									  
-										  <tr>
-                                            <td>
-											本次登录IP:
-										    </td>
-										    <td>
-											<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-                                            </td>
-										</tr>
-									  </table>
-								   </div>
-								</div>
-							 </div>
-                            </li>
-                            <li class="panel-footer" style="height:100%;">
-							  <div class="col-xs-4">
-							  <a href="#"  data-addtab="修改密码" url="person/ChangePwd.aspx" class="btn btn-default myStyleBtn">修改密码</a>
-							  </div>
-							  <div class="col-xs-4 col-xs-offset-4">
-							 <asp:LinkButton ID="lbtnEdit" runat="server" CssClass="btn btn-default myStyleBtn" OnClick="lbtnEdit_Click">注销</asp:LinkButton>
-							  </div>
-                            </li>
+                                        <i class="icon-caret-down"></i>
+                                    </a>
+
+                                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                        <li class="panel-body">
+                                            <div class="row">
+                                                <div class="col-xs-4 ListColAndRow">
+                                                    <asp:Image ID="Image1" CssClass="img-circle" runat="server" Width="100px" Height="100px" />
+                                                </div>
+                                                <div class="col-xs-8 ListColAndRow" style="font-size: xx-small">
+                                                    <h4 class="myH4">
+                                                        <asp:Label ID="lblRealName" runat="server" Text=""></asp:Label>·<asp:Label ID="lblRole" runat="server" Text=""></asp:Label></h4>
+                                                    <div class="row ListColAndRow">
+                                                        <div class="col-xs-12 ListColAndRow">
+                                                            <span style="color: #808080">
+                                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row ListColAndRow ListColAndRow2">
+                                                        <table>
+                                                            <tr>
+                                                                <td>本次登录时间:
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>本次登录IP:
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="panel-footer" style="height: 100%;">
+                                            <div class="col-xs-4">
+                                                <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx" class="btn btn-default myStyleBtn">修改密码</a>
+                                            </div>
+                                            <div class="col-xs-4 col-xs-offset-4">
+                                                <asp:LinkButton ID="lbtnEdit" runat="server" CssClass="btn btn-default myStyleBtn" OnClick="lbtnEdit_Click">注销</asp:LinkButton>
+                                            </div>
+                                        </li>
 
 
 
-                          
-                        </ul>
-                    
-                    </li>
-                </ul><!-- /.ace-nav -->
-            </div><!-- /.navbar-header -->
+
+                                    </ul>
+
+                                </li>
+                            </ul>
+                            <!-- /.ace-nav -->
+                        </div>
+                        <!-- /.navbar-header -->
+                    </div>
                 </div>
-                </div>
-        </div><!-- /.container -->
-    </div>
+            </div>
+            <!-- /.container -->
+        </div>
 
 
-        <div class="main-container-inner"><!--  新版版主窗口   -->
+        <div class="main-container-inner">
+            <!--  新版版主窗口   -->
             <a class="menu-toggler" id="menu-toggler" href="#">
                 <span class="menu-text"></span>
             </a>
@@ -210,7 +213,7 @@
                     try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
                 </script>
 
-               <!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
 
                     <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
                         <span class="btn btn-success"></span>
@@ -223,271 +226,227 @@
                     </div>
                 </div><!-- #sidebar-shortcuts -->
 
-                <ul class="nav nav-list"><!--新版导航-->
-                    
-                  <!--  <li>
+                <ul class="nav nav-list">
+                    <!--新版导航-->
+
+                    <!--  <li>
                         <a href="#" data-addtab="mss"  url="http://www.bilibili.com">
                             <i class="icon-text-width"></i>
                             文字排版
                         </a>
                     </li> -->
-                    <li  runat="server" id="menu1">
+                    <li runat="server" id="menu1">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-wrench"></span>
-                            <span class="menu-text"> 系统管理 </span>
+                            <span class="menu-text">系统管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="用户管理" url="user/UserList.aspx">
-                                   
-                                    用户管理　
+                                <a href="#" data-addtab="用户管理" url="user/UserList.aspx">用户管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">
-                                    
-                                    班级管理　
+                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">班级管理　
                                 </a>
-                            </li>                          
+                            </li>
                         </ul>
                     </li>
 
-                    <li runat="server"  id="menu2">
+                    <li runat="server" id="menu2">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-calendar"></span>
-                            <span class="menu-text"> 课程管理 </span>
+                            <span class="menu-text">课程管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="科目管理" url="subject/SubjectList.aspx">
-                                    
-                                   科目管理　
+                                <a href="#" data-addtab="科目管理" url="subject/SubjectList.aspx">科目管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="章节管理" url="subject/ChapterList.aspx">
-                                    
-                                    章节管理　
+                                <a href="#" data-addtab="章节管理" url="subject/ChapterList.aspx">章节管理　
                                 </a>
                             </li>
-                            
+
                             <li>
-                                <a href="#" data-addtab="授课管理" url="subject/GrantList.aspx">
-                                    
-                                     授课管理　
+                                <a href="#" data-addtab="授课管理" url="subject/GrantList.aspx">授课管理　
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li  runat="server" id="menu9">
+                    <li runat="server" id="menu9">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-volume-up"></span>
-                            <span class="menu-text"> 通知公告 </span>
+                            <span class="menu-text">通知公告 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx">
-                                    
-                                    发布公告　
+                                <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx">发布公告　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="公告列表" url="message/MessageList.aspx">
-                                    
-                                    公告列表　
+                                <a href="#" data-addtab="公告列表" url="message/MessageList.aspx">公告列表　
                                 </a>
-                            </li>                           
+                            </li>
                         </ul>
                     </li>
 
 
-                    
-                    <li  runat="server" id="menu3">
+
+                    <li runat="server" id="menu3">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-briefcase"></span>
-                            <span class="menu-text"> 题库管理 </span>
+                            <span class="menu-text">题库管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">
-                                    
-                                    单选题　
+                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">单选题　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">
-                                    
-                                    多选题　
+                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">多选题　
                                 </a>
                             </li>
-                             <li>
-                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">
-                                    
-                                   判断题　
+                            <li>
+                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">判断题　
                                 </a>
-                            </li>  
-                             <li>
-                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">
-                                    
-                                    填空题　
+                            </li>
+                            <li>
+                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">填空题　
                                 </a>
-                            </li>  
-                             <li>
-                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">
-                                    
-                                    简答题　
+                            </li>
+                            <li>
+                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">简答题　
                                 </a>
-                            </li>                             
+                            </li>
                         </ul>
                     </li>
 
-                      <li  runat="server" id="menu4">
+                    <li runat="server" id="menu4">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-file"></span>
-                            <span class="menu-text"> 试卷管理 </span>
+                            <span class="menu-text">试卷管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="添加试卷" url="paper/PaperAdd.aspx">
-                                    
-                                    添加试卷　
+                                <a href="#" data-addtab="添加试卷" url="paper/PaperAdd.aspx">添加试卷　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="试卷列表" url="paper/PaperList.aspx">
-                                    
-                                    试卷列表　
+                                <a href="#" data-addtab="试卷列表" url="paper/PaperList.aspx">试卷列表　
                                 </a>
-                            </li>                                                 
+                            </li>
                         </ul>
                     </li>
 
-                     <li  runat="server" id="menu5">
+                    <li runat="server" id="menu5">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-tasks"></span>
-                            <span class="menu-text"> 考试安排 </span>
+                            <span class="menu-text">考试安排 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="练习管理" url="arrange/ExerciseList.aspx">
-                                    
-                                    练习管理　
+                                <a href="#" data-addtab="练习管理" url="arrange/ExerciseList.aspx">练习管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="考试管理" url="arrange/ExamList.aspx">
-                                    
-                                    考试管理　
+                                <a href="#" data-addtab="考试管理" url="arrange/ExamList.aspx">考试管理　
                                 </a>
-                            </li>                                                 
+                            </li>
                         </ul>
                     </li>
-                    
-                     <li  runat="server" id="menu6">
+
+                    <li runat="server" id="menu6">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-folder-open"></span>
-                            <span class="menu-text"> 成绩管理 </span>
+                            <span class="menu-text">成绩管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="简答批改" url="score/CorrectList.aspx">
-                                    
-                                    简答批改　
+                                <a href="#" data-addtab="简答批改" url="score/CorrectList.aspx">简答批改　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx">
-                                    
-                                    学生成绩　
+                                <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx">学生成绩　
                                 </a>
                             </li>
-                             <li>
-                                <a href="#" data-addtab="系统分析" url="score/ExamList.aspx">
-                                    
-                                    统计分析（building...）　
+                            <li>
+                                <a href="#" data-addtab="系统分析" url="score/ExamList.aspx">统计分析（building...）　
                                 </a>
-                            </li>                                                      
+                            </li>
                         </ul>
                     </li>
-                                             
-                    <li  runat="server" id="menu7">
-                        <a href="#" class="dropdown-toggle" >
+
+                    <li runat="server" id="menu7">
+                        <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-pencil"></span>
-                            <span class="menu-text"> 学生考试 </span>
+                            <span class="menu-text">学生考试 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx">
-                                    
-                                    我的练习　
+                                <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx">我的练习　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#"  data-addtab="我的考试" url="student/MyExam.aspx">
-                                    
-                                    我的考试　
+                                <a href="#" data-addtab="我的考试" url="student/MyExam.aspx">我的考试　
                                 </a>
                             </li>
-                             <li>
-                                <a href="#" data-addtab="我的成绩" url="student/MyScore.aspx">
-                                    
-                                    我的成绩　
+                            <li>
+                                <a href="#" data-addtab="我的成绩" url="student/MyScore.aspx">我的成绩　
                                 </a>
-                            </li>                                                        
+                            </li>
                         </ul>
                     </li>
-                    
-                     <li  runat="server" id="menu8">
+
+                    <li runat="server" id="menu8">
                         <a href="#" class="dropdown-toggle">
                             <span class="glyphicon glyphicon-heart"></span>
-                            <span class="menu-text"> 个人管理 </span>
+                            <span class="menu-text">个人管理 </span>
 
                             <b class="arrow icon-angle-down"></b>
                         </a>
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx">
-                                    
-                                    修改密码　
+                                <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx">修改密码　
                                 </a>
-                            </li>                                                         
+                            </li>
                         </ul>
-                    </li>                                                                      
-                </ul><!-- /.nav-list -->
+                    </li>
+                </ul>
+                <!-- /.nav-list -->
 
                 <div class="sidebar-collapse" id="sidebar-collapse">
                     <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
@@ -513,7 +472,7 @@
                         <div class="col-xs-12">
                             <!-- PAGE CONTENT BEGINS -->
 
-              <!--              <div class="alert alert-block alert-success">
+                            <!--              <div class="alert alert-block alert-success">
                                 <button type="button" class="close" data-dismiss="alert">
                                     <i class="icon-remove"></i>
                                 </button>
@@ -531,65 +490,111 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active">
-                                        <a href="#home"  aria-controls="home" role="tab" data-toggle="tab">
-                                            主页
+                                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">主页
                                         </a>
                                     </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="home">
-                                   <!--主页内容-->
-                                       
-                <div style=" padding-left:20px;padding-top:5px;">
-                   
-                    
-                    <div style="clear: both;padding-top:10px;">
-                        <h3>
-                            通知公告</h3>
-                        <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                            HorizontalAlign="Center">
-                            <Columns>
-                                <asp:TemplateField HeaderText="">
-                                    <ItemTemplate>
-                                        <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %></ItemTemplate>
-                                    <ItemStyle CssClass="table_head" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="标题">
-                                    <ItemTemplate>
-                                        &nbsp;&nbsp;<%# GetSmallTitle(Eval("messagetitle").ToString())%>
-                                    </ItemTemplate>
-                                    <ItemStyle HorizontalAlign="Left" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="发布者">
-                                    <ItemTemplate>
-                                        <%# Eval("realname")%>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="时间">
-                                    <ItemTemplate>
-                                        <%# Eval("createtime")%>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="操作">
-                                    <ItemTemplate>
-                                        <a  data-options="plain:true" onclick="return myAddTab('查看公告','message/MessageShow.aspx?id=<%#Eval("id") %>')">
-                                            查看</a>
-                                    </ItemTemplate>
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                </asp:TemplateField>
-                            </Columns>
-                            <EmptyDataTemplate>
-                                没有返回任何数据！
-                            </EmptyDataTemplate>
-                            <HeaderStyle CssClass="table_head" />
-                            <RowStyle HorizontalAlign="Center" />
-                            <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
-                        </asp:GridView>
-                        <div style="background: #efefef; border: 1px solid #ccc;"
-                            data-options="  
+                                        <!--主页内容-->
+
+                                        <div style="padding-left: 20px; padding-top: 5px;">
+
+                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                欢迎进入 <strong>超级试卷</strong>在线考试系统
+                                            </div>
+
+                                            <div class="row Int hanheiSCText" runat="server" id="studentInt">
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>我的练习</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>我的考试</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>我的成绩</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="row Int hanheiSCText" runat="server" id="teacherInt">
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>练习管理</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>考试管理</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>学生成绩</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="row Int hanheiSCText" runat="server" id="adminInt">
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>发布公告</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>授课管理</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>班级管理</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="row Int hanheiSCText" runat="server" id="oeadminInt">
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>用户管理</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>发布公告</span></a>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <a href="#" class="btn btn-default btnGroup3 btn-block"><span class="glyphicon glyphicon-list"></span><span>公告列表</span></a>
+                                                </div>
+                                            </div>
+                                            <div style="clear: both; padding-top: 10px;">
+                                                <h3>通知公告</h3>
+                                                <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
+                                                    HorizontalAlign="Center">
+                                                    <Columns>
+                                                        <asp:TemplateField HeaderText="">
+                                                            <ItemTemplate>
+                                                                <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
+                                                            </ItemTemplate>
+                                                            <ItemStyle CssClass="table_head" />
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="标题">
+                                                            <ItemTemplate>
+                                                                &nbsp;&nbsp;<%# GetSmallTitle(Eval("messagetitle").ToString())%>
+                                                            </ItemTemplate>
+                                                            <ItemStyle HorizontalAlign="Left" />
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="发布者">
+                                                            <ItemTemplate>
+                                                                <%# Eval("realname")%>
+                                                            </ItemTemplate>
+                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="时间">
+                                                            <ItemTemplate>
+                                                                <%# Eval("createtime")%>
+                                                            </ItemTemplate>
+                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                        </asp:TemplateField>
+                                                        <asp:TemplateField HeaderText="操作">
+                                                            <ItemTemplate>
+                                                                <a data-options="plain:true" onclick="return myAddTab('查看公告','message/MessageShow.aspx?id=<%#Eval("id") %>')">查看</a>
+                                                            </ItemTemplate>
+                                                            <HeaderStyle HorizontalAlign="Center" />
+                                                        </asp:TemplateField>
+                                                    </Columns>
+                                                    <EmptyDataTemplate>
+                                                        没有返回任何数据！
+                                                    </EmptyDataTemplate>
+                                                    <HeaderStyle CssClass="table_head" />
+                                                    <RowStyle HorizontalAlign="Center" />
+                                                    <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
+                                                </asp:GridView>
+                                                <div style="background: #efefef; border: 1px solid #ccc;"
+                                                    data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
                                      $('#<%=hfPageIndex.ClientID %>').val(pageIndex);
@@ -601,17 +606,17 @@
                                 pageNumber:<%=pageIndex %>,
                                 pageSize:5  
                             ">
-                        </div>
-                        <div style="display: none;">
-                            <asp:HiddenField ID="hfPageIndex" runat="server" />
-                            <asp:HiddenField ID="hfPageSize" runat="server" />
-                            <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
-                        </div>
-                    </div>
-                </div>
-   
-    
-                                    </div>   
+                                                </div>
+                                                <div style="display: none;">
+                                                    <asp:HiddenField ID="hfPageIndex" runat="server" />
+                                                    <asp:HiddenField ID="hfPageSize" runat="server" />
+                                                    <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
 
                             </div>
@@ -619,12 +624,16 @@
 
 
                             <!-- PAGE CONTENT ENDS -->
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.page-content -->
-            </div><!-- /.main-content -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.page-content -->
+            </div>
+            <!-- /.main-content -->
 
-       <!--        <div class="ace-settings-container" id="ace-settings-container">
+            <!--        <div class="ace-settings-container" id="ace-settings-container">
                 <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                     <i class="icon-cog bigger-150"></i>
                 </div>
@@ -661,44 +670,45 @@
                 </div>
             </div><!-- /#ace-settings-container -->
 
-        </div><!-- /.main-container-inner -->
+        </div>
+        <!-- /.main-container-inner -->
 
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
             <i class="icon-double-angle-up icon-only bigger-110"></i>
         </a>
-    </div><!-- /.main-container -->
-    <!-- basic scripts -->
-    <!--[if !IE]> -->
+        </div><!-- /.main-container -->
+        <!-- basic scripts -->
+        <!--[if !IE]> -->
 
-    <script type="text/javascript">
-        window.jQuery || document.write("<script src='demo/assets/js/jquery-2.0.3.min.js'>" + "<" + "script>");
-    </script>
+        <script type="text/javascript">
+            window.jQuery || document.write("<script src='demo/assets/js/jquery-2.0.3.min.js'>" + "<" + "script>");
+        </script>
 
-    <!-- <![endif]-->
-    <!--[if IE]>
+        <!-- <![endif]-->
+        <!--[if IE]>
     <script type="text/javascript">
      window.jQuery || document.write("<script src='demo/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
     </script>
     <![endif]-->
 
-    <script type="text/javascript">
-        if ("ontouchend" in document) document.write("<script src='demo/assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
-    </script>
-   
-    <script src="demo/assets/js/typeahead-bs2.min.js"></script>
-   
-    <!-- page specific plugin scripts -->
-    <!--[if lte IE 8]>
+        <script type="text/javascript">
+            if ("ontouchend" in document) document.write("<script src='demo/assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
+        </script>
+
+        <script src="demo/assets/js/typeahead-bs2.min.js"></script>
+
+        <!-- page specific plugin scripts -->
+        <!--[if lte IE 8]>
       <script src="demo/assets/js/excanvas.min.js"></script>
     <![endif]-->
-        
-    <!-- ace scripts -->
 
-    <script src="demo/assets/js/ace-elements.min.js"></script>
-    <script src="demo/assets/js/ace.min.js"></script>
+        <!-- ace scripts -->
 
-    <!-- inline scripts related to this page -->
-   
-      </form>
+        <script src="demo/assets/js/ace-elements.min.js"></script>
+        <script src="demo/assets/js/ace.min.js"></script>
+
+        <!-- inline scripts related to this page -->
+
+    </form>
 </body>
 </html>
