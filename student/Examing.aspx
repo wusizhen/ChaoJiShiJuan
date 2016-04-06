@@ -9,21 +9,21 @@
     `
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!--禁止缩放，启动响应式-->
-    <link rel="stylesheet" href="demo/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../demo/bootstrap/css/bootstrap.min.css">
     <!-- mystyle.css-->
-    <link rel="stylesheet" href="demo/assets/css/mystyle.css" />
+    <link rel="stylesheet" href="../demo/assets/css/mystyle.css" />
     <!--[if IE 7]>
-		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="../demo/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 
     <!--[if lte IE 8]>
-		  <link rel="stylesheet" href="demo/assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="../demo/assets/css/ace-ie.min.css" />
 		<![endif]-->
 
     <!--[if lt IE 9]>
-		<script src="demo/assets/js/html5shiv.js"></script>
-		<script src="demo/assets/js/respond.min.js"></script>
+		<script src="../demo/assets/js/html5shiv.js"></script>
+		<script src="../demo/assets/js/respond.min.js"></script>
 		<![endif]-->
 
     <!--conutdown-->
@@ -32,7 +32,8 @@
     <style>
         body {
             position: relative;
-            padding-top: 70px;
+            padding-top: 10px;
+            background-color:#f5f5f5;
         }
 
 
@@ -47,7 +48,7 @@
                 display: inline-block;
                 margin: 0 5px;
                 width: 50px;
-                background: url(demo/countdown/images/timer.png) no-repeat 0 0;
+                background: url(../demo/countdown/images/timer.png) no-repeat 0 0;
             }
 
                 .timer .table-cell .tab-val {
@@ -67,7 +68,7 @@
         #simple_timer.timer .table-cell.day,
         #periodic_timer_days.timer .table-cell.hour {
             width: 120px;
-            background-image: url(demo/countdown/images/timer_long.png);
+            background-image: url(../demo/countdown/images/timer_long.png);
         }
 
         #span1 {
@@ -224,28 +225,39 @@
 
 <body>
     <form id="form1" runat="server">
+        <!--<div id="timer">
+            存放时间（old）
+        </div>-->
     <div>
 
     <div id="oe_box">
-        <div id="timer">
-        </div>
-        <div class="paperTitle">
-            <div style="font-size: 30px; padding-top: 5px; padding-bottom: 5px; text-align: center;">
-                <%=arrange.arrangetitle%>
-            </div>
-            <div style="height: 10px;">
-            </div>
-            <div style="padding-bottom: 5px; text-align: center; font-size: 20px;">
-                科目：<%=subject.subjectname %>&nbsp;&nbsp;&nbsp;&nbsp;时长：<%=paper.durationtime %>分钟
-            </div>
-
-            <script type="text/jscript">
+        <!--新版考试头-->
+         <div class="container-head">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="exam-h2"><%=arrange.arrangetitle%>
+          <small>科目：<%=subject.subjectname %>&nbsp;&nbsp;&nbsp;&nbsp;时长：<%=paper.durationtime %>分钟</small></h2>
+          <script type="text/jscript">
                 setTimer(<%=paper.durationtime %>);
             </script>
-
         </div>
-        <div style="height: 10px;">
+        <div class="panel-body">
+          <div class="mychoice">
+            <p>总分 <%=paper.allscore %> 分 ，请在 ：<%=paper.durationtime %> 分钟内作答 。</p>
+          </div>
+          <div id="testpaper-navbar" class="testpaper-navbar affix-top" data-spy="affix" data-offset-top="200">
+        <ul class="nav nav-pills clearfix">
+                      <li class="active"><a href="#single">单选题</a></li>
+                      <li><a href="#double">多选题</a></li>
+                      <li><a href="#answer">问答题</a></li>
+                      <li><a href="#cailiao">材料题</a></li>
+                  </ul>
+      </div>
+          
         </div>
+      </div>
+    </div>
+        
         <!--从此处开始添加-->
         <div class="questionZone">
             <asp:Repeater ID="rptSR" runat="server">

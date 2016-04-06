@@ -27,7 +27,7 @@ public partial class subject_SubjectAdd : BasePage
 
         if (user.userpwd!=MyUtil.MD5(txtOldPwd.Text.Trim()))
         {
-            Response.Write(MyUtil.MD5(txtOldPwd.Text.Trim()));
+            //Response.Write(MyUtil.MD5(txtOldPwd.Text.Trim())); //没必要写
             lblInfo.Text = "原密码错误！";
             lblInfo.Visible = true;
             return;

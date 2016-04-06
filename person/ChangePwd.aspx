@@ -1,53 +1,94 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master/admin.master" AutoEventWireup="true"
-    CodeFile="ChangePwd.aspx.cs" Inherits="subject_SubjectAdd" Title="无标题页"  ValidateRequest="false"%>
+﻿<%@ Page Language="C#"  CodeFile="ChangePwd.aspx.cs" Inherits="subject_SubjectAdd" Title="无标题页"  %>
 
-<%@ Register TagName="CKEditor" TagPrefix="XG" Src="~/js/CKEditor.ascx" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table style="padding:20px;">
-        <tr>
-            <td>
-                原密码：
-            </td>
-            <td>
-                <asp:TextBox ID="txtOldPwd" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtOldPwd"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                新密码：
-            </td>
-            <td>
-                <asp:TextBox ID="txtNewPwd" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtNewPwd"></asp:RequiredFieldValidator>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-                重复新密码：
-            </td>
-            <td>
-                <asp:TextBox ID="txtNewPwd2" runat="server" TextMode="Password"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtNewPwd2"></asp:RequiredFieldValidator>                
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-            <td>
-                <asp:Label ID="lblInfo" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-            <td>
-                <asp:LinkButton ID="lbtnAdd" runat="server" CssClass="easyui-linkbutton" data-options="iconCls:'icon-save'"
-                    OnClick="lbtnAdd_Click">保存</asp:LinkButton>
-            </td>
-        </tr>
-    </table>
-</asp:Content>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--禁止缩放，启动响应式-->
+    <link rel="stylesheet" href="../demo/bootstrap/css/bootstrap.min.css">
+    <!-- mystyle.css-->
+    <link rel="stylesheet" href="../demo/assets/css/mystyle.css" />
+    <style>
+        body {
+            margin-top: 70px;
+            background-color: #F5F5F5;
+        }
+
+        .row > .col-sm-offset-4 {
+            margin-top: 70px;
+        }
+
+        .pwdbtn {
+            width:100%;
+        }
+    </style>
+</head>
+<body runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4 style="color: #808080; display: inline-block">修改密码 </h4>
+                        <span class="glyphicon glyphicon-lock pull-right" style="margin-top: 10px; color: #808080"></span>
+                    </div>
+                    <div class="panel-body">
+                        <form runat="server" method="post" action="" role="form" class="form-horizontal">
+                            <div class="form-group">
+
+                                <div class="col-sm-12 col-xs-12">
+                                    <asp:Label ID="lblInfo" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">原密码:</label>
+                                <div class="col-sm-12 col-xs-12">
+
+                                    <asp:TextBox ID="txtOldPwd" runat="server" CssClass="form-control myInput" TextMode="Password" placeholder="原密码"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="txtOldPwd"></asp:RequiredFieldValidator>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">新密码:</label>
+                                <div class="col-sm-12 col-xs-12">
+                                    <asp:TextBox ID="txtNewPwd" runat="server" TextMode="Password" CssClass="form-control myInput" placeholder="新密码"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="txtNewPwd"></asp:RequiredFieldValidator>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">重复新密码:</label>
+                                <div class="col-sm-12 col-xs-12">
+
+                                    <asp:TextBox ID="txtNewPwd2" runat="server" TextMode="Password" CssClass="form-control myInput" placeholder="重复新密码"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="txtNewPwd2"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-4">
+
+                                    <asp:LinkButton ID="lbtnAdd" runat="server" CssClass="btn btn-success pwdbtn" 
+                                        OnClick="lbtnAdd_Click">保存</asp:LinkButton>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../demo/bootstrap/js/jquery-1.11.1.min.js"></script>
+    <script src="../demo/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../demo/assets/js/placeholderForCP.js"></script>
+
+</body>
+</html>
+
+
+
