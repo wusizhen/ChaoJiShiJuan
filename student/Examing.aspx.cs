@@ -588,12 +588,15 @@ public partial class student_Examing : System.Web.UI.Page
         {
             CheckBox chkE = (CheckBox)e.Item.FindControl("chkE");
             Label lblE = (Label)e.Item.FindControl("lblE");
+            Control liE = e.Item.FindControl("LiE");
             if (chkE.Text != "")
             {
+                liE.Visible = true;
                 chkE.Visible = true;
                 lblE.Visible = true;
             }
 
+            Control liF = e.Item.FindControl("LiF");
             CheckBox chkF = (CheckBox)e.Item.FindControl("chkF");
             Label lblF = (Label)e.Item.FindControl("lblF");
             if (chkF.Text != "")
@@ -602,6 +605,7 @@ public partial class student_Examing : System.Web.UI.Page
                 lblF.Visible = true;
             }
 
+            Control liG = e.Item.FindControl("LiG");
             CheckBox chkG = (CheckBox)e.Item.FindControl("chkG");
             Label lblG = (Label)e.Item.FindControl("lblG");
             if (chkG.Text != "")

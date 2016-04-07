@@ -4,9 +4,9 @@
 <%@ Import Namespace="Model" %>
 <!doctype html>
 <html lang="en">
-<head runat="server"> 
+<head runat="server">
     <meta charset="UTF-8">
-    `
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!--禁止缩放，启动响应式-->
     <link rel="stylesheet" href="../demo/bootstrap/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         body {
             position: relative;
             padding-top: 10px;
-            background-color:#f5f5f5;
+            background-color: #f5f5f5;
         }
 
 
@@ -202,23 +202,23 @@
                 Pause(this, 3000);
                 this.NextStep = function () {
                     document.getElementById('<%=btnAuto.ClientID %>').click();
-}
-           }
-       }
-       function manual() {
-           if (confirm('你确定要交卷吗？')) {
-               clearInterval(timer);
-               document.getElementById("main").className = "oe_filter";
-               document.getElementById("submiting").style.display = "block";
-               Pause(this, 3000);
-               this.NextStep = function () {
-                   return true;
-               }
-           } else {
-               return false;
-           }
-       }
-       timer = setInterval("CountDown()", 1000);
+                }
+            }
+        }
+        function manual() {
+            if (confirm('你确定要交卷吗？')) {
+                clearInterval(timer);
+                document.getElementById("main").className = "oe_filter";
+                document.getElementById("submiting").style.display = "block";
+                Pause(this, 3000);
+                this.NextStep = function () {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+        timer = setInterval("CountDown()", 1000);
     </script>
 </head>
 
@@ -228,226 +228,425 @@
         <!--<div id="timer">
             存放时间（old）
         </div>-->
-    <div>
+        <div>
 
-    <div id="oe_box">
-        <!--新版考试头-->
-         <div class="container-head">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="exam-h2"><%=arrange.arrangetitle%>
-          <small>科目：<%=subject.subjectname %>&nbsp;&nbsp;&nbsp;&nbsp;时长：<%=paper.durationtime %>分钟</small></h2>
-          <script type="text/jscript">
-                setTimer(<%=paper.durationtime %>);
-            </script>
-        </div>
-        <div class="panel-body">
-          <div class="mychoice">
-            <p>总分 <%=paper.allscore %> 分 ，请在 ：<%=paper.durationtime %> 分钟内作答 。</p>
-          </div>
-          <div id="testpaper-navbar" class="testpaper-navbar affix-top" data-spy="affix" data-offset-top="200">
-        <ul class="nav nav-pills clearfix">
-                      <li class="active"><a href="#single">单选题</a></li>
-                      <li><a href="#double">多选题</a></li>
-                      <li><a href="#answer">问答题</a></li>
-                      <li><a href="#cailiao">材料题</a></li>
-                  </ul>
-      </div>
-          
-        </div>
-      </div>
-    </div>
-        
-        <!--从此处开始添加-->
-        <div class="questionZone">
-            <asp:Repeater ID="rptSR" runat="server">
-                <HeaderTemplate>
-                    <div class="oe_title">
-                        <%=GetIndex() %>、单项选择(共<%=paper.sr_count%>小题：每小题<%=paper.sa_scoreofeach%>分，满分<%=paper.sr_count * paper.sa_scoreofeach%>分)</div>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <div class="oe_item">
-                        <%#Container.ItemIndex+1 %>.&nbsp;<%# ((tbSingle)Container.DataItem).ques %><br />
-                        <table>
-                            <tr>
-                                <td class="tda">
-                                    A:<asp:RadioButton ID="rbtnA" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_a %>'
-                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdb">
-                                    B:<asp:RadioButton ID="rbtnB" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_b %>'
-                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tda">
-                                    C:<asp:RadioButton ID="rbtnC" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_c %>'
-                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdb">
-                                    D:<asp:RadioButton ID="rbtnD" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_d %>'
-                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" /><br />
-                                </td>
-                            </tr>
-                        </table>
-                        <asp:HiddenField ID="hfSR" runat="server" Value="<%# ((tbSingle)Container.DataItem).id %>" />
+            <div id="oe_box">
+                <!--新版考试头-->
+                <div class="container-head">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="exam-h2"><%=arrange.arrangetitle%>
+                                <small>科目：<%=subject.subjectname %>&nbsp;&nbsp;&nbsp;&nbsp;时长：<%=paper.durationtime %>分钟</small></h2>
+                            <script type="text/jscript">
+                                setTimer(<%=paper.durationtime %>);
+                            </script>
+                        </div>
+                        <div class="panel-body">
+                            <div class="mychoice">
+                                <p>总分 <%=paper.allscore %> 分 ，请在 ：<%=paper.durationtime %> 分钟内作答 。</p>
+                            </div>
+                            <div id="testpaper-navbar" class="testpaper-navbar affix-top" data-spy="affix" data-offset-top="200">
+                                <ul class="nav nav-pills clearfix">
+                                    <li class="active">
+                                        <a href="#single">单选题</a></li>
+                                    <li><a href="#double">多选题</a></li>
+                                    <li><a href="#judge">判断题</a></li>
+                                    <li><a href="#answer">问答题</a></li>
+                                    <li><a href="#cailiao">简答题</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <br />
-                </FooterTemplate>
-            </asp:Repeater>
-        </div>
-        <div class="questionZone">
-            <asp:Repeater ID="rptCB" runat="server" onitemdatabound="rptCB_ItemDataBound">
-                <HeaderTemplate>
-                    <div class="oe_title">
-                        <%=GetIndex() %>、多项选择(共<%=paper.cb_count%>小题：每小题<%=paper.cb_scoreofeach %>分，满分<%=paper.cb_count * paper.cb_scoreofeach%>分)</div>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <div class="oe_item">
-                        <%#Container.ItemIndex+1 %>.&nbsp;<%# ((tbCheck)Container.DataItem).ques %><br />
-                        <table>
-                            <tr>
-                                <td class="tda">
-                                    A:<asp:CheckBox ID="chkA" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_a %>' /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdb">
-                                    B:<asp:CheckBox ID="chkB" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_b %>' /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tda">
-                                    C:<asp:CheckBox ID="chkC" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_c %>' /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdb">
-                                    D:<asp:CheckBox ID="chkD" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_d %>' /><br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tda">
-                                    <asp:Label ID="lblE" runat="server" Text="E:" Visible="false" ></asp:Label><asp:CheckBox ID="chkE" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_e %>' Visible="false"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tdb">
-                                    <asp:Label ID="lblF" runat="server" Text="F:" Visible="false"></asp:Label><asp:CheckBox ID="chkF" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_f %>' Visible="false"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tda">
-                                    <asp:Label ID="lblG" runat="server" Text="G:" Visible="false"></asp:Label><asp:CheckBox ID="chkG" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_g %>' Visible="false"/>
-                                </td>
-                            </tr>
-                        </table>
-                        <asp:HiddenField ID="hfCB" runat="server" Value="<%# ((tbCheck)Container.DataItem).id %>" />
+                </div>
+                <!--new头以外的全部-->
+                <div class="row">
+                    <!--5试题存放处-->
+                    <div class="col-sm-9 col-xs-7" id="panel-right">
+                        <!--单选-->
+                        <div id="single">
+                            <div class="panel panel-default">
+                                <!-- 添加选择题-->
+                                <asp:Repeater ID="rptSR" runat="server">
+                                    <HeaderTemplate>
+                                        <div class="panel-heading">
+                                            <h4><%=GetIndex() %>、单项选择
+                <small>(共<%=paper.sr_count%>小题：每小题<%=paper.sa_scoreofeach%>分，满分<%=paper.sr_count * paper.sa_scoreofeach%>分)</small></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <div class="testpaper-question-stem-wrap clearfix">
+                                            <div class="testpaper-question-seq-wrap">
+                                                <div class="testpaper-question-seq"><%#Container.ItemIndex+1 %></div>
+                                                <div class="testpaper-question-score"><%=paper.sa_scoreofeach%>分</div>
+                                            </div>
+                                            <div class="testpaper-question-stem">
+                                                <p class="MsoNormal">
+                                                    <br>
+                                                        <%# ((tbSingle)Container.DataItem).ques %></br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="testpaper-question-choices">
+                                            <ul>
+                                                <li>
+                                                    <strong>A.</strong><asp:RadioButton ID="rbtnA" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_a %>'
+                                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" />
+                                                </li>
+                                                <li>
+                                                    <strong>B.</strong><asp:RadioButton ID="rbtnB" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_b %>'
+                                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" />
+                                                </li>
+                                                <li>
+                                                    <strong>C.</strong><asp:RadioButton ID="rbtnC" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_c %>'
+                                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" />
+                                                </li>
+                                                <li>
+                                                    <strong>D.</strong><asp:RadioButton ID="rbtnD" runat="server" Text='<%# ((tbSingle)Container.DataItem).option_d %>'
+                                                        GroupName="<%# ((tbSingle)Container.DataItem).id %>" />
+                                                </li>
+                                            </ul>
+                                            <asp:HiddenField ID="hfSR" runat="server" Value="<%# ((tbSingle)Container.DataItem).id %>" />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        <br />
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <!--多选-->
+                        <div id="double">
+                            <div class="panel panel-default">
+                                <!-- 添加选择题-->
+                                <asp:Repeater ID="rptCB" runat="server" OnItemDataBound="rptCB_ItemDataBound">
+                                    <HeaderTemplate>
+                                        <div class="panel-heading">
+                                            <h4><%=GetIndex() %>、多项选择
+                <small>(共<%=paper.cb_count%>小题：每小题<%=paper.cb_scoreofeach %>分，满分<%=paper.cb_count * paper.cb_scoreofeach%>分)</small></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <div class="testpaper-question-stem-wrap clearfix">
+                                            <div class="testpaper-question-seq-wrap">
+                                                <div class="testpaper-question-seq"><%#Container.ItemIndex+1 %></div>
+                                                <div class="testpaper-question-score"><%=paper.cb_scoreofeach %>分</div>
+                                            </div>
+                                            <div class="testpaper-question-stem">
+                                                <p class="MsoNormal">
+                                                    <br>
+                                                        <%# ((tbCheck)Container.DataItem).ques %></br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="testpaper-question-choices">
+                                            <ul>
+                                                <li>
+                                                    <strong>A.</strong><asp:CheckBox ID="chkA" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_a %>' />
+                                                </li>
+                                                <li>
+                                                    <strong>B.</strong><asp:CheckBox ID="chkB" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_b %>' />
+                                                </li>
+                                                <li>
+                                                    <strong>C.</strong><asp:CheckBox ID="chkC" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_c %>' />
+                                                </li>
+                                                <li>
+                                                    <strong>D.</strong><asp:CheckBox ID="chkD" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_d %>' /></li>
+                                                <li runat="server" id="liE" visible="false">
+                                                    <strong>
+                                                        <asp:Label ID="lblE" runat="server" Text="E." Visible="false"></asp:Label><asp:CheckBox ID="chkE" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_e %>' Visible="false" /></strong></li>
+                                                <li runat="server" id="liF" visible="false">
+                                                    <strong>
+                                                        <asp:Label ID="lblF" runat="server" Text="F." Visible="false"></asp:Label><asp:CheckBox ID="chkF" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_f %>' Visible="false" /></strong></li>
+                                                <li runat="server" id="liG" visible="false">
+                                                    <stron>
+                                                        <asp:Label ID="lblG" runat="server" Text="G." Visible="false"></asp:Label><asp:CheckBox ID="chkG" runat="server" Text='<%# ((tbCheck)Container.DataItem).option_g %>' Visible="false" />
+                                                    </strong></li>
+                                            </ul>
+                                            <asp:HiddenField ID="hfCB" runat="server" Value="<%# ((tbCheck)Container.DataItem).id %>" />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        <br />
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <!--判断-->
+                        <div id="judge">
+                            <div class="panel panel-default">
+                                <!-- 添加选择题-->
+                                <asp:Repeater ID="rptJD" runat="server">
+                                    <HeaderTemplate>
+                                        <div class="panel-heading">
+                                            <h4><%=GetIndex() %>、判断题
+                <small>(共<%=paper.jd_count%>小题：每小题<%=paper.jd_scoreofeach%>分，满分<%=paper.jd_count * paper.jd_scoreofeach%>分)</small></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <div class="testpaper-question-stem-wrap clearfix">
+                                            <div class="testpaper-question-seq-wrap">
+                                                <div class="testpaper-question-seq"><%#Container.ItemIndex+1 %></div>
+                                                <div class="testpaper-question-score"><%=paper.jd_scoreofeach%>分</div>
+                                            </div>
+                                            <div class="testpaper-question-stem">
+                                                <p class="MsoNormal">
+                                                    <br>
+                                                        <%# ((tbJudge)Container.DataItem).ques%></br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="testpaper-question-choices">
+                                            <ul>
+                                                <li>
+                                                    <asp:RadioButton ID="rbtnRight" runat="server" GroupName="<%# ((tbJudge)Container.DataItem).id %>" Text="对　　　　　　　　　　　　　　　　　　　　" /></li>
+                                                <li>
+                                                    <asp:RadioButton ID="rbtnWrong" runat="server" GroupName="<%# ((tbJudge)Container.DataItem).id %>" Text="错　　　　　　　　　　　　　　　　　　　　" /></li>
+
+                                            </ul>
+                                            <asp:HiddenField ID="hfJD" runat="server" Value="<%# ((tbJudge)Container.DataItem).id %>" />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        <br />
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <!--填空-->
+                        <div id="answer">
+                            <div class="panel panel-default">
+                                <!-- 添加选择题-->
+                                <asp:Repeater ID="rptBF" runat="server">
+                                    <HeaderTemplate>
+                                        <div class="panel-heading">
+                                            <h4><%=GetIndex() %>、填空题
+                <small>(共<%=paper.bf_count%>小题：每小题<%=paper.bf_scoreofeach%>分，满分<%=paper.bf_count * paper.bf_scoreofeach%>分)</small></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <div class="testpaper-question-stem-wrap clearfix">
+                                            <div class="testpaper-question-seq-wrap">
+                                                <div class="testpaper-question-seq"><%#Container.ItemIndex+1 %></div>
+                                                <div class="testpaper-question-score"><%=paper.bf_scoreofeach%>分</div>
+                                            </div>
+                                            <div class="testpaper-question-stem">
+                                                <p class="MsoNormal">
+                                                    <br>
+                                                        <%# GetBFFront(((tbBlank)Container.DataItem).ques)%>
+                                                        <asp:TextBox ID="txtBF" runat="server" CssClass="oe_bfText" Width='<%#((tbBlank)Container.DataItem).blanklength*40%>'></asp:TextBox>
+                                                        <%# GetBFAfter(((tbBlank)Container.DataItem).ques)%></br>
+                                                    <asp:Label ID="lblBFAnswer" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+                                                </p>
+                                                <asp:HiddenField ID="hfBF" runat="server" Value="<%# ((tbBlank)Container.DataItem).id %>" />
+                                            </div>
+                                        </div>
+
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        <br />
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                        <!--简答-->
+                        <div id="cailiao">
+                            <div class="panel panel-default">
+                                <!-- 添加选择题-->
+                                <asp:Repeater ID="rptSA" runat="server">
+                                    <HeaderTemplate>
+                                        <div class="panel-heading">
+                                            <h4><%=GetIndex() %>、简答题
+                <small>(共<%=paper.sa_count%>小题：每小题<%=paper.sa_scoreofeach%>分，满分<%=paper.sa_count * paper.sa_scoreofeach%>分)</small></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                    </HeaderTemplate>
+
+                                    <ItemTemplate>
+                                        <div class="testpaper-question-stem-wrap clearfix">
+                                            <div class="testpaper-question-seq-wrap">
+                                                <div class="testpaper-question-seq"><%#Container.ItemIndex+1 %></div>
+                                                <div class="testpaper-question-score"><%=paper.sa_scoreofeach%>分</div>
+                                            </div>
+                                            <div class="testpaper-question-stem">
+                                                <p class="MsoNormal">
+                                                    <br>
+                                                        <%# ((tbAnswer)Container.DataItem).ques %></br>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        <div class="testpaper-question-choices">
+                                            <asp:TextBox ID="txtAnswer" Style="border: solid 1px #cccccc;" runat="server" TextMode="MultiLine"
+                                                Rows="15" Columns="90" EnableTheming="false"></asp:TextBox>
+                                            <asp:HiddenField ID="hfSA" runat="server" Value="<%# ((tbAnswer)Container.DataItem).id %>" />
+                                        </div>
+
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        <br />
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+
+
+                        <!--计时器 时间-->
+
                     </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <br />
-                </FooterTemplate>
-            </asp:Repeater>
+
+                   
+                </div>
+                 
+            </div>
         </div>
-        <div class="questionZone">
-            <asp:Repeater ID="rptJD" runat="server">
-                <HeaderTemplate>
-                    <div class="oe_title">
-                        <%=GetIndex() %>、判断题(共<%=paper.jd_count%>小题：每小题<%=paper.jd_scoreofeach%>分，满分<%=paper.jd_count * paper.jd_scoreofeach%>分)</div>
-                    <table>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <tr>
-                        <td class="tda">
-                            <%#Container.ItemIndex+1 %>.&nbsp;<%# ((tbJudge)Container.DataItem).ques%><br />
-                        </td>
-                        <td class="tdb">
-                            <asp:RadioButton ID="rbtnRight" runat="server" GroupName="<%# ((tbJudge)Container.DataItem).id %>"
-                                Text="对" />
-                            <asp:RadioButton ID="rbtnWrong" runat="server" GroupName="<%# ((tbJudge)Container.DataItem).id %>"
-                                Text="错" />
-                            <asp:HiddenField ID="hfJD" runat="server" Value="<%# ((tbJudge)Container.DataItem).id %>" />
-                        </td>
-                    </tr>
-                </ItemTemplate>
-                <FooterTemplate>
-                    </table>
-                    <br />
-                </FooterTemplate>
-            </asp:Repeater>
-        </div>
-        <div class="questionZone">
-            <asp:Repeater ID="rptBF" runat="server">
-                <HeaderTemplate>
-                    <div class="oe_title">
-                        <%=GetIndex() %>、填空题(共<%=paper.bf_count%>小题：每小题<%=paper.bf_scoreofeach%>分，满分<%=paper.bf_count * paper.bf_scoreofeach%>分)</div>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <div class="tda">
-                        <%#Container.ItemIndex+1 %>.&nbsp;
-                        <%# GetBFFront(((tbBlank)Container.DataItem).ques)%>
-                        <asp:TextBox ID="txtBF" runat="server" CssClass="oe_bfText" Width='<%#((tbBlank)Container.DataItem).blanklength*40%>'></asp:TextBox>
-                        <%# GetBFAfter(((tbBlank)Container.DataItem).ques)%>
-                        <asp:Label ID="lblBFAnswer" runat="server" Visible="false" ForeColor="Red"></asp:Label>
-                        <asp:HiddenField ID="hfBF" runat="server" Value="<%# ((tbBlank)Container.DataItem).id %>" />
+        </div></div>
+
+        <div class="col-sm-3 col-xs-5">
+                        <div class="testpaper-card affix-top" data-spy="affix" data-offset-top="200" data-offset-bottom="200">
+                            <div class="panel-heading">
+                                <span class=" testpaper-card-timer" id="time_show">　</span>
+                                <button class="btn btn-sm btn-default pull-right" id="suspend">下次再做</button>
+                                <button id="pause" class="btn btn-sm btn-default pull-right" data-toggle="modal" data-backdrop="static" data-target="#modal">暂停</button>
+                            </div>
+
+                            <div class="panel-footer">
+
+                                <asp:LinkButton ID="lbtnSubmit" runat="server" CssClass="btn btn-success btn-block do-test"
+                                    OnClick="btnSubmit_Click" OnClientClick="return manual();">交卷</asp:LinkButton>
+                                <div style="display: none;">
+                                    <asp:Button ID="btnAuto" runat="server" Text="" OnClick="btnSubmit_Click" />
+                                </div>
+                                <asp:LinkButton ID="lbtnBack" runat="server" CssClass="btn btn-success btn-block do-test"
+                                    OnClick="btnBack_Click" Visible="false">关闭并返回</asp:LinkButton>
+                            </div>
+                        </div>
+
                     </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <br />
-                </FooterTemplate>
-            </asp:Repeater>
-        </div>
-        <div class="questionZone">
-            <asp:Repeater ID="rptSA" runat="server">
-                <HeaderTemplate>
-                    <div class="oe_title">
-                        <%=GetIndex() %>、简答题(共<%=paper.sa_count%>小题：每小题<%=paper.sa_scoreofeach%>分，满分<%=paper.sa_count * paper.sa_scoreofeach%>分)</div>
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <div class="tda">
-                        <%#Container.ItemIndex+1 %>.&nbsp;
-                        <%# ((tbAnswer)Container.DataItem).ques %><br />
-                        <asp:TextBox ID="txtAnswer" Style="border: solid 1px #cccccc;" runat="server" TextMode="MultiLine"
-                            Rows="6" Columns="60" EnableTheming="false"></asp:TextBox>
-                        <asp:HiddenField ID="hfSA" runat="server" Value="<%# ((tbAnswer)Container.DataItem).id %>" />
-                    </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <br />
-                </FooterTemplate>
-            </asp:Repeater>
-        </div>
-        <div style="text-align: center;">
-            <asp:LinkButton ID="lbtnSubmit" runat="server" CssClass="easyui-linkbutton" 
-                OnClick="btnSubmit_Click" OnClientClick="return manual();">交卷</asp:LinkButton>
-        </div>
-        <div style="display: none;">
-            <asp:Button ID="btnAuto" runat="server" Text="" OnClick="btnSubmit_Click" />
-        </div>
-        <div style="text-align: center;">
-            <asp:LinkButton ID="lbtnBack" runat="server" CssClass="easyui-linkbutton" data-options="iconCls:'icon-back'"
-                OnClick="btnBack_Click" Visible="false">关闭并返回</asp:LinkButton>
-        </div>
+        <!--旧版从此处开始添加-->
+
+
+
         <div style="height: 20px;">
         </div>
         <div style="display: none;" id="submiting">
             <img src="img/loading.gif" alt="" /><br />
             正在提交……
         </div>
-    </div>
+
+
+
+        <script type="text/javascript">
+            //$(function(){ $("body").attr("onselectstart","return false");$("body").attr("oncontextmenu","self.event.returnValue=false");});            
+        </script>
+
+
+    </form>
+    <script src="../demo/bootstrap/js/jquery-1.11.1.min.js"></script>
+    <script src="../demo/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--conutdown-->
+    <script src="../demo/countdown/js/jquery.syotimer.js"></script>
+
 
     <script type="text/javascript">
-        //$(function(){ $("body").attr("onselectstart","return false");$("body").attr("oncontextmenu","self.event.returnValue=false");});            
-    </script>
+        //侧边栏固定
+        var Getid = function (id) {
+            return document.getElementById(id);
+        }
+        var addEvent = function (obj, event, fun) {
+            if (obj, addEventListener) {
+                obj.addEventListener(event, fun, false);
+            } else if (obj.attachEvent()) {
+                obj.attachEvent("on" + event, fun)
+            }
 
-</div>
-    </form>
+        }
+
+        var lnSider = Getid("rightside");
+        addEvent(window, "scroll", function () {
+            //scrollTop兼容性问题
+            var scrollHeight = document.documentElement.scrollTop == 0 ? document.body.scrollTop : document.documentElement.scrollTop;
+            // console.log(scrollHeight);
+            var contentHeight = Getid("panel-right").offsetHeight - lnSider.offsetHeight;
+            // console.log(contentHeight);
+            if (scrollHeight > 14 && scrollHeight < contentHeight + 14) {
+                lnSider.style.position = "absolute";
+
+                lnSider.style.width = "90%";
+                lnSider.style.left = "15px";
+                lnSider.style.top = scrollHeight - 14 + "px";
+            } else if (scrollHeight <= 14) {
+                lnSider.style.position = "absolute";
+                lnSider.style.width = "90%";
+                lnSider.style.left = "15px";
+                lnSider.style.top = "0px";
+            }
+        });
+
+        //countdown
+        var myDate = new Date();
+        var myyear = myDate.getFullYear();
+        var mymonth = myDate.getMonth();
+        var myday = myDate.getDate();
+        var myhour = myDate.getHours();
+        var mymin = myDate.getMinutes();
+        var mysec = myDate.getSeconds();
+        //console.log(myyear);
+        //console.log(mymonth);
+        $('#simple_timer').syotimer({
+            year: myyear,
+            month: mymonth + 1,
+            day: myday,
+            hour: myhour,
+            minute: mymin + 1,
+            second: mysec,
+            dayVisible: false,
+            headTitle: '<h3>考试剩余时间</h3>',
+
+
+            dubleNumbers: false,
+            effectType: 'opacity',
+
+            periodUnit: 'm',
+            periodic: false,
+            periodInterval: 3,
+        });
+
+
+        //倒计时结束后触发的事件
+        function done() {
+            var str = $('#simple_timer').text();
+            var out = str.match(/\d+/g);//正则表达式 /d匹配数字 +匹配至少一个 /g全局匹配 匹配一个字数字符，/\d/ = /[0-9]/
+            //console.log(out); 
+            var h = parseInt(out[0]), m = parseInt(out[1]), s = parseInt(out[2]);
+            //console.log(h+'#'+m+'#'+s);
+            var calc = h * 3600 + m * 60 + s;
+            //console.log(calc); 
+            if (calc == 0) {
+                //事件
+
+                alert("结束");
+            }
+            /*else{
+            console.log('等待..');
+            } 
+            */
+            var t = setTimeout('done()', 1000);
+        }
+        done();
+
+    </script>
 </body>
 </html>
