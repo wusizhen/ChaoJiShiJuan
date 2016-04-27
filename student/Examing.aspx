@@ -247,7 +247,7 @@
                             </div>
                             <div id="testpaper-navbar" class="testpaper-navbar affix-top" data-spy="affix" data-offset-top="200">
                                 <ul class="nav nav-pills clearfix">
-                                    <li class="active">
+                                    <li>
                                         <a href="#single">单选题</a></li>
                                     <li><a href="#double">多选题</a></li>
                                     <li><a href="#judge">判断题</a></li>
@@ -489,7 +489,7 @@
                                         </div>
                                         <div class="testpaper-question-choices">
                                             <asp:TextBox ID="txtAnswer" Style="border: solid 1px #cccccc;" runat="server" TextMode="MultiLine"
-                                                Rows="15" Columns="90" EnableTheming="false"></asp:TextBox>
+                                                Rows="15" Columns="45" EnableTheming="false"></asp:TextBox>
                                             <asp:HiddenField ID="hfSA" runat="server" Value="<%# ((tbAnswer)Container.DataItem).id %>" />
                                         </div>
 
