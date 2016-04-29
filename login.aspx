@@ -36,25 +36,24 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-4 col-xs-12">
-                        <div class="panel" style="background-color: rgba(0,0,0,0.35);">
-                            <div class="panel-heading" style="text-align: center">
+                        <div class="panel" style="background-color: rgba(0,0,0,0);">
+                            <div class="panel-heading myheading" style="text-align: center">
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <h1 style="color: #FFFFFF;">超级试卷</h1>
-                                        <h4 style="color: #FFFFFF;">在线考试系统</h4>
+                                        <!--<h1 style="color: #FFFFFF;">超级试卷</h1>-->
+                                        <img src="demo/cjsj.png" id="logo2"/>
+                                        <h4 style="color: #FFFFFF; font-family: 'HanHei-SC-thin';">智能多题型高校在线考试系统</h4>
                                     </div>
                                 </div>
-                                <div style="min-height: 20px;">
+                                <div style="min-height: 20px;margin-top:20px;">
                                     <asp:Label ID="lblTip" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
                                 </div>
                             </div>
                             <div class="panel-body">
                                 <form runat="server" id="form1" method="post" role="form">
                                     <div class="row myRows">
-                                        <div class="col-xs-1 col-xs-offset-1 myCols">
-                                            <i class="glyphicon glyphicon-user"></i>
-                                        </div>
-                                        <div class="col-xs-8">
+                                        
+                                        <div class="col-xs-8 col-xs-offset-2">
                                             <asp:TextBox ID="txtLoginName" runat="server" CssClass="form-control myInput" placeholder="用户名"></asp:TextBox>
                                         </div>
                                         <div class="col-xs-1">
@@ -63,10 +62,8 @@
                                         </div>
                                     </div>
                                     <div class="row myRows">
-                                        <div class="col-xs-1 col-xs-offset-1 myCols">
-                                            <i class="glyphicon glyphicon-lock"></i>
-                                        </div>
-                                        <div class="col-xs-8">
+                                        
+                                        <div class="col-xs-8 col-xs-offset-2">
                                             <asp:TextBox ID="txtUserPwd" runat="server" CssClass="form-control myInput" placeholder="密码" TextMode="Password"></asp:TextBox>
                                         </div>
                                         <div class="col-xs-1">
@@ -74,20 +71,21 @@
                                                 ControlToValidate="txtUserPwd"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
+                                    
                                     <div class="row myRows">
-                                        <div class="col-xs-4 col-xs-offset-2">
-                                            <a class="myA" href="#">忘记密码?</a>
-                                        </div>
-                                        <div class="col-xs-5 col-xs-offset-1" style="color: #FFFFFF">
-                                            <asp:CheckBox runat="server" ID="cookieCheck" CssClass="myCheckBox"></asp:CheckBox>30天内记住
-                                       
-                                        </div>
-                                    </div>
-                                    <div class="row myRows">
-                                        <div class="col-xs-4 col-xs-offset-6">
+                                        <div class="col-xs-8 col-xs-offset-2">
                                             <asp:LinkButton ID="lbtnSubmit" runat="server" CssClass="btn btn-info btn-block" OnClick="lbtnSubmit_Click">登陆</asp:LinkButton>
                                         </div>
 
+                                    </div>
+                                    <div class="row myRows">
+                                        <div class="col-xs-5 col-xs-offset-1">
+                                            <a class="myA" href="#">忘记密码?</a>
+                                        </div>
+                                        <div class="col-xs-5" style="color: #FFFFFF">
+                                            <asp:CheckBox runat="server" ID="cookieCheck" CssClass="myCheckBox"></asp:CheckBox>记住我
+                                       
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -101,16 +99,17 @@
         <div class="row myrow footer">
             <div class="col-xs-12 footer">
                 <span>© 2016 超级试卷</span>
+              <div class="foot-media">
                 <span class="dot">·</span>
                 <a target="_blank" href="http://www.whut.edu.cn">武汉理工大学</a>
                 <span class="dot">·</span>
                 <span>创作：大呲花|MuJi|Vi.Ci</span>
                 <span class="dot">·</span>
                 <a target="_blank" href="https://github.com/woailuoli993/ChaoJiShiJuan" >源码</a>
+              </div>
             </div>
         </div>
     </div>
-
 
 
 </body>

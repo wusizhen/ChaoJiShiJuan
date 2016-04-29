@@ -120,21 +120,24 @@
 
             <div class="navbar-container" id="navbar-container">
                 <div class="row">
-                    <div class="col-xs-1">
+                    <div class="col-sm-1 col-xs-6">
                         <div class="navbar-header pull-left mynavbar-header">
-                            <a href="#" class="navbar-brand">
+                            <a class="menu-toggler" id="menu-toggler" href="#">
+                                <span class="menu-text"></span>
+                            </a>
+                            <a href="#" class="navbar-brand miss">
                                 <img src="demo/logo2/Icons11.png" />
                             </a>
                             <!-- /.brand -->
                         </div>
                         <!-- /.navbar-header -->
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-sm-7 ">
                         <div class="brand">
                             <a href="#">高校在线考试系统</a>
                         </div>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-sm-4 col-xs-6">
                         <div class="navbar-header pull-right" role="navigation">
                             <ul class="nav ace-nav mynav">
                                 <li class="light-blue">
@@ -209,10 +212,10 @@
 
         <div class="main-container-inner">
             <!--  新版版主窗口   -->
-            <a class="menu-toggler" id="menu-toggler" href="#">
+           <!-- <a class="menu-toggler" id="menu-toggler" href="#"> 
                 <span class="menu-text"></span>
             </a>
-
+            -->
             <div class="sidebar" id="sidebar">
                 <script type="text/javascript">
                     try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
@@ -488,9 +491,9 @@
 
                                         <div style="padding-left: 20px; padding-top: 5px;">
 
-                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                            <div class="alert alert-info alert-dismissible" role="alert">
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                欢迎进入 <strong>超级试卷</strong>在线考试系统
+                                                欢迎进入 <strong>超级试卷</strong> - <span style="font-size:12px;">智能多题型高校在线考试系统</span>
                                             </div>
 
                                             <div class="row Int" runat="server" id="studentInt">
@@ -539,7 +542,7 @@
                                             </div>
                                             <div class="row ">
                                                <div class="pan">
-                                                <div class="col-xs-6">
+                                                <div class="col-sm-6 col-xs-12">
                                                     <div class="inform">
                                                         <div class="page-header myPage-header">
                                                             <h3 style="font-family: SimHei">通知公告</h3>
@@ -604,7 +607,7 @@
                                                         <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-6">
+                                                <div class="col-sm-6 col-xs-12">
                                                     <div class="inform">
                                                         <div id="chart-container"></div>
                                                     </div>
@@ -612,7 +615,6 @@
                                                 <div class="clear"></div>
                                                </div>
                                             </div>
-
 
                                         </div>
                                     </div>
