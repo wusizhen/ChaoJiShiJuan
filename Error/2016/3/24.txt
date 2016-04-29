@@ -1,0 +1,126 @@
+用户IP:::1
+发生时间:2016/3/24 星期四 23:35:27
+发生异常页: http://localhost:60838/library/SingleList.aspx
+异常信息: “)”附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 h:\vs2015\ChaoJiShiJuan\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 h:\vs2015\ChaoJiShiJuan\library\SingleList.aspx.cs:行号 64
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\library\SingleList.aspx.cs:行号 39
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:35:41
+发生异常页: http://localhost:60838/arrange/ExerciseList.aspx
+异常信息: “)”附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 h:\vs2015\ChaoJiShiJuan\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 h:\vs2015\ChaoJiShiJuan\arrange\ExerciseList.aspx.cs:行号 51
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\arrange\ExerciseList.aspx.cs:行号 36
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:35:51
+发生异常页: http://localhost:60838/paper/PaperAdd.aspx
+异常信息: 输入字符串的格式不正确。
+错误源:mscorlib
+堆栈信息:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 paper_PaperAdd.BindSubject() 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperAdd.aspx.cs:行号 44
+   在 paper_PaperAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperAdd.aspx.cs:行号 30
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:53:48
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:53:51
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:55:12
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:55:16
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:55:31
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/24 星期四 23:55:32
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------

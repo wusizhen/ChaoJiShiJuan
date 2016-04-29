@@ -1,0 +1,56 @@
+用户IP:27.17.29.180
+发生时间:2016/3/15 14:55:25
+发生异常页: http://www.heyuhua.com:8088/library/SingleList.aspx
+异常信息: ')' 附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\SingleList.aspx.cs:行号 64
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\SingleList.aspx.cs:行号 39
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:27.17.29.180
+发生时间:2016/3/15 14:55:28
+发生异常页: http://www.heyuhua.com:8088/library/CheckList.aspx
+异常信息: ')' 附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\CheckList.aspx.cs:行号 64
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\CheckList.aspx.cs:行号 39
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:27.17.29.180
+发生时间:2016/3/15 14:55:32
+发生异常页: http://www.heyuhua.com:8088/library/CheckList.aspx
+异常信息: ')' 附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\CheckList.aspx.cs:行号 64
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\CheckList.aspx.cs:行号 39
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:27.17.29.180
+发生时间:2016/3/15 15:12:34
+发生异常页: http://www.heyuhua.com:8088/library/SingleList.aspx
+异常信息: ')' 附近有语法错误。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString)
+   在 Util.MyUtil.GetCount(String tableNames, String strWhere1, String strWhere2) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\App_Code\util\MyUtil.cs:行号 358
+   在 subject_SubjectList.BindData() 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\SingleList.aspx.cs:行号 64
+   在 subject_SubjectList.Page_Load(Object sender, EventArgs e) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\library\SingleList.aspx.cs:行号 39
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------

@@ -1,0 +1,52 @@
+用户IP:::1
+发生时间:2016/3/26 星期六 15:30:46
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/26 星期六 15:30:49
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/26 星期六 15:31:07
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/3/26 星期六 15:31:09
+发生异常页: http://localhost:60838/paper/PaperEdit.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_znblgk66
+堆栈信息:   在 subject_SubjectAdd.Page_Load(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\paper\PaperEdit.aspx.cs:行号 26
+   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.EventHandler.Invoke(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------

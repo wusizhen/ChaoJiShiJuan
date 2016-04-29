@@ -1,0 +1,490 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Examing.aspx.cs"
+    Inherits="student_Examing" Title="无标题页" %>
+
+<%@ Import Namespace="Model" %>
+<!doctype html>
+<html lang="en">
+<head runat="server"> 
+    <meta charset="UTF-8">
+  
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--禁止缩放，启动响应式-->
+    <link rel="stylesheet" href="../demo/bootstrap/css/bootstrap.min.css">
+    <!-- mystyle.css-->
+    <link rel="stylesheet" href="../demo/assets/css/mystyle.css" />
+    <!--[if IE 7]>
+		  <link rel="stylesheet" href="../demo/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+
+    <!--[if lte IE 8]>
+		  <link rel="stylesheet" href="../demo/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+    <!--[if lt IE 9]>
+		<script src="../demo/assets/js/html5shiv.js"></script>
+		<script src="../demo/assets/js/respond.min.js"></script>
+		<![endif]-->
+
+    <!--conutdown-->
+
+    <title>在线考试</title>
+    <style>
+        body {
+            position: relative;
+            padding-top: 70px;
+        }
+
+
+        .timer {
+            text-align: center;
+            margin: 30px auto 0;
+            padding: 0 0 10px;
+            border-bottom: 2px solid #99CC33;
+        }
+
+            .timer .table-cell {
+                display: inline-block;
+                margin: 0 5px;
+                width: 50px;
+                background: url(../demo/countdown/images/timer.png) no-repeat 0 0;
+            }
+
+                .timer .table-cell .tab-val {
+                    font-size: 35px;
+                    color: #99CC33;
+                    height: 81px;
+                    line-height: 81px;
+                    margin: 0 0 5px;
+                }
+
+                .timer .table-cell .tab-metr {
+                    font-family: Arial;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+
+        #simple_timer.timer .table-cell.day,
+        #periodic_timer_days.timer .table-cell.hour {
+            width: 120px;
+            background-image: url(../demo/countdown/images/timer_long.png);
+        }
+
+        #span1 {
+            float: left;
+            padding-top: 10px;
+        }
+
+        #oe_box {
+            margin: 0px auto;
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 6px;
+            float: left;
+            padding-left: 30px;
+            width: 90%;
+            color: Black;
+        }
+
+        .paperTitle {
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        #timer {
+            position: fixed;
+            top: 250px;
+            right: 5px;
+            font-size: 25px;
+            color: Green;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            z-index: 100;
+            font-weight: bold;
+            line-height: 30px;
+            text-align: center;
+            width: auto;
+        }
+
+        .questionZone {
+        }
+
+        .oe_title {
+            color: #333333;
+            font-weight: bold;
+            margin-left: 0px;
+            line-height: 35px;
+        }
+
+        .oe_item {
+            margin-top: 10px;
+            margin-left: 18px;
+        }
+
+        .tda, .tdb {
+            padding-left: 25px;
+            line-height: 28px;
+        }
+
+            .tda:hover, .tdb:hover {
+                font-weight: 100;
+                cursor: pointer;
+            }
+
+        .oe_bfText {
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-top-width: 0px;
+            border-bottom: solid 1px #333333;
+        }
+
+        .oe_filter {
+            background: #A1A1A1;
+            filter: Alpha(Opacity=50);
+        }
+
+        #submiting {
+            width: 200px;
+            background-color: White;
+            position: fixed;
+            top: 30%;
+            left: 45%;
+            border: solid 2px #757415;
+            text-align: center;
+        }
+    </style>
+    <script type="text/jscript">
+        var maxtime = 5;
+        function setTimer(i) {
+            maxtime = i * 60;
+        }
+        function Pause(obj, iMinSecond) {
+            if (window.eventList == null) window.eventList = new Array();
+            var ind = -1;
+            for (var i = 0; i < window.eventList.length; i++) {
+                if (window.eventList[i] == null) {
+                    window.eventList[i] = obj;
+                    ind = i;
+                    break;
+                }
+            }
+            if (ind == -1) {
+                ind = window.eventList.length;
+                window.eventList[ind] = obj;
+            }
+            setTimeout("GoOn(" + ind + ")", 3000);
+        }
+        function GoOn(ind) {
+            var obj = window.eventList[ind];
+            window.eventList[ind] = null;
+            if (obj.NextStep) obj.NextStep();
+            else obj();
+        }
+        function CountDown() {
+            if (maxtime >= 0) {
+                minutes = Math.floor(maxtime / 60);
+                seconds = Math.floor(maxtime % 60);
+                if (seconds < 10)
+                    seconds = "0" + seconds;
+                if (minutes < 10)
+                    minutes = "0" + minutes;
+                msg =  minutes + ":" + seconds;
+                document.getElementById("time_show").innerHTML = msg;
+                if (maxtime == 5 * 60) {
+                    document.getElementById("time_show").style.color = "Red"
+                }
+                --maxtime;
+            } else {
+                clearInterval(timer);
+                document.getElementById("main").className = "oe_filter";
+                document.getElementById("submiting").style.display = "block";
+                Pause(this, 3000);
+                this.NextStep = function () {
+                    document.getElementById('<%=btnAuto.ClientID %>').click();
+}
+           }
+       }
+       function manual() {
+           if (confirm('你确定要交卷吗？')) {
+               clearInterval(timer);
+               document.getElementById("main").className = "oe_filter";
+               document.getElementById("submiting").style.display = "block";
+               Pause(this, 3000);
+               this.NextStep = function () {
+                   return true;
+               }
+           } else {
+               return false;
+           }
+       }
+       timer = setInterval("CountDown()", 1000);
+    </script>
+</head>
+
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50" class="body1">
+  <form id="form1" runat="server">
+  	<div class="container-fluid">
+    <div class="container-head">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="exam-h2"><%=arrange.arrangetitle%>
+          <small>科目：<%=subject.subjectname %>&nbsp;&nbsp;&nbsp;&nbsp;时长：<%=paper.durationtime %>分钟</small></h2>
+          <script type="text/jscript">
+                setTimer(<%=paper.durationtime %>);
+            </script>
+        </div>
+        <div class="panel-body">
+          <div class="mychoice">
+            <p>总分 <%=paper.allscore %> 分 ，请在 ：<%=paper.durationtime %> 分钟内作答 。</p>
+          </div>
+          <div id="testpaper-navbar" class="testpaper-navbar affix-top" data-spy="affix" data-offset-top="200">
+        <ul class="nav nav-pills clearfix">
+                      <li class="active"><a href="#single">单选题</a></li>
+                      <li><a href="#double">多选题</a></li>
+                      <li><a href="#answer">问答题</a></li>
+                      <li><a href="#cailiao">材料题</a></li>
+                  </ul>
+      </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+        <div class="col-sm-9 col-xs-7" id="panel-right">
+          <div id="single">
+            <div class="panel panel-default">
+            <!-- 添加选择题-->
+              <div class="panel-heading">
+                <h4> <%=GetIndex() %>、单项选择
+                <small>(共<%=paper.sr_count%>小题：每小题<%=paper.sa_scoreofeach%>分，满分<%=paper.sr_count * paper.sa_scoreofeach%>分)</small></h4>
+              </div>
+              <div class="panel-body">
+                <div class="testpaper-question-stem-wrap clearfix">
+  <div class="testpaper-question-seq-wrap">
+    <div class="testpaper-question-seq">1</div>
+    <div class="testpaper-question-score">2.0分</div>
+  </div>
+      <div class="testpaper-question-stem"><p class="MsoNormal"><br>
+	哪个不属于<span>HDFS</span>架构组成部分<br>
+</p></div>
+    </div>
+                <div class="testpaper-question-choices">
+                  <ul>
+                    <li>
+                    <strong>A.</strong>NameNode</li>
+                    <li>
+                    <strong>B.</strong>Secondary NameNode</li>
+                    <li>
+                    <strong>C.</strong>DataNode</li>
+                    <li>
+                    <strong>D.</strong>TaskTracker</li>
+                  </ul>
+                </div>
+                
+              
+              </div>
+            </div>
+          </div>
+          <div id="double">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>多选题 
+                <small>共X题，共X分</small></h4>
+              </div>
+              <div class="panel-body">
+                <div class="myquestion">
+                  <h4>
+                  <strong>3.</strong>关于Capacity Scheduler，下面说法正确的是</h4>
+                  <span class="label label-success">3.0分</span>
+                </div>
+                <div class="mychoice">
+                  <ul>
+                    <li>
+                    <strong>A.</strong>由Yahoo！开源的共享集群调度器</li>
+                    <li>
+                    <strong>B.</strong>每个队列内部采用FIFO调度策略</li>
+                    <li>
+                    <strong>C.</strong>只能配置一个队列</li>
+                    <li>
+                    <strong>D.</strong>可限制每个用户使用资源量</li>
+                  </ul>
+                </div>
+                <div class="myanswer">
+                  <div class="form-group">
+                    <div class="checkbox">
+                    <label class="checkbox-inline">
+                    <input type="checkbox" name="3" value="0" />A</label> 
+                    <label class="checkbox-inline">
+                    <input type="checkbox" name="3" value="1" />B</label> 
+                    <label class="checkbox-inline">
+                    <input type="checkbox" name="3" value="2" />C</label> 
+                    <label class="checkbox-inline">
+                    <input type="checkbox" name="3" value="3" />D</label></div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div id="answer">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>问答题 
+                <small>共X题，共X分</small></h4>
+              </div>
+              <div class="panel-body">
+                <div class="myquestion">
+                  <h4>
+                  <strong>5.</strong>描述作业从提交到MapReduce上，到运行结束的整个过程，请用步骤1，步骤2，…，描述。</h4>
+                  <span class="label label-success">10.0分</span>
+                </div>
+                <div class="myanswer">
+                  <span style="color:red">此次应有输入框</span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div id="cailiao">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>材料题 
+                <small>共X题，共X分</small></h4>
+              </div>
+              <div class="panel-body">
+                <div class="mychoice">
+                  <p>有一批文件，格式如下： 11.12.1.2 11.14.2.3 11.11.4.1 11.12.1.1 11.14.2.2
+                  每行有4列，每一列均是一个整数，列之间采用“.”作为分隔符，将数据按照第一列、第二列和第三列分组，每组中第四列所有数最大值、最小值和平均值。比如上述结果为：
+                  11.11.4 1,1,1 11.12.1 2,1,1.5 11.14.2 3,2,2.5
+                  结果中，key为“第一列、第二列和第三列”值，value是对应的第四列的最大值、最小值和平均值（使用“,”分割），key和value之间使用\t分割。</p>
+                </div>
+                <div class="myquestion">
+                  <h4>
+                  <strong>8.</strong>使用任意语言实现以上功能，写出Mapper和Reducer，并给出相应的作业提交命令（或脚本）。</h4>
+                  <span class="label label-success">20.0分</span>
+                </div>
+                <div class="myanswer">
+                  <span style="color:red">此次应有输入框</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-sm-3 col-xs-5">
+        <div class="testpaper-card affix-top" data-spy="affix" data-offset-top="200" data-offset-bottom="200">
+          <div class="panel-heading">
+					<span class=" testpaper-card-timer" id="time_show" data-time="42996">697:54</span>
+						<button class="btn btn-sm btn-default pull-right" id="suspend" data-url="/test/14579/suspend" data-goto="/my/quiz">下次再做</button>
+			<button id="pause" class="btn btn-sm btn-default pull-right" data-toggle="modal" data-backdrop="static" data-target="#modal" data-url="/test/pause">暂停</button>
+		    			</div>
+	
+	<div class="panel-footer">
+				<button class="btn btn-success btn-block do-test" id="finishPaper" data-ajax="/test/14579/submit" data-url="/test/14579/finish" data-goto="/test/14579/result">我要交卷</button>
+			</div>
+        </div>
+        </div>
+     
+    </div>
+  </div>
+  <script src="../demo/bootstrap/js/jquery-1.11.1.min.js"></script> 
+  <script src="../demo/bootstrap/js/bootstrap.min.js"></script> 
+  <!--conutdown-->
+   
+  <script src="../demo/countdown/js/jquery.syotimer.js"></script> 
+  <script type="text/javascript">
+   //侧边栏固定
+  var Getid = function(id){
+         return document.getElementById(id);
+        }
+        var addEvent = function(obj,event,fun){
+                if(obj,addEventListener){
+                 obj.addEventListener(event,fun,false);
+                }else if(obj.attachEvent()){
+                    obj.attachEvent(&quot;on&quot;+event,fun)
+                }
+        
+        }
+
+        var lnSider = Getid(&quot;rightside&quot;);
+        addEvent(window,&quot;scroll&quot;,function(){
+        //scrollTop兼容性问题
+          var scrollHeight = document.documentElement.scrollTop == 0 ? document.body.scrollTop :
+document.documentElement.scrollTop;
+         // console.log(scrollHeight);
+      var contentHeight = Getid(&quot;panel-right&quot;).offsetHeight-lnSider.offsetHeight;
+         // console.log(contentHeight);
+       if(scrollHeight&gt;14 &amp;&amp; scrollHeight&lt;contentHeight+14){
+             lnSider.style.position = &quot;absolute&quot;;
+        
+                 lnSider.style.width = &quot;90%&quot;;            
+                 lnSider.style.left= &quot;15px&quot;;
+                 lnSider.style.top = scrollHeight-14+&quot;px&quot;;
+           }else if(scrollHeight&lt;=14){
+             lnSider.style.position=&quot;absolute&quot;;                                
+                 lnSider.style.width =&quot;90%&quot;;
+                 lnSider.style.left=&quot;15px&quot;;
+                 lnSider.style.top=&quot;0px&quot;;
+           }
+        });
+
+ //countdown
+var myDate = new Date();
+var myyear=myDate.getFullYear();    
+var mymonth=myDate.getMonth(); 
+var myday=myDate.getDate();
+var myhour=myDate.getHours(); 
+var mymin=myDate.getMinutes();  
+var mysec=myDate.getSeconds();    
+//console.log(myyear);
+//console.log(mymonth);
+ $(&#39;#simple_timer&#39;).syotimer({
+   year: myyear,
+   month:mymonth+1,
+   day:myday,
+   hour: myhour,
+   minute:mymin+1,
+   second: mysec,
+   dayVisible: false,
+   headTitle: &#39;&lt;h3&gt;考试剩余时间&lt;\/h3&gt;&#39;,
+
+   
+   dubleNumbers: false,
+   effectType: &#39;opacity&#39;,
+
+   periodUnit: &#39;m&#39;,
+   periodic: false,
+   periodInterval: 3,
+});  
+
+
+//倒计时结束后触发的事件
+function done(){
+var str=$(&#39;#simple_timer&#39;).text(); 
+var out=str.match(/\d+/g);//正则表达式 /d匹配数字 +匹配至少一个 /g全局匹配 匹配一个字数字符，/\d/ =
+/[0-9]/
+//console.log(out); 
+var h=parseInt(out[0]),m=parseInt(out[1]),s=parseInt(out[2]); 
+//console.log(h+&#39;#&#39;+m+&#39;#&#39;+s);
+var calc=h*3600+m*60+s;
+//console.log(calc); 
+if(calc==0){
+//事件
+
+alert(&quot;结束&quot;);
+} 
+/*else{
+console.log(&#39;等待..&#39;);
+} 
+*/
+var t=setTimeout(&#39;done()&#39;,1000);
+} 
+done();
+
+   
+</script>
+  </form>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+用户IP:27.17.29.189
+发生时间:2016/3/12 16:51:00
+发生异常页: http://www.heyuhua.com:8088/message/MessageAdd.aspx
+异常信息: 从客户端(ctl00$ContentPlaceHolder1$txtMessageContent$txtCKContent="<p>
+	内容在这里</p>
+")中检测到有潜在危险的 Request.Form 值。
+错误源:System.Web
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.ValidateHttpValueCollection(HttpValueCollection collection, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.get_Form()
+   在 System.Web.HttpRequest.get_HasForm()
+   在 System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull)
+   在 System.Web.UI.Page.DeterminePostBackMode()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   在 System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   在 System.Web.UI.Page.ProcessRequest()
+   在 System.Web.UI.Page.ProcessRequest(HttpContext context)
+   在 ASP.message_messageadd_aspx.ProcessRequest(HttpContext context) 位置 c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\64ce6371\2c40d307\App_Web_5hfi45ra.0.cs:行号 0
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------
+用户IP:27.17.29.189
+发生时间:2016/3/12 17:08:07
+发生异常页: http://www.heyuhua.com:8088/message/MessageAdd.aspx
+异常信息: 从客户端(ctl00$ContentPlaceHolder1$txtMessageContent$txtCKContent="<p>
+	2016年3月12日17:0...")中检测到有潜在危险的 Request.Form 值。
+错误源:System.Web
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.ValidateHttpValueCollection(HttpValueCollection collection, RequestValidationSource requestCollection)
+   在 System.Web.HttpRequest.get_Form()
+   在 System.Web.HttpRequest.get_HasForm()
+   在 System.Web.UI.Page.GetCollectionBasedOnMethod(Boolean dontReturnNull)
+   在 System.Web.UI.Page.DeterminePostBackMode()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   在 System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   在 System.Web.UI.Page.ProcessRequest()
+   在 System.Web.UI.Page.ProcessRequest(HttpContext context)
+   在 ASP.message_messageadd_aspx.ProcessRequest(HttpContext context) 位置 c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\64ce6371\2c40d307\App_Web_5hfi45ra.0.cs:行号 0
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--------------------------------------------------------------------------------------
+用户IP:27.17.29.189
+发生时间:2016/3/12 17:20:50
+发生异常页: http://www.heyuhua.com:8088/message/MessageAdd.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_5hfi45ra
+堆栈信息:   在 subject_SubjectAdd.lbtnAdd_Click(Object sender, EventArgs e) 位置 c:\Program Files\Common Files\chaojishijuan\graduate\message\MessageAdd.aspx.cs:行号 62
+   在 System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------

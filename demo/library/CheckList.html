@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="gb2312">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><!--禁止缩放，启动响应式-->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+      <!-- mystyle.css-->
+  <link rel="stylesheet" href="../assets/css/mystyle.css" />
+  <title>CheckList</title>
+  <style>
+  .panel-footer{
+   padding:0;
+   background-color:#FFFFFF;
+   height:34px;
+  }
+  .panel-footer ul{
+   margin:0;
+  }
+  .pagination>li:first-child>a{
+  border-top-left-radius:0;
+  }
+  .pagination>li:last-child>a{
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  }
+  .panel{
+   margin-bottom:5px;
+  }
+  .panel-footer{
+   bottom:0;
+   width:100%;
+  }
+
+
+  </style>
+ </head>
+ <body>
+ <div  class="container-fluid" >
+	<div  class="row">
+		<div  class="col-sm-12 col-xs-12 ">	 
+		  <div  class="panel panel-default" style="height:100%;">
+		   <div  class="panel-heading">
+		    <form method="post" action="" class="form-inline" role="form">						   
+			 <label class="sr-only">题目</label>										 
+			 <input type="text" style="width:200px;" class="form-control" placeholder="题目">	
+			 <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                 <option  selected="selected">所有科目</option>
+                 <option>XXXXXXXXX</option>
+             </select>
+		     <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                 <option  selected="selected">所有章节</option>
+                 <option>XXXXXX</option>
+             </select>
+			 <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search marginRight" ></span>搜索</a>
+			 <a href="" class="btn btn-default" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus marginRight" ></span>添加</a>
+			 <a href="" class="btn btn-default" data-toggle="modal" data-target="#import"><span class="glyphicon glyphicon-download-alt marginRight" ></span>导入</a>
+			 <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove marginRight" ></span>删除所选</a>
+
+			</form>
+		   </div><!--panel-heading-->
+		   <div  class="panel-body" style="height:405px;" >
+			 
+            <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			  <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			  <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			
+			
+
+
+			  
+		   </div>
+		   <div  class="panel-footer">
+		   
+             <ul class="pagination">
+              <li>
+                 <a href="#" aria-label="Previous">
+                   <span aria-hidden="true">&laquo;</span>
+                 </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+              <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              </a>
+              </li>
+              </ul>
+		   </div>
+		  </div>
+		</div>
+	</div>
+ </div>
+
+<!-- 模态框（Modal）SingleImport -->
+<div class="modal fade" id="import" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               导入
+            </h4>
+         </div>
+         <div class="modal-body">
+             <div class="form-group">
+               <label for="exampleInputFile">File input</label>
+               <input type="file" id="exampleInputFile">
+             </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-success">
+               导入
+            </button>
+			<button type="button" class="btn btn-success">
+               模板下载
+            </button>
+         </div>
+		
+      </div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 模态框（Modal）SingleAdd -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel1">
+               添加
+            </h4>
+         </div>
+         <div class="modal-body">
+            <form class="form-horizontal" role="form">
+               <div class="form-group">
+                 <label for="firstname" class="col-xs-2 control-label">科目名</label>
+                 <div class="col-xs-5">
+                        <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                             <option  selected="selected">所有科目</option>
+                             <option>XXXXXXXX</option>
+                        </select> 		
+                     </div>
+               </div>
+               <div class="form-group">
+                     <label for="lastname" class="col-xs-2 control-label">章节名</label>
+                     <div class="col-xs-5">
+                        <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                             <option  selected="selected">第一章</option>                           
+							 <option>第二章</option>
+							 <option>第三章</option>
+							 <option>第四章</option>
+							 <option>第五章</option>
+                        </select> 		
+                     </div>
+               </div>
+			   <div class="form-group">
+                     <label for="lastname" class="col-xs-2 control-label">章节名</label>
+                     <div class="col-xs-5">
+                     <input type="text" class="form-control">
+                     </div>
+               </div>
+			 
+			   
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+			<button type="button" class="btn btn-success">
+               保存
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+ <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
+ <script src="../bootstrap/js/bootstrap.min.js"></script>
+ <script src="../assets/js/placeholderForSL.js"></script>
+ </body>
+</html>

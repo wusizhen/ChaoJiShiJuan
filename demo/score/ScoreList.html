@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><!--禁止缩放，启动响应式-->
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+      <!-- mystyle.css-->
+  <link rel="stylesheet" href="../assets/css/mystyle.css" />
+  <title>成绩管理：学生成绩</title>
+  <style>
+  .panel-footer{
+   padding:0;
+   background-color:#FFFFFF;
+   height:34px;
+  }
+  .panel-footer ul{
+   margin:0;
+  }
+  .pagination>li:first-child>a{
+  border-top-left-radius:0;
+  }
+  .pagination>li:last-child>a{
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  }
+  .panel{
+   margin-bottom:5px;
+  }
+  .panel-footer{
+   bottom:0;
+   width:100%;
+  }
+
+
+  </style>
+ </head>
+ <body>
+ <div  class="container-fluid" >
+	<div  class="row">
+		<div  class="col-sm-12 col-xs-12 ">	 
+		  <div  class="panel panel-default" style="height:100%;">
+		   <div  class="panel-heading">
+		    <form method="post" action="" class="form-inline" role="form">						   
+			 <label class="sr-only">学生名</label>										 
+			 <input type="text" style="width:120px;" class="form-control" placeholder="学生名">		 			 			 											 
+                <label for="name">分数</label>
+                  <select  class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                     <option  selected="selected">0</option>
+                     <option>60</option>
+                     <option>70</option>
+                     <option>90</option>
+                     <option>100</option>
+                  </select>
+				  <label for="name">至</label>
+				  <select class="form-control"><!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                     <option>0</option>
+                     <option>60</option>
+                     <option>70</option>
+                     <option>90</option>
+                     <option selected="selected">100</option>
+                  </select>		 
+				  <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                     <option  selected="selected">所有科目</option>
+                     <option>MIS系统期末考试</option>
+                  </select>
+				  <select class="form-control"> <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                     <option  selected="selected">所有班级</option>
+                     <option>xx</option>
+                  </select>
+				  <select class="form-control"><!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                     <option selected="selected">所有状态</option>
+                     <option>还没考试</option>
+                     <option>正在考试</option>
+                     <option>考试成功</option>
+                     <option>考试失败</option>
+					 <option>等待批改</option>
+                     <option>重新考试</option>
+                  </select>
+				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search" style="margin-right:5px;"></span>搜索</a>
+				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove" style="margin-right:5px;"></span>重考所选</a>
+				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-new-window"  style="margin-right:5px;"></span>导出</a>
+			</form>
+		   </div><!--panel-heading-->
+		   <div  class="panel-body" style="height:405px;" >
+			 
+            <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			  <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			  <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			 <p> 此次应有表格</p>
+			
+			
+
+
+			  
+		   </div>
+		   <div  class="panel-footer">
+		   
+             <ul class="pagination">
+              <li>
+                 <a href="#" aria-label="Previous">
+                   <span aria-hidden="true">&laquo;</span>
+                 </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+              <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              </a>
+              </li>
+              </ul>
+		   </div>
+		  </div>
+		</div>
+	</div>
+ </div>
+
+
+
+
+
+
+ <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
+ <script src="../bootstrap/js/bootstrap.min.js"></script>
+ <script src="../assets/js/placeholderForSL.js"></script>
+ </body>
+</html>
