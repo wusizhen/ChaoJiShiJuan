@@ -13,3 +13,33 @@
    在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
    在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
 --------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/4/29 11:03:16
+发生异常页: http://localhost:65207/login.aspx
+异常信息: 用户 'sa' 登录失败。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString, SqlParameter[] cmdParms)
+   在 Maticsoft.DBUtility.DbHelperSQL.Exists(String strSql, SqlParameter[] cmdParms)
+   在 Login.lbtnSubmit_Click(Object sender, EventArgs e) 位置 f:\Git\ChaoJiShiJuan\login.aspx.cs:行号 35
+   在 System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
+用户IP:::1
+发生时间:2016/4/29 11:11:46
+发生异常页: http://localhost:65207/login.aspx
+异常信息: 用户 'sa' 登录失败。
+错误源:.Net SqlClient Data Provider
+堆栈信息:   在 Maticsoft.DBUtility.DbHelperSQL.GetSingle(String SQLString, SqlParameter[] cmdParms)
+   在 Maticsoft.DBUtility.DbHelperSQL.Exists(String strSql, SqlParameter[] cmdParms)
+   在 Login.lbtnSubmit_Click(Object sender, EventArgs e) 位置 f:\Git\ChaoJiShiJuan\login.aspx.cs:行号 35
+   在 System.Web.UI.WebControls.LinkButton.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.LinkButton.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.WebControls.LinkButton.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------
