@@ -61,7 +61,7 @@ html, body {
 }
 
 body {
-  background:rgb(101,147,74);
+  background:#66CCCC;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   line-height: 1.3;
@@ -138,4 +138,19 @@ h4 {
   h1::after {
     height: 4px;
   }
+}
+
+.footer {
+    font-size: 14px;
+    line-height: 42px;
+    text-align: center;
+    font-family: HanHeiSC,'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+}
+
+.footer span,.footer a {
+    color: #aebdc9
+}
+
+.footer .dot {
+    margin: 0 3px
 }

@@ -1,0 +1,15 @@
+用户IP:::1
+发生时间:2016/4/29 星期五 10:19:54
+发生异常页: http://localhost:60838/arrange/ExamList.aspx
+异常信息: 未将对象引用设置到对象的实例。
+错误源:App_Web_2uh0ihw1
+堆栈信息:   在 subject_SubjectList.GetWhereSql() 位置 h:\vs2015\ChaoJiShiJuan\arrange\ExamList.aspx.cs:行号 62
+   在 subject_SubjectList.BindData() 位置 h:\vs2015\ChaoJiShiJuan\arrange\ExamList.aspx.cs:行号 53
+   在 subject_SubjectList.btnHide_Click(Object sender, EventArgs e) 位置 h:\vs2015\ChaoJiShiJuan\arrange\ExamList.aspx.cs:行号 85
+   在 System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   在 System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   在 System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+--------------------------------------------------------------------------------------

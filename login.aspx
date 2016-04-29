@@ -98,7 +98,7 @@
             </div>
 
         </div>
-        <div class="row myrow">
+        <div class="row myrow footer">
             <div class="col-xs-12 footer">
                 <span>© 2016 超级试卷</span>
                 <span class="dot">·</span>
