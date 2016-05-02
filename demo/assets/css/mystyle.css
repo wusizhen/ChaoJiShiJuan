@@ -636,57 +636,19 @@ h4 {
     margin-bottom:-10px;
 }
 /* score、paper、Library、person、message 文件夹*/
-.marginRight {
-    margin-right: 5px;
+/*
+2016.05.02  
+表格样式
+*/
+.table_style{width:100%;height:auto;color:rgb(87,97,109);}
+   .table_style tr td{text-align:center;height:30px;line-height:30px;border-color:rgb(237,237,237);}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+vertical-align:middle;
 }
-/*2016.3.26*/
-.mypanel-body {
-    padding: 0;
-}
-
-    .mypanel-body table {
-        margin: 0;
-    }
-
-        .mypanel-body table tr {
-            height: 77px;
-        }
-            /*2016.3.27*/
-            .mypanel-body table tr td {
-                width: 150.33px;
-            }
-
-                .mypanel-body table tr td:first-child {
-                    width: 50px;
-                }
-
-                .mypanel-body table tr td .td0 {
-                    margin-left: 40%;
-                    margin-top: 20px;
-                }
-
-                .mypanel-body table tr td .td1 {
-                    width: 470px;
-                }
-
-                    .mypanel-body table tr td .td1 h4 {
-                        margin: 0;
-                        margin-bottom: 10px;
-                    }
-
-                    .mypanel-body table tr td .td1 p {
-                        margin-left: 10px;
-                        color: #A9A9A9;
-                    }
-
-                .mypanel-body table tr td .td3 {
-                    margin-top: 20px;
-                }
-
-                .mypanel-body table tr td .td4 {
-                    margin-top: 8%;
-                }
-
+.myForm-control{
+  display:inline-block;
+  width:30%;
+  }
 /* ExamList*/
 .mydate {
     border-radius: 4px !important;
