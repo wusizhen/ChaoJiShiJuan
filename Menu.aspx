@@ -123,7 +123,7 @@
                     <div class="col-sm-1 col-xs-6">
                         <div class="navbar-header pull-left mynavbar-header">
                             <a class="menu-toggler" id="menu-toggler" href="#">
-                                <span class="menu-text"></span>
+                                
                             </a>
                             <a href="#" class="navbar-brand miss">
                                 <img src="demo/logo2/Icons11.png" />

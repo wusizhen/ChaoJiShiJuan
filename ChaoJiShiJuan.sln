@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ChaoJiShiJuan", ".", "{2F413949-6759-4C4E-9529-6704107D4B81}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "graduate_update", ".", "{738EDFB5-14A8-4E0F-B44E-AD73C7D4557C}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_60838"
@@ -29,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F413949-6759-4C4E-9529-6704107D4B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F413949-6759-4C4E-9529-6704107D4B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{738EDFB5-14A8-4E0F-B44E-AD73C7D4557C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{738EDFB5-14A8-4E0F-B44E-AD73C7D4557C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

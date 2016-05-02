@@ -72,7 +72,7 @@
                             <div class="form-group">
                                 <div class="col-xs-4 col-xs-offset-4">
 
-                                    <asp:LinkButton ID="lbtnAdd" runat="server" CssClass="btn btn-success pwdbtn" 
+                                    <asp:LinkButton ID="lbtnAdd" runat="server" CssClass="btn btn-info pwdbtn" 
                                         OnClick="lbtnAdd_Click">保存</asp:LinkButton>
                                 </div>
                             </div>
