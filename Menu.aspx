@@ -718,8 +718,8 @@
     var fusioncharts = new FusionCharts({
     type: 'doughnut2d',
     renderAt: 'chart-container',
-    width: '330',
-    height: '370',
+    width: '350',
+    height: '365',
     dataFormat: 'json',
     dataSource: {
         "chart": {
