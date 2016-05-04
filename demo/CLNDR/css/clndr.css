@@ -24,6 +24,7 @@ html[xmlns] .clearfix {
   -ms-user-select: none;
   /* IE10+ */
 }
+/*
 h4 {
   width: 75%;
   text-align: center;
@@ -35,6 +36,7 @@ h4 {
   padding: 1em;
   background: #b63642;
 }
+*/
 h5 {
   font-size: 1em;
   font-weight: bold;

@@ -62,16 +62,74 @@
             <div class="cal1"></div>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-            <script src="../demo/CLNDR/src/clndr.js"></script>
-            <script src="../demo/CLNDR/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="../demo/CLNDR/src/clndr.js"></script>
+    <script src="../demo/CLNDR/demo.js"></script>
+        </div>
+        <div>
+            <p>教师统计分析</p>
+            <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
+            <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
+
+
         </div>
         
-        
-       
+        <div>
+            <p>管理员统计</p>
+            <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
+            <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
+        </div>
 
-        
+        <div>
+            <p>学生统计</p>
+            <asp:Literal ID="studentError" runat="server"></asp:Literal>
+
+        <div class="col-sm-7 infobox-container">
+            <br /><p>学生统计</p>
+            <div class="infobox infobox-red  ">
+                <div class="infobox-icon">
+                    <i class="icon-beaker"></i>
+                </div>
+
+                <div class="infobox-data">
+                    <span class="infobox-data-number">3</span>
+                    <div class="infobox-content">最近考试</div>
+                </div>
+            </div>
+
+           
+
+            <div class="space-6"></div>
+            <div class="infobox infobox-blue infobox-small infobox-dark">
+                <div class="infobox-chart">
+                    <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
+                </div>
+
+                <div class="infobox-data">
+                    <div class="infobox-content">答题成就</div>
+                    <div class="infobox-content">40</div>
+                </div>
+            </div>
+
+            <div class="infobox infobox-green infobox-small infobox-dark">
+                <div class="infobox-progress">
+                    <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                        <span class="percent">61</span>%
+                    </div>
+                </div>
+
+                <div class="infobox-data">
+                    <div class="infobox-content">正答率</div>
+                    <div class="infobox-content"> 61%</div>
+                </div>
+            </div>
+
+            
+
+            
+        </div>
+        </div>
     </form>
 
     <!--script Start-->
