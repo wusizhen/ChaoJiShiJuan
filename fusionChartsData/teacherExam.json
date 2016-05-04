@@ -1,0 +1,56 @@
+﻿{
+  "chart": {
+    "caption": "科目：《Mis系统软件》",
+    "subCaption": "题库存题量",
+    "captionFontSize": "14",
+    "subcaptionFontSize": "14",
+    "numberPrefix": "",
+    "baseFontColor": "#333333",
+    "baseFont": "Helvetica Neue,Arial",
+    "subcaptionFontBold": "0",
+    "paletteColors": "#008ee4,#6baa01",
+    "bgColor": "#ffffff",
+    "radarfillcolor": "#ffffff",
+    "showBorder": "0",
+    "showShadow": "0",
+    "showCanvasBorder": "0",
+    "legendBorderAlpha": "0",
+    "legendShadow": "0",
+    "divLineAlpha": "10",
+    "usePlotGradientColor": "0",
+    "numberPreffix": "$"
+  },
+  "categories": [
+    {
+      "category": [
+        { "label": "单选题" },
+        { "label": "多选题" },
+        { "label": "判断题" },
+        { "label": "填空题" },
+        { "label": "简答题" }
+      ]
+    }
+  ],
+  "dataset": [
+    {
+      "seriesname": "存题量",
+      "data": [
+        { "value": "131" },
+        { "value": "103" },
+        { "value": "84" },
+        { "value": "45" },
+        { "value": "46" }
+      ]
+    },
+    {
+      "seriesname": "已使用题目",
+      "data": [
+        { "value": "41" },
+        { "value": "57" },
+        { "value": "54" },
+        { "value": "41" },
+        { "value": "46" }
+      ]
+    }
+  ]
+}

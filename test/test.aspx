@@ -44,7 +44,7 @@
 <!--fusioncharts Script tag-->
 <script type="text/javascript" src="../demo/assets/js/fusioncharts.js"></script>
 <!--END-->
-</head>
+
 <body>
     <form id="form1" runat="server">
         

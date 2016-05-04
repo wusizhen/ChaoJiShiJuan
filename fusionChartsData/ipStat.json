@@ -1,0 +1,46 @@
+﻿{
+  "chart": {
+    "caption": "访问流量分类统计",
+    "subCaption": "总计",
+    "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
+    "bgColor": "#ffffff",
+    "showBorder": "0",
+    "use3DLighting": "0",
+    "showShadow": "0",
+    "enableSmartLabels": "0",
+    "startingAngle": "0",
+    "showPercentValues": "1",
+    "showPercentInTooltip": "0",
+    "decimals": "1",
+    "captionFontSize": "14",
+    "subcaptionFontSize": "14",
+    "subcaptionFontBold": "0",
+    "toolTipColor": "#ffffff",
+    "toolTipBorderThickness": "0",
+    "toolTipBgColor": "#000000",
+    "toolTipBgAlpha": "80",
+    "toolTipBorderRadius": "2",
+    "toolTipPadding": "5",
+    "showHoverEffect": "1",
+    "showLegend": "1",
+    "legendBgColor": "#ffffff"
+  },
+  "data": [
+    {
+      "label": "直接访问",
+      "value": "12504"
+    },
+    {
+      "label": "搜索引擎",
+      "value": "4631"
+    },
+    {
+      "label": "服务端访问",
+      "value": "4422"
+    },
+    {
+      "label": "社交网络",
+      "value": "1100"
+    }
+  ]
+}

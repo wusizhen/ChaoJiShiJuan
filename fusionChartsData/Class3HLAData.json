@@ -1,0 +1,486 @@
+{
+  "chart": {
+    "caption": " 信管13级《MIS成绩分析》",
+    "subcaption": " 各班级考试人数（点击查看详情）",
+    "numberprefix": "",
+    "showvalues": "1",
+    "bgcolor": "FFFFFF",
+    "xaxisname": "班级",
+    "yaxisname": "人数",
+    "plotgradientcolor": "",
+    "showalternatehgridcolor": "0",
+    "showplotborder": "0",
+    "divlinecolor": "CCCCCC",
+    "canvasborderalpha": "0"
+  },
+  "data": [
+    {
+      "label": "信管1301",
+      "value": "35",
+      "link": "newchart-xml-1301Quarters",
+      "color": "008ee4"
+    },
+    {
+      "label": "信管1302",
+      "value": "34",
+      "link": "newchart-xml-1302Quarters",
+      "color": "6baa01"
+    },
+    {
+      "label": "信管1303",
+      "value": "37",
+      "link": "newchart-xml-1303Quarters",
+      "color": "f8bd19"
+    }
+  ],
+  "linkeddata": [
+    {
+      "id": "1301Quarters",
+      "linkedchart": {
+        "chart": {
+          "caption": "1301班最高分 最低分 平均分",
+          "subcaption": "点击查看各类别三班比较",
+          "xaxisname": "类别",
+          "yaxisname": "分数",
+          "numberprefix": "",
+          "showvalues": "1",
+          "bgcolor": "FFFFFF",
+          "plotgradientcolor": "",
+          "showalternatehgridcolor": "0",
+          "showplotborder": "0",
+          "divlinecolor": "CCCCCC",
+          "canvasborderalpha": "0"
+        },
+        "data": [
+          {
+            "label": "最高分",
+            "value": "95",
+            "link": "newchart-xml-highest",
+            "color": "008ee4"
+          },
+          {
+            "label": "最低分",
+            "value": "32",
+            "link": "newchart-xml-lowest",
+            "color": "008ee4"
+          },
+          {
+            "label": "平均分",
+            "value": "75.5",
+            "link": "newchart-xml-avg",
+            "color": "008ee4"
+          }
+        ],
+        "linkeddata": [
+          {
+            "id": "highest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最高分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "95",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "97",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "100",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "lowest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最低分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "32",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "57",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "62",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "avg",
+            "linkedchart": {
+              "chart": {
+                "caption": "平均分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "75.5",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "70.3",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "80.4",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "1302Quarters",
+      "linkedchart": {
+        "chart": {
+          "caption": "1302班最高分 最低分 平均分",
+          "subcaption": "点击查看各类别三班比较",
+          "xaxisname": "类别",
+          "yaxisname": "分数",
+          "numberprefix": "",
+          "showvalues": "1",
+          "bgcolor": "FFFFFF",
+          "plotgradientcolor": "",
+          "showalternatehgridcolor": "0",
+          "showplotborder": "0",
+          "divlinecolor": "CCCCCC",
+          "canvasborderalpha": "0"
+        },
+        "data": [
+          {
+            "label": "最高分",
+            "value": "97",
+            "link": "newchart-xml-highest",
+            "color": "008ee4"
+          },
+          {
+            "label": "最低分",
+            "value": "57",
+            "link": "newchart-xml-lowest",
+            "color": "008ee4"
+          },
+          {
+            "label": "平均分",
+            "value": "55",
+            "link": "newchart-xml-avg",
+            "color": "008ee4"
+          }
+        ],
+        "linkeddata": [
+          {
+            "id": "highest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最高分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "95",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "97",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "100",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "lowest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最低分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "32",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "57",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "62",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "avg",
+            "linkedchart": {
+              "chart": {
+                "caption": "平均分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "75.5",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "70.3",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "80.4",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "1303Quarters",
+      "linkedchart": {
+        "chart": {
+          "caption": "1303班最高分 最低分 平均分",
+          "subcaption": "点击查看各类别三班比较",
+          "xaxisname": "类别",
+          "yaxisname": "分数",
+          "numberprefix": "",
+          "showvalues": "1",
+          "bgcolor": "FFFFFF",
+          "plotgradientcolor": "",
+          "showalternatehgridcolor": "0",
+          "showplotborder": "0",
+          "divlinecolor": "CCCCCC",
+          "canvasborderalpha": "0"
+        },
+        "data": [
+          {
+            "label": "最高分",
+            "value": "100",
+            "link": "newchart-xml-highest",
+            "color": "008ee4"
+          },
+          {
+            "label": "最低分",
+            "value": "55",
+            "link": "newchart-xml-lowest",
+            "color": "008ee4"
+          },
+          {
+            "label": "平均分",
+            "value": "69.7",
+            "link": "newchart-xml-avg",
+            "color": "008ee4"
+          }
+        ],
+        "linkeddata": [
+          {
+            "id": "highest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最高分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "95",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "97",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "100",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "lowest",
+            "linkedchart": {
+              "chart": {
+                "caption": "最低分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "32",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "57",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "62",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          },
+          {
+            "id": "avg",
+            "linkedchart": {
+              "chart": {
+                "caption": "平均分",
+                "subcaption": "《Mis系统软件》",
+                "xaxisname": "班级",
+                "yaxisname": "分数",
+                "numberprefix": "",
+                "showvalues": "1",
+                "bgcolor": "FFFFFF",
+                "plotgradientcolor": "",
+                "showalternatehgridcolor": "0",
+                "showplotborder": "0",
+                "divlinecolor": "CCCCCC",
+                "canvasborderalpha": "0"
+              },
+              "data": [
+                {
+                  "label": "1301",
+                  "value": "75.5",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1302",
+                  "value": "70.3",
+                  "color": "008ee4"
+                },
+                {
+                  "label": "1303",
+                  "value": "80.4",
+                  "color": "008ee4"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+
+  ]
+}
