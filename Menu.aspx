@@ -45,7 +45,7 @@
     <![endif]-->
     <script src="demo/assets/js/jquery.min.js"></script>
     
-    <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
+   
     <script type="text/javascript">
         $(function () {
             $('#tabs').addtabs({ monitor: 'body' });
@@ -808,6 +808,7 @@
         </script>
         <script src="demo/assets/js/bootstrap.min.js"></script>
         <script src="demo/assets/js/typeahead-bs2.min.js"></script>
+        <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
 
         <!-- page specific plugin scripts -->
         <!--[if lte IE 8]>
