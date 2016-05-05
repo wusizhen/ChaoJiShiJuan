@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div style="width: 600px;padding-top: 15px;padding-left:15px;">
+    <div style="width: 600px;margin:0 auto;">
         <div style="text-align: center;">
             <asp:Label ID="lblTitle" runat="server" Text="Label" Font-Size="Large" Font-Bold="true"></asp:Label><br />
             <div style="font-size:14px;padding-top:10px;">时间：<asp:Label ID="lblTime" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;访问量：<asp:Label
