@@ -44,7 +44,8 @@
 		<script src="demo/assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="demo/assets/js/jquery.min.js"></script>
-    
+    <script src="demo/assets/js/bootstrap.min.js"></script>
+    <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -789,9 +790,10 @@
         <script type="text/javascript">
             if ("ontouchend" in document) document.write("<script src='demo/assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
         </script>
-        <script src="demo/assets/js/bootstrap.min.js"></script>
+
+
         <script src="demo/assets/js/typeahead-bs2.min.js"></script>
-        <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
+
 
         <!-- page specific plugin scripts -->
         <!--[if lte IE 8]>
