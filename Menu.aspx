@@ -44,7 +44,7 @@
 		<script src="demo/assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="demo/assets/js/jquery.min.js"></script>
-    <script src="demo/assets/js/bootstrap.min.js"></script>
+    
     <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
 
     <script type="text/javascript">
@@ -623,7 +623,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12">
+                                                  <!--  <div class="col-sm-12 col-xs-12">
                                                         <div class="inform">
 
                                                             <div class="page-header myPage-header">
@@ -637,8 +637,8 @@
                                                             <script src="demo/CLNDR/demo.js"></script>
 
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-12 col-xs-12">
+                                                    </div>-->
+                                                    <div class="col-sm-12 col-xs-12" id="teacher_static">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">教师统计分析</h3>
@@ -653,7 +653,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12">
+                                                    <div class="col-sm-12 col-xs-12" id="admin_static">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">管理员统计</h3>
@@ -668,7 +668,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12">
+                                                    <div class="col-sm-12 col-xs-12"id="student_static">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">学生统计</h3>
@@ -678,7 +678,7 @@
                                                                     <asp:Literal ID="studentError" runat="server"></asp:Literal>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xs-12 infobox-container">
-                                                                    <p>学生统计</p>
+                                                                  <div>
                                                                     <div class="infobox infobox-red  ">
                                                                         <div class="infobox-icon">
                                                                             <i class="icon-beaker"></i>
@@ -690,9 +690,9 @@
                                                                         </div>
                                                                     </div>
 
+                                                                      </div>
 
-
-                                                                    <div class="space-6"></div>
+                                                                    <div>
                                                                     <div class="infobox infobox-blue infobox-small infobox-dark">
                                                                         <div class="infobox-chart">
                                                                             <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
@@ -703,7 +703,8 @@
                                                                             <div class="infobox-content">40</div>
                                                                         </div>
                                                                     </div>
-
+                                                                        </div>
+                                                                    <div>
                                                                     <div class="infobox infobox-green infobox-small infobox-dark">
                                                                         <div class="infobox-progress">
                                                                             <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
@@ -717,7 +718,7 @@
                                                                         </div>
                                                                     </div>
 
-
+                                                                        </div>
 
 
                                                                 </div>
@@ -807,7 +808,7 @@
             if ("ontouchend" in document) document.write("<script src='demo/assets/js/jquery.mobile.custom.min.js'>" + "<" + "script>");
         </script>
 
-
+        <script src="demo/assets/js/bootstrap.min.js"></script>
         <script src="demo/assets/js/typeahead-bs2.min.js"></script>
 
 

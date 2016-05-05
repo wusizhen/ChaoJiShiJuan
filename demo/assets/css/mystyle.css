@@ -461,6 +461,7 @@ text-align:center;
 border-color:rgb(237,237,237);
 }
 .inform .table-responsive table tbody tr td{
+min-width:60px;
 color:rgb(87,97,109);
 }
 .inform .table-responsive table tbody tr td a{
@@ -483,6 +484,18 @@ margin-left:15px;
 .ace-nav {
 text-align:right;
 }
+/*2016.5.5*/
+@media screen and (max-width: 587px) {
+    #student_static {
+        display:none;
+    }
+    #teacher_static {
+        display:none;
+    }
+    #admin_static {
+        display:none;
+    }
+}  
 /* exam.apsx*/
 
 
