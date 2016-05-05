@@ -106,8 +106,8 @@
 
     </script>
 
-    <!--fusioncharts js-->
-    <script src="demo/assets/js/fusioncharts.js"></script>
+     <!--fusioncharts js-->
+   <script src="demo/assets/js/fusioncharts.js"></script>
     <style>
         td {
             padding-right: 20px;
@@ -544,54 +544,51 @@
                                             </div>
                                             <div class="row ">
                                                 <div class="pan">
-                                                    <div class="col-sm-12 col-xs-12">
+                                                    <div class="col-sm-6 col-xs-12">
                                                         <div class="inform">
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <div class="page-header myPage-header">
-                                                                        <h3 style="font-family: SimHei">通知公告</h3>
-                                                                    </div>
+                                                            <div class="page-header myPage-header">
+                                                                <h3 style="font-family: SimHei">通知公告</h3>
+                                                            </div>
+                                                            <div class="table-responsive">
+                                                                <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
+                                                                    GridLines="None">
+                                                                    <Columns>
+                                                                        <asp:TemplateField HeaderText="序号">
+                                                                            <ItemTemplate>
+                                                                                <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
+                                                                            </ItemTemplate>
 
-                                                                    <div class="table-responsive">
-                                                                        <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                                                                            GridLines="None">
-                                                                            <Columns>
-                                                                                <asp:TemplateField HeaderText="序号">
-                                                                                    <ItemTemplate>
-                                                                                        <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
-                                                                                    </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="发布人">
+                                                                            <ItemTemplate>
+                                                                                <span><%# Eval("realname")%></span>
+                                                                            </ItemTemplate>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="发布人">
-                                                                                    <ItemTemplate>
-                                                                                        <span><%# Eval("realname")%></span>
-                                                                                    </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="主题">
+                                                                            <ItemTemplate>
+                                                                                <a href="#" onclick="return myAddTab('查看公告　','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a>
+                                                                            </ItemTemplate>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="主题">
-                                                                                    <ItemTemplate>
-                                                                                        <a href="#" onclick="return myAddTab('查看公告　','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a>
-                                                                                    </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="时间">
+                                                                            <ItemTemplate>
+                                                                                <span><%# Eval("createtime")%></span>
+                                                                            </ItemTemplate>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="时间">
-                                                                                    <ItemTemplate>
-                                                                                        <span><%# Eval("createtime")%></span>
-                                                                                    </ItemTemplate>
-
-                                                                                </asp:TemplateField>
+                                                                        </asp:TemplateField>
 
 
-                                                                            </Columns>
-                                                                            <EmptyDataTemplate>
-                                                                                没有返回任何数据！
-                                                                            </EmptyDataTemplate>
+                                                                    </Columns>
+                                                                    <EmptyDataTemplate>
+                                                                        没有返回任何数据！
+                                                                    </EmptyDataTemplate>
 
-                                                                            <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
-                                                                        </asp:GridView>
-                                                                    </div>
-                                                                    <div style="background: #efefef; border: 1px solid #ccc;"
-                                                                        data-options="  
+                                                                    <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
+                                                                </asp:GridView>
+                                                            </div>
+                                                            <div style="background: #efefef; border: 1px solid #ccc;"
+                                                                data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
                                      $('#<%=hfPageIndex.ClientID %>').val(pageIndex);
@@ -603,38 +600,36 @@
                                 pageNumber:<%=pageIndex %>,
                                 pageSize:5  
                             ">
-                                                                    </div>
-                                                                    <div style="display: none;">
-                                                                        <asp:HiddenField ID="hfPageIndex" runat="server" />
-                                                                        <asp:HiddenField ID="hfPageSize" runat="server" />
-                                                                        <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    
-                                                                        <div class="page-header myPage-header">
-                                                                            <h3 style="font-family: SimHei">天气</h3>
-                                                                        </div>
-                                                                        <iframe name="sinaWeatherTool" src="http://weather.news.sina.com.cn/chajian/iframe/weatherStyle41.html?city=%E6%AD%A6%E6%B1%89" width="260" height="114" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
-                                                                    
-                                                                </div>
                                                             </div>
-                                                        </div>
 
+                                                        </div>
+                                                        <div style="display: none;">
+                                                            <asp:HiddenField ID="hfPageIndex" runat="server" />
+                                                            <asp:HiddenField ID="hfPageSize" runat="server" />
+                                                            <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="inform">         
+                                                           <div class="page-header myPage-header">
+                                                                <h3 style="font-family: SimHei">天气</h3>
+                                                            </div>
+                                                           <iframe name="sinaWeatherTool" src="http://weather.news.sina.com.cn/chajian/iframe/weatherStyle41.html?city=%E6%AD%A6%E6%B1%89" width="260" height="114" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+                                                        </div>
                                                     </div>
                                                     <div class="col-sm-12 col-xs-12">
                                                         <div class="inform">
-
-                                                            <div class="page-header myPage-header">
+                                                         
+                                                                <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">日历</h3>
-                                                            </div>
-                                                            <div class="cal1"></div>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-                                                            <script src="demo/CLNDR/src/clndr.js"></script>
-                                                            <script src="demo/CLNDR/demo.js"></script>
-
+                                                                </div>
+                                                                <div class="cal1"></div>
+                                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+                                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+                                                                <script src="demo/CLNDR/src/clndr.js"></script>
+                                                                <script src="demo/CLNDR/demo.js"></script>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 col-xs-12">
@@ -642,14 +637,10 @@
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">教师统计分析</h3>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
-                                                                </div>
-                                                            </div>
+                                                            <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
+                                                            <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
+
+
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 col-xs-12">
@@ -657,14 +648,8 @@
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">管理员统计</h3>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
-                                                                </div>
-                                                            </div>
+                                                            <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
+                                                            <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 col-xs-12">
@@ -672,60 +657,59 @@
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">学生统计</h3>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="studentError" runat="server"></asp:Literal>
+                                                            <asp:Literal ID="studentError" runat="server"></asp:Literal>
+
+                                                            <div class="col-sm-7 infobox-container">
+                                                                <br />
+                                                                <p>学生统计</p>
+                                                                <div class="infobox infobox-red  ">
+                                                                    <div class="infobox-icon">
+                                                                        <i class="icon-beaker"></i>
+                                                                    </div>
+
+                                                                    <div class="infobox-data">
+                                                                        <span class="infobox-data-number">3</span>
+                                                                        <div class="infobox-content">最近考试</div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-sm-6 col-xs-12 infobox-container">
-                                                                    <p>学生统计</p>
-                                                                    <div class="infobox infobox-red  ">
-                                                                        <div class="infobox-icon">
-                                                                            <i class="icon-beaker"></i>
-                                                                        </div>
 
-                                                                        <div class="infobox-data">
-                                                                            <span class="infobox-data-number">3</span>
-                                                                            <div class="infobox-content">最近考试</div>
-                                                                        </div>
+
+
+                                                                <div class="space-6"></div>
+                                                                <div class="infobox infobox-blue infobox-small infobox-dark">
+                                                                    <div class="infobox-chart">
+                                                                        <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
                                                                     </div>
 
-
-
-                                                                    <div class="space-6"></div>
-                                                                    <div class="infobox infobox-blue infobox-small infobox-dark">
-                                                                        <div class="infobox-chart">
-                                                                            <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
-                                                                        </div>
-
-                                                                        <div class="infobox-data">
-                                                                            <div class="infobox-content">答题成就</div>
-                                                                            <div class="infobox-content">40</div>
-                                                                        </div>
+                                                                    <div class="infobox-data">
+                                                                        <div class="infobox-content">答题成就</div>
+                                                                        <div class="infobox-content">40</div>
                                                                     </div>
-
-                                                                    <div class="infobox infobox-green infobox-small infobox-dark">
-                                                                        <div class="infobox-progress">
-                                                                            <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
-                                                                                <span class="percent">61</span>%
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="infobox-data">
-                                                                            <div class="infobox-content">正答率</div>
-                                                                            <div class="infobox-content">61%</div>
-                                                                        </div>
-                                                                    </div>
-
-
-
-
                                                                 </div>
+
+                                                                <div class="infobox infobox-green infobox-small infobox-dark">
+                                                                    <div class="infobox-progress">
+                                                                        <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                                                                            <span class="percent">61</span>%
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="infobox-data">
+                                                                        <div class="infobox-content">正答率</div>
+                                                                        <div class="infobox-content">61%</div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
                                                             </div>
                                                         </div>
-                                                        <div class="clear"></div>
                                                     </div>
+                                                    <div class="clear"></div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
 
