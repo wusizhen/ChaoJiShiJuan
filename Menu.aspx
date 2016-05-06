@@ -174,15 +174,15 @@
                                                     </div>
                                                     <div class="row ListColAndRow ListColAndRow2">
                                                         <table>
-                                                            <tr>
-                                                                <td>本次登录时间:
+                                                            <tr style="color:rgb(128,128,128);">
+                                                                <td>登录时间:
                                                                 </td>
                                                                 <td>
                                                                     <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>本次登录IP:
+                                                            <tr style="color:rgb(128,128,128);">
+                                                                <td>登录IP:
                                                                 </td>
                                                                 <td>
                                                                     <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
@@ -193,7 +193,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="panel-footer" style="height: 100%;">
+                                        <li class="panel-footer" style="height: 100%;border-color:rgb(230,230,230);">
                                             <div class="col-xs-4">
                                                 <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx" class="btn btn-default myStyleBtn">修改密码</a>
                                             </div>
