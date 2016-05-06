@@ -461,7 +461,7 @@ text-align:center;
 border-color:rgb(237,237,237);
 }
 .inform .table-responsive table tbody tr td{
-min-width:60px;
+min-width:80px;
 color:rgb(87,97,109);
 }
 .inform .table-responsive table tbody tr td a{
@@ -496,9 +496,17 @@ text-align:right;
         display:none;
     }
 }
+
 .myWeather {
+float:right;
  margin-top:10px;
-margin-right:-50px;
+margin-right:-20%;
+display:inline-block;   
+}
+@media screen and (max-width: 770px) {
+    .myWeather {
+    display:none;
+    }
 }
 /* exam.apsx*/
 

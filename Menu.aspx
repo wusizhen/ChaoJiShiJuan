@@ -133,19 +133,20 @@
                             </a>
                             <!-- /.brand -->
                         </div>
+                        
                         <!-- /.navbar-header -->
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-7 col-xs-1">
                         <div class="brand">
                             <a href="#">高校在线考试系统</a>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                      <div class="myWeather pull-right">
+                    <div class="col-sm-2 col-xs-1">
+                      <div class="myWeather">
                         <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=000000&f=ffffff&q=1&e=1&a=1&c=57494&w=180&h=36&align=center"></iframe>
                       </div>
                     </div>
-                    <div class="col-sm-2 col-xs-6"> 
+                    <div class="col-sm-2 col-xs-4"> 
                         <div class="navbar-header pull-right" role="navigation">
                             <ul class="nav ace-nav mynav">
                                 <li class="light-blue">
