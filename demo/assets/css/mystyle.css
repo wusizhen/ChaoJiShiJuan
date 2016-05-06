@@ -495,7 +495,11 @@ text-align:right;
     #admin_static {
         display:none;
     }
-}  
+}
+.myWeather {
+ margin-top:10px;
+margin-right:-50px;
+}
 /* exam.apsx*/
 
 

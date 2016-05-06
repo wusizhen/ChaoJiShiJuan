@@ -135,12 +135,17 @@
                         </div>
                         <!-- /.navbar-header -->
                     </div>
-                    <div class="col-sm-7 ">
+                    <div class="col-sm-6">
                         <div class="brand">
                             <a href="#">高校在线考试系统</a>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-xs-6">
+                    <div class="col-sm-3">
+                      <div class="myWeather pull-right">
+                        <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=000000&f=ffffff&q=1&e=1&a=1&c=57494&w=180&h=36&align=center"></iframe>
+                      </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-6"> 
                         <div class="navbar-header pull-right" role="navigation">
                             <ul class="nav ace-nav mynav">
                                 <li class="light-blue">
@@ -496,7 +501,7 @@
 
                                             <div class="alert alert-info alert-dismissible" role="alert">
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                欢迎进入 <strong>超级试卷</strong> - <span style="font-size: 12px;">智能多题型高校在线考试系统</span>
+                                                欢迎进入 <strong>超级试卷</strong> - <span style="font-size: 12px;">高校智能多题型在线考试系统</span>
                                             </div>
 
                                             <div class="row Int" runat="server" id="studentInt">
@@ -612,12 +617,12 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xs-12">
-                                                                    
+                                                                    <!--
                                                                         <div class="page-header myPage-header">
                                                                             <h3 style="font-family: SimHei">天气</h3>
-                                                                        </div>
-                                                                        <iframe name="sinaWeatherTool" src="http://weather.news.sina.com.cn/chajian/iframe/weatherStyle41.html?city=%E6%AD%A6%E6%B1%89" width="260" height="114" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
-                                                                    
+                                                                        </div>                                            
+                                                                        <iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+                                                                        -->
                                                                 </div>
                                                             </div>
                                                         </div>

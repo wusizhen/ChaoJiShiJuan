@@ -42,7 +42,7 @@
                                     <div class="col-xs-12">
                                         <!--<h1 style="color: #FFFFFF;">超级试卷</h1>-->
                                         <img src="demo/cjsj.png" id="logo2"/>
-                                        <h4 style="color: #FFFFFF; font-family: 'HanHei-SC-thin';">智能多题型高校在线考试系统</h4>
+                                        <h4 style="color: #FFFFFF; font-family: 'HanHei-SC-thin';">高校智能多题型在线考试系统</h4>
                                     </div>
                                 </div>
                                 <div style="min-height: 20px;margin-top:20px;">
