@@ -47,22 +47,37 @@ public partial class _Default : BasePage
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = false;  menu9.Visible = true;
                     studentInt.Visible = false; teacherInt.Visible = false; adminInt.Visible = true; oeadminInt.Visible = false;
-                    Image1.ImageUrl = "~/images/admin.png"; break;
+                    Image1.ImageUrl = "~/images/admin.png";
+                    teacher_static.Visible = false; admin_static.Visible = true; student_static.Visible = false;
+                    break;
+                    
                 case 2: lblRole.Text = "教师"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = true;
                     menu4.Visible = true; menu5.Visible = true; menu6.Visible = true;
                     menu7.Visible = false;  menu9.Visible = true;
                     studentInt.Visible = false; teacherInt.Visible = true; adminInt.Visible = false; oeadminInt.Visible = false;
-                    Image1.ImageUrl = "~/images/tea.png"; break;
+                    Image1.ImageUrl = "~/images/tea.png";
+                    teacher_static.Visible = true; admin_static.Visible = false; student_static.Visible = false;
+                    break;
+                    
+
                 case 3: lblRole.Text = "学生"; menu1.Visible = false; menu2.Visible = false; menu3.Visible = false;
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = true;  menu9.Visible = false;
                     studentInt.Visible = true; teacherInt.Visible = false; adminInt.Visible = false; oeadminInt.Visible = false;
-                    Image1.ImageUrl = "~/images/stu.png"; break;
+                    Image1.ImageUrl = "~/images/stu.png";
+                    teacher_static.Visible = false; admin_static.Visible = false; student_static.Visible = true;
+                    break;
+                    
+
                 case 4: lblRole.Text = "超级管理员"; menu1.Visible = true; menu2.Visible = true; menu3.Visible = false;
                     menu4.Visible = false; menu5.Visible = false; menu6.Visible = false;
                     menu7.Visible = false;  menu9.Visible = true;
                     studentInt.Visible = false; teacherInt.Visible = false; adminInt.Visible = false; oeadminInt.Visible = true;
-                    Image1.ImageUrl = "~/images/admin.jpg"; break;
+                    Image1.ImageUrl = "~/images/admin.jpg";
+                    teacher_static.Visible = true; admin_static.Visible = false; student_static.Visible = false;
+                    break;
+                   
+
             }
         }
         //教师

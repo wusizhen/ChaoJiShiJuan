@@ -2,7 +2,7 @@
   "chart": {
     "caption": "一周访问统计",
     "subCaption": "上周",
-    "xAxisName": "天",
+    "xAxisName": "",
     "yAxisName": "访问次数",
     "numberPrefix": "",
     "paletteColors": "#5fc78d",

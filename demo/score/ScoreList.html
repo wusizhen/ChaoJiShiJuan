@@ -2,15 +2,11 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1"><!--禁止缩放，启动响应式-->
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
       <!-- mystyle.css-->
   <link rel="stylesheet" href="../assets/css/mystyle.css" />
-  <title>成绩管理：学生成绩</title>
+  <title></title>
   <style>
   .panel-footer{
    padding:0;
@@ -29,13 +25,26 @@
   }
   .panel{
    margin-bottom:5px;
+   border:none;
+   border-color:
+  }
+  .panel-body{
+   padding:0;
+  }
+  .panel-heading{
+   border:none; 
   }
   .panel-footer{
    bottom:0;
    width:100%;
   }
+  .table{
+  margin:0;	
+  }
+  .table tr td{
 
-
+  margin:0;	
+  }
   </style>
  </head>
  <body>
@@ -80,29 +89,75 @@
 					 <option>等待批改</option>
                      <option>重新考试</option>
                   </select>
-				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search" style="margin-right:5px;"></span>搜索</a>
-				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove" style="margin-right:5px;"></span>重考所选</a>
-				  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-new-window"  style="margin-right:5px;"></span>导出</a>
+				  <div class="btn-group" role="group">
+				   <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search marginRight" ></span>搜索</a>
+				   <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove marginRight" ></span>重考所选</a>
+				   <a href="" class="btn btn-default"><span class="glyphicon glyphicon-new-window marginRight" ></span>导出</a>
+				  </div>
 			</form>
 		   </div><!--panel-heading-->
-		   <div  class="panel-body" style="height:405px;" >
-			 
-            <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			  <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			  <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			
-			
+		   <div  class="panel-body" id="panel-body">
+		    <div class="table-responsive">
+             <table class="table table_style">
+			 	<tr >
+				    <td> 
+					  <label>
+					   <input type="checkbox" />
+					  </label>
+					</td>
+					<td><span>班级</span></td>
+					<td><span>姓名</span></td>
+					<td><span>科目名</span></td>
+					<td><span>考试标题</span></td>
+					<td><span>分数</span></td>
+					<td><span>考试状态</span></td>
+					<td><span>操作</span></td>
+				</tr>
+				<tr>
+				    <td> 
+					  <label>
+					   <input type="checkbox" />
+					  </label>
+					</td>
+					<td><span>信管0903</span></td>
+					<td><span>罗伊唅（学生）</span></td>
+					<td><span>MIS系统软件</span></td>
+					<td><span>信管0903考试</span></td>
+					<td><span>6</span></td>
+					<td><span>重新考试</span></td>
+					<td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil marginRight" ></span>重考</a></td>
+				</tr>
+				<tr>
+				    <td> 
+					  <label>
+					   <input type="checkbox" />
+					  </label>
+					</td>
+					<td><span>信管0903</span></td>
+					<td><span>罗伊唅（学生）</span></td>
+					<td><span>MIS系统软件</span></td>
+					<td><span>信管0903考试</span></td>
+					<td><span>6</span></td>
+					<td><span>重新考试</span></td>
+					<td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil marginRight" ></span>重考</a></td>
+				</tr>
+				<tr>
+				    <td> 
+					  <label>
+					   <input type="checkbox" />
+					  </label>
+					</td>
+					<td><span>信管0903</span></td>
+					<td><span>罗伊唅（学生）</span></td>
+					<td><span>MIS系统软件</span></td>
+					<td><span>信管0903考试</span></td>
+					<td><span>6</span></td>
+					<td><span>重新考试</span></td>
+					<td><a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil marginRight" ></span>重考</a></td>
+				</tr>
 
-
-			  
+			 </table>
+			</div>
 		   </div>
 		   <div  class="panel-footer">
 		   
@@ -137,5 +192,11 @@
  <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
  <script src="../bootstrap/js/bootstrap.min.js"></script>
  <script src="../assets/js/placeholderForSL.js"></script>
+  <script type="text/javascript">
+ //panel-body 根据内容改变高度
+   var body=document.getElementById("panel-body");
+   var table = document.getElementsByTagName("table");
+   body.style.height=table.style.height;
+ </script>
  </body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../assets/css/mystyle.css" />
   <title>JudgeList</title>
   <style>
-  .panel-footer{
+ .panel-footer{
    padding:0;
    background-color:#FFFFFF;
    height:34px;
@@ -25,13 +25,25 @@
   }
   .panel{
    margin-bottom:5px;
+   border:none;
+   border-color:
+  }
+  .panel-body{
+   padding:0;
+  }
+  .panel-heading{
+   border:none; 
   }
   .panel-footer{
    bottom:0;
    width:100%;
   }
-
-
+  .table{
+  margin:0;	
+  }
+  .table tr td{
+  margin:0;	
+  }
   </style>
  </head>
  <body>
@@ -39,8 +51,8 @@
 	<div  class="row">
 		<div  class="col-sm-12 col-xs-12 ">	 
 		  <div  class="panel panel-default" style="height:100%;">
-		   <div  class="panel-heading">
-		    <form method="post" action="" class="form-inline" role="form">						   
+		   <form method="post" action="" class="form-inline" role="form">	
+		   <div  class="panel-heading">				   
 			 <label class="sr-only">题目</label>										 
 			 <input type="text" style="width:200px;" class="form-control" placeholder="题目">	
 			 <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
@@ -51,31 +63,66 @@
                  <option  selected="selected">所有章节</option>
                  <option>XXXXXX</option>
              </select>
-			 <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search marginRight" ></span>搜索</a>
-			 <a href="" class="btn btn-default" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus marginRight" ></span>添加</a>
-			 <a href="" class="btn btn-default" data-toggle="modal" data-target="#import"><span class="glyphicon glyphicon-download-alt marginRight" ></span>导入</a>
-			 <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove marginRight" ></span>删除所选</a>
-
+			 <div class="btn-group" role="group">
+			  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-search marginRight" ></span>搜索</a>
+			  <a href="" class="btn btn-default" data-toggle="modal" data-target="#add"><span class="glyphicon  glyphicon-plus marginRight" ></span>添加</a>
+			  <a href="" class="btn btn-default" data-toggle="modal" data-target="#import"><span class="glyphicon glyphicon-download-alt marginRight" ></span>导入</a>
+			  <a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove marginRight" ></span>删除所选</a>
+             </div>
 			</form>
 		   </div><!--panel-heading-->
-		   <div  class="panel-body" style="height:405px;" >
-			 
-            <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			  <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			  <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			 <p> 此次应有表格</p>
-			
-			
-
-
+		   <div  class="panel-body mypanel-body" id="panel-body" >
+		    <div class="table-responsive">
+		     <table class="table table_style">
+              <tr>
+			   <td>
+				<input type="checkbox" />
+			   </td>
+			   <td>
+			   </td>
+			   <td> 
+			     <label>答案</label>
+			   </td>
+			   <td> 
+			     <label>难度</label>
+			   </td>
+			   <td>
+			     <label>错误率</label>
+			   </td>
+			   <td>
+			   </td>
+			   <td>
+			   </td>
+			  </tr>
+			  <tr>
+			   <td>
+				  
+					 <input type="checkbox" />
+				  
+			   </td>
+			   <td>
+			     <span>MIS系统进程</span>●<span>操作系统引论</span>
+			   </td>
+			   <td>
+			   错
+			   
+			   </td>
+			   <td>
 			  
+			   较难
+			   </td>
+			   <td>
+			     40%
+			   </td>
+			   <td>
+					<a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil  marginRight" ></span>编辑题目</a>
+			   </td>
+			   <td>
+					<a href="" class="btn btn-default"><span class="glyphicon glyphicon-remove marginRight" ></span>删除</a>
+			   </td>
+			  </tr>
+             </table>
+			</div>
 		   </div>
 		   <div  class="panel-footer">
 		   
@@ -97,18 +144,19 @@
               </li>
               </ul>
 		   </div>
+		   </form>
 		  </div>
 		</div>
 	</div>
  </div>
 
-<!-- 模态框（Modal）SingleImport -->
+<!-- 模态框（Modal）JudgeImport -->
 <div class="modal fade" id="import" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
-            <button type="button" class="close"data-dismiss="modal" aria-hidden="true">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                   &times;
             </button>
             <h4 class="modal-title" id="myModalLabel">
@@ -116,19 +164,33 @@
             </h4>
          </div>
          <div class="modal-body">
-             <div class="form-group">
-               <label for="exampleInputFile">File input</label>
-               <input type="file" id="exampleInputFile">
+            <div class="form-group">
+             <div class="row">
+				
+            
+			  <div  class="col-xs-12">
+			   <label for="exampleInputFile">File input</label>
+			  </div>
+			  <div  class="col-xs-5">
+                 <input type="file" id="exampleInputFile">
+			  </div>
+              <div class="col-xs-1">
+				 <label>*</label>
+              </div>
+			  <div class="col-xs-12">
+               <label >这有个Label</label>              
+              </div>
              </div>
+			</div>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
                data-dismiss="modal">关闭
             </button>
-            <button type="button" class="btn btn-success">
+            <button type="button" class="btn btn-info">
                导入
             </button>
-			<button type="button" class="btn btn-success">
+			<button type="button" class="btn btn-info">
                模板下载
             </button>
          </div>
@@ -137,8 +199,9 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- 模态框（Modal）SingleAdd -->
+<!-- 模态框（Modal）JudgeAdd -->
 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+ <form class="form-horizontal" role="form">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -151,7 +214,6 @@
             </h4>
          </div>
          <div class="modal-body">
-            <form class="form-horizontal" role="form">
                <div class="form-group">
                  <label for="firstname" class="col-xs-2 control-label">科目名</label>
                  <div class="col-xs-5">
@@ -172,32 +234,73 @@
 							 <option>第五章</option>
                         </select> 		
                      </div>
+					 <div class="col-xs-1">
+						*
+					 </div>
                </div>
 			   <div class="form-group">
-                     <label for="lastname" class="col-xs-2 control-label">章节名</label>
+                     <label for="lastname" class="col-xs-2 control-label">题目</label>
+                     <div class="col-xs-9">
+                        <textarea cols="30" rows="3" style="width:100%;"></textarea>		
+                     </div>
+					 <div class="col-xs-1">
+						*
+					 </div>
+					 <div class="col-xs-2 col-xs-offset-2">
+					 <button type="button" class="btn btn-default">分隔符</button>
+					 </div>
+               </div>
+			   <div class="form-group">
+                     <label for="lastname" class="col-xs-2 control-label">难度</label>
                      <div class="col-xs-5">
-                     <input type="text" class="form-control">
+                      <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                             <option  selected="selected">一般</option>                           
+							 <option>困难</option>
+                        </select> 	
+                     </div>
+					 <div class="col-xs-1">
+						*
+					 </div>
+               </div>
+			   <div class="form-group">
+                     <label for="lastname" class="col-xs-2 control-label">答案</label>
+                     <div class="col-xs-5">
+                        <select class="form-control" > <!--可换成asp:DropDownList 属性 CssClass="form-control"-->
+                             <option  selected="selected">对</option>                           
+							 <option>错</option>
+                        </select> 				
+                     </div>
+					 <div class="col-xs-1">
+						*
+					 </div>
+               </div>
+			   <div class="form-group">
+                     <div class="col-xs-5 col-xs-offset-2">
+                     <label>这里有一个Label</label>
                      </div>
                </div>
-			 
 			   
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
                data-dismiss="modal">关闭
             </button>
-			<button type="button" class="btn btn-success">
+			<button type="button" class="btn btn-info">
                保存
             </button>
          </div>
       </div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
+  </form>
 </div><!-- /.modal -->
-
-
-
  <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
  <script src="../bootstrap/js/bootstrap.min.js"></script>
  <script src="../assets/js/placeholderForSL.js"></script>
+ <script type="text/javascript">
+ //panel-body 根据内容改变高度
+   var body=document.getElementById("panel-body");
+   var table = document.getElementsByTagName("table");
+   body.style.height=table.style.height;
+ </script>
  </body>
 </html>

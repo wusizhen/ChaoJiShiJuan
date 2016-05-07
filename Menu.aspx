@@ -8,10 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
     <link rel="shortcut icon" href="demo/LG.png">
-    <link rel="stylesheet" href="demo/CLNDR/css/clndr.css">
+
     <link rel="stylesheet" href="demo/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap-addtabs.css" type="text/css" media="screen" />
+    
+    
+    <!--simple cal-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+  <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
+    
+    <link rel="stylesheet" href="demo/assets/css/simplecalstyle-personal.css" />
+    
+
     <!--[if IE 7]>
 		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
@@ -44,7 +53,7 @@
 		<script src="demo/assets/js/respond.min.js"></script>
     <![endif]-->
     <script src="demo/assets/js/jquery.min.js"></script>
-    
+
     <script src="demo/bootstrap-addtabs/theme/js/bootstrap-addtabs.js"></script>
 
     <script type="text/javascript">
@@ -133,7 +142,7 @@
                             </a>
                             <!-- /.brand -->
                         </div>
-                        
+
                         <!-- /.navbar-header -->
                     </div>
                     <div class="col-sm-7">
@@ -142,11 +151,11 @@
                         </div>
                     </div>
                     <div class="col-sm-2">
-                      <div class="myWeather">
-                        <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=000000&f=ffffff&q=1&e=1&a=1&c=57494&w=180&h=36&align=center"></iframe>
-                      </div>
+                        <div class="myWeather">
+                            <iframe allowtransparency="true" frameborder="0" width="180" height="36" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&z=2&t=0&v=0&d=3&bd=0&k=000000&f=ffffff&q=1&e=1&a=1&c=57494&w=180&h=36&align=center"></iframe>
+                        </div>
                     </div>
-                    <div class="col-sm-2 col-xs-12"> 
+                    <div class="col-sm-2 col-xs-12">
                         <div class="navbar-header pull-right" role="navigation">
                             <ul class="nav ace-nav mynav">
                                 <li class="light-blue">
@@ -174,14 +183,14 @@
                                                     </div>
                                                     <div class="row ListColAndRow ListColAndRow2">
                                                         <table>
-                                                            <tr style="color:rgb(128,128,128);">
+                                                            <tr style="color: rgb(128,128,128);">
                                                                 <td>登录时间:
                                                                 </td>
                                                                 <td>
                                                                     <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
                                                                 </td>
                                                             </tr>
-                                                            <tr style="color:rgb(128,128,128);">
+                                                            <tr style="color: rgb(128,128,128);">
                                                                 <td>登录IP:
                                                                 </td>
                                                                 <td>
@@ -193,7 +202,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="panel-footer" style="height: 100%;border-color:rgb(230,230,230);">
+                                        <li class="panel-footer" style="height: 100%; border-color: rgb(230,230,230);">
                                             <div class="col-xs-4">
                                                 <a href="#" data-addtab="修改密码" url="person/ChangePwd.aspx" class="btn btn-default myStyleBtn">修改密码</a>
                                             </div>
@@ -597,7 +606,7 @@
                                                                             <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
                                                                         </asp:GridView>
                                                                     </div>
-                                                                    <div style="background: #efefef; border: 1px solid #ccc;"
+                                                                    <div
                                                                         data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
@@ -617,19 +626,45 @@
                                                                         <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <!--
-                                                                        <div class="page-header myPage-header">
-                                                                            <h3 style="font-family: SimHei">天气</h3>
-                                                                        </div>                                            
-                                                                        <iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
-                                                                        -->
+                                                                <div class="col-sm-6 col-xs-12 col-md-6">
+                                                                    
+                                                                        <div class="calendar hidden-print">
+                                                                            <header>
+                                                                                <h2 class="month simplecalh2"></h2>
+                                                                                <a class="btn-prev fontawesome-angle-left simplecala" href="#"></a>
+                                                                                <a class="btn-next fontawesome-angle-right simplecala" href="#"></a>
+                                                                            </header>
+                                                                            <table class="simplecaltable">
+                                                                                <thead class="event-days">
+                                                                                    <tr></tr>
+                                                                                </thead>
+                                                                                <tbody class="event-calendar">
+                                                                                    <tr class="1"></tr>
+                                                                                    <tr class="2"></tr>
+                                                                                    <tr class="3"></tr>
+                                                                                    <tr class="4"></tr>
+                                                                                    <tr class="5"></tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div class="list">
+                                                                                <div class="day-event" date-day="2" date-month="2" date-year="2016" data-number="1">
+                                                                                    <a href="#" class="close fontawesome-remove simplecala"></a>
+                                                                                    <h2 class="simplecalh2 title">Lorem ipsum 1</h2>
+                                                                                    <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok.</p>
+                                                                                    <label class="check-btn">
+                                                                                        <input  type="checkbox" class="save simplecalinput" id="save" name="" value="" />
+                                                                                        <span class="simplecalspan">Save to personal list!</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>
 
                                                     </div>
-                                                  <!--  <div class="col-sm-12 col-xs-12">
+                                                    <!--  <div class="col-sm-12 col-xs-12">
                                                         <div class="inform">
 
                                                             <div class="page-header myPage-header">
@@ -644,13 +679,13 @@
 
                                                         </div>
                                                     </div>-->
-                                                    <div class="col-sm-12 col-xs-12" id="teacher_static">
+                                                    <div class="col-sm-12 col-xs-12" runat="server" id="teacher_static" visible="False">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">教师统计分析</h3>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align:center;">
+                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                     <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xs-12">
@@ -659,13 +694,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12" id="admin_static">
+                                                    <div class="col-sm-12 col-xs-12" runat="server" id="admin_static" visible="False">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">管理员统计</h3>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align:center;">
+                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                     <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xs-12">
@@ -674,57 +709,57 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12"id="student_static">
+                                                    <div class="col-sm-12 col-xs-12" runat="server" id="student_static" visible="False">
                                                         <div class="inform">
                                                             <div class="page-header myPage-header">
                                                                 <h3 style="font-family: SimHei">学生统计</h3>
                                                             </div>
                                                             <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align:center;">
+                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                     <asp:Literal ID="studentError" runat="server"></asp:Literal>
                                                                 </div>
                                                                 <div class="col-sm-6 col-xs-12 infobox-container">
-                                                                  <div>
-                                                                    <div class="infobox infobox-red  ">
-                                                                        <div class="infobox-icon">
-                                                                            <i class="icon-beaker"></i>
-                                                                        </div>
-
-                                                                        <div class="infobox-data">
-                                                                            <span class="infobox-data-number">3</span>
-                                                                            <div class="infobox-content">最近考试</div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                      </div>
-
                                                                     <div>
-                                                                    <div class="infobox infobox-blue infobox-small infobox-dark">
-                                                                        <div class="infobox-chart">
-                                                                            <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
-                                                                        </div>
+                                                                        <div class="infobox infobox-red  ">
+                                                                            <div class="infobox-icon">
+                                                                                <i class="icon-beaker"></i>
+                                                                            </div>
 
-                                                                        <div class="infobox-data">
-                                                                            <div class="infobox-content">答题成就</div>
-                                                                            <div class="infobox-content">40</div>
-                                                                        </div>
-                                                                    </div>
-                                                                        </div>
-                                                                    <div>
-                                                                    <div class="infobox infobox-green infobox-small infobox-dark">
-                                                                        <div class="infobox-progress">
-                                                                            <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
-                                                                                <span class="percent">61</span>%
+                                                                            <div class="infobox-data">
+                                                                                <span class="infobox-data-number">3</span>
+                                                                                <div class="infobox-content">最近考试</div>
                                                                             </div>
                                                                         </div>
 
-                                                                        <div class="infobox-data">
-                                                                            <div class="infobox-content">正答率</div>
-                                                                            <div class="infobox-content">61%</div>
-                                                                        </div>
                                                                     </div>
 
+                                                                    <div>
+                                                                        <div class="infobox infobox-blue infobox-small infobox-dark">
+                                                                            <div class="infobox-chart">
+                                                                                <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
+                                                                            </div>
+
+                                                                            <div class="infobox-data">
+                                                                                <div class="infobox-content">答题成就</div>
+                                                                                <div class="infobox-content">40</div>
+                                                                            </div>
                                                                         </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        <div class="infobox infobox-green infobox-small infobox-dark">
+                                                                            <div class="infobox-progress">
+                                                                                <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                                                                                    <span class="percent">61</span>%
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="infobox-data">
+                                                                                <div class="infobox-content">正答率</div>
+                                                                                <div class="infobox-content">61%</div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
 
 
                                                                 </div>
@@ -822,7 +857,7 @@
         <!--[if lte IE 8]>
             <script src="demo/assets/js/excanvas.min.js"></script>
         <![endif]-->
-
+        <script src="demo/assets/js/simplecalendar.js"></script>
         <script src="demo/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
         <script src="demo/assets/js/jquery.ui.touch-punch.min.js"></script>
         <script src="demo/assets/js/jquery.slimscroll.min.js"></script>
@@ -836,208 +871,208 @@
 
         <script src="demo/assets/js/ace-elements.min.js"></script>
         <script src="demo/assets/js/ace.min.js"></script>
-       
+
         <!-- inline scripts related to this page -->
 
-          <script type="text/javascript">
-        jQuery(function ($) {
-            $('.easy-pie-chart.percentage').each(function () {
-                var $box = $(this).closest('.infobox');
-                var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
-                var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
-                var size = parseInt($(this).data('size')) || 50;
-                $(this).easyPieChart({
-                    barColor: barColor,
-                    trackColor: trackColor,
-                    scaleColor: false,
-                    lineCap: 'butt',
-                    lineWidth: parseInt(size / 10),
-                    animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
-                    size: size
-                });
-            })
-
-            $('.sparkline').each(function () {
-                var $box = $(this).closest('.infobox');
-                var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
-                $(this).sparkline('html', { tagValuesAttribute: 'data-values', type: 'bar', barColor: barColor, chartRangeMin: $(this).data('min') || 0 });
-            });
-
-
-
-
-            var placeholder = $('#piechart-placeholder').css({ 'width': '90%', 'min-height': '150px' });
-            var data = [
-              { label: "social networks", data: 38.7, color: "#68BC31" },
-              { label: "search engines", data: 24.5, color: "#2091CF" },
-              { label: "ad campaigns", data: 8.2, color: "#AF4E96" },
-              { label: "direct traffic", data: 18.6, color: "#DA5430" },
-              { label: "other", data: 10, color: "#FEE074" }
-            ]
-            function drawPieChart(placeholder, data, position) {
-                $.plot(placeholder, data, {
-                    series: {
-                        pie: {
-                            show: true,
-                            tilt: 0.8,
-                            highlight: {
-                                opacity: 0.25
-                            },
-                            stroke: {
-                                color: '#fff',
-                                width: 2
-                            },
-                            startAngle: 2
-                        }
-                    },
-                    legend: {
-                        show: true,
-                        position: position || "ne",
-                        labelBoxBorderColor: null,
-                        margin: [-30, 15]
-                    }
-                  ,
-                    grid: {
-                        hoverable: true,
-                        clickable: true
-                    }
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $('.easy-pie-chart.percentage').each(function () {
+                    var $box = $(this).closest('.infobox');
+                    var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
+                    var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
+                    var size = parseInt($(this).data('size')) || 50;
+                    $(this).easyPieChart({
+                        barColor: barColor,
+                        trackColor: trackColor,
+                        scaleColor: false,
+                        lineCap: 'butt',
+                        lineWidth: parseInt(size / 10),
+                        animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+                        size: size
+                    });
                 })
-            }
-            drawPieChart(placeholder, data);
 
-            /**
-            we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
-            so that's not needed actually.
-            */
-            placeholder.data('chart', data);
-            placeholder.data('draw', drawPieChart);
-
-
-
-            var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
-            var previousPoint = null;
-
-            placeholder.on('plothover', function (event, pos, item) {
-                if (item) {
-                    if (previousPoint != item.seriesIndex) {
-                        previousPoint = item.seriesIndex;
-                        var tip = item.series['label'] + " : " + item.series['percent'] + '%';
-                        $tooltip.show().children(0).text(tip);
-                    }
-                    $tooltip.css({ top: pos.pageY + 10, left: pos.pageX + 10 });
-                } else {
-                    $tooltip.hide();
-                    previousPoint = null;
-                }
-
-            });
-
-
-
-
-
-
-            var d1 = [];
-            for (var i = 0; i < Math.PI * 2; i += 0.5) {
-                d1.push([i, Math.sin(i)]);
-            }
-
-            var d2 = [];
-            for (var i = 0; i < Math.PI * 2; i += 0.5) {
-                d2.push([i, Math.cos(i)]);
-            }
-
-            var d3 = [];
-            for (var i = 0; i < Math.PI * 2; i += 0.2) {
-                d3.push([i, Math.tan(i)]);
-            }
-
-
-            var sales_charts = $('#sales-charts').css({ 'width': '100%', 'height': '220px' });
-            $.plot("#sales-charts", [
-                { label: "Domains", data: d1 },
-                { label: "Hosting", data: d2 },
-                { label: "Services", data: d3 }
-            ], {
-                hoverable: true,
-                shadowSize: 0,
-                series: {
-                    lines: { show: true },
-                    points: { show: true }
-                },
-                xaxis: {
-                    tickLength: 0
-                },
-                yaxis: {
-                    ticks: 10,
-                    min: -2,
-                    max: 2,
-                    tickDecimals: 3
-                },
-                grid: {
-                    backgroundColor: { colors: ["#fff", "#fff"] },
-                    borderWidth: 1,
-                    borderColor: '#555'
-                }
-            });
-
-
-            $('#recent-box [data-rel="tooltip"]').tooltip({ placement: tooltip_placement });
-            function tooltip_placement(context, source) {
-                var $source = $(source);
-                var $parent = $source.closest('.tab-content')
-                var off1 = $parent.offset();
-                var w1 = $parent.width();
-
-                var off2 = $source.offset();
-                var w2 = $source.width();
-
-                if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
-                return 'left';
-            }
-
-
-            $('.dialogs,.comments').slimScroll({
-                height: '300px'
-            });
-
-
-            //Android's default browser somehow is confused when tapping on label which will lead to dragging the task
-            //so disable dragging when clicking on label
-            var agent = navigator.userAgent.toLowerCase();
-            if ("ontouchstart" in document && /applewebkit/.test(agent) && /android/.test(agent))
-                $('#tasks').on('touchstart', function (e) {
-                    var li = $(e.target).closest('#tasks li');
-                    if (li.length == 0) return;
-                    var label = li.find('label.inline').get(0);
-                    if (label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation();
+                $('.sparkline').each(function () {
+                    var $box = $(this).closest('.infobox');
+                    var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
+                    $(this).sparkline('html', { tagValuesAttribute: 'data-values', type: 'bar', barColor: barColor, chartRangeMin: $(this).data('min') || 0 });
                 });
 
-            $('#tasks').sortable({
-                opacity: 0.8,
-                revert: true,
-                forceHelperSize: true,
-                placeholder: 'draggable-placeholder',
-                forcePlaceholderSize: true,
-                tolerance: 'pointer',
-                stop: function (event, ui) {//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
-                    $(ui.item).css('z-index', 'auto');
+
+
+
+                var placeholder = $('#piechart-placeholder').css({ 'width': '90%', 'min-height': '150px' });
+                var data = [
+                  { label: "social networks", data: 38.7, color: "#68BC31" },
+                  { label: "search engines", data: 24.5, color: "#2091CF" },
+                  { label: "ad campaigns", data: 8.2, color: "#AF4E96" },
+                  { label: "direct traffic", data: 18.6, color: "#DA5430" },
+                  { label: "other", data: 10, color: "#FEE074" }
+                ]
+                function drawPieChart(placeholder, data, position) {
+                    $.plot(placeholder, data, {
+                        series: {
+                            pie: {
+                                show: true,
+                                tilt: 0.8,
+                                highlight: {
+                                    opacity: 0.25
+                                },
+                                stroke: {
+                                    color: '#fff',
+                                    width: 2
+                                },
+                                startAngle: 2
+                            }
+                        },
+                        legend: {
+                            show: true,
+                            position: position || "ne",
+                            labelBoxBorderColor: null,
+                            margin: [-30, 15]
+                        }
+                      ,
+                        grid: {
+                            hoverable: true,
+                            clickable: true
+                        }
+                    })
                 }
-            }
-            );
-            $('#tasks').disableSelection();
-            $('#tasks input:checkbox').removeAttr('checked').on('click', function () {
-                if (this.checked) $(this).closest('li').addClass('selected');
-                else $(this).closest('li').removeClass('selected');
-            });
+                drawPieChart(placeholder, data);
+
+                /**
+                we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
+                so that's not needed actually.
+                */
+                placeholder.data('chart', data);
+                placeholder.data('draw', drawPieChart);
 
 
-        })
-    </script>
-          <script type="text/javascript">
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe9e1d61340ff3d9495a8cca04ebdb49d' type='text/javascript'%3E%3C/script%3E"));
-    </script>
+
+                var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
+                var previousPoint = null;
+
+                placeholder.on('plothover', function (event, pos, item) {
+                    if (item) {
+                        if (previousPoint != item.seriesIndex) {
+                            previousPoint = item.seriesIndex;
+                            var tip = item.series['label'] + " : " + item.series['percent'] + '%';
+                            $tooltip.show().children(0).text(tip);
+                        }
+                        $tooltip.css({ top: pos.pageY + 10, left: pos.pageX + 10 });
+                    } else {
+                        $tooltip.hide();
+                        previousPoint = null;
+                    }
+
+                });
+
+
+
+
+
+
+                var d1 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.5) {
+                    d1.push([i, Math.sin(i)]);
+                }
+
+                var d2 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.5) {
+                    d2.push([i, Math.cos(i)]);
+                }
+
+                var d3 = [];
+                for (var i = 0; i < Math.PI * 2; i += 0.2) {
+                    d3.push([i, Math.tan(i)]);
+                }
+
+
+                var sales_charts = $('#sales-charts').css({ 'width': '100%', 'height': '220px' });
+                $.plot("#sales-charts", [
+                    { label: "Domains", data: d1 },
+                    { label: "Hosting", data: d2 },
+                    { label: "Services", data: d3 }
+                ], {
+                    hoverable: true,
+                    shadowSize: 0,
+                    series: {
+                        lines: { show: true },
+                        points: { show: true }
+                    },
+                    xaxis: {
+                        tickLength: 0
+                    },
+                    yaxis: {
+                        ticks: 10,
+                        min: -2,
+                        max: 2,
+                        tickDecimals: 3
+                    },
+                    grid: {
+                        backgroundColor: { colors: ["#fff", "#fff"] },
+                        borderWidth: 1,
+                        borderColor: '#555'
+                    }
+                });
+
+
+                $('#recent-box [data-rel="tooltip"]').tooltip({ placement: tooltip_placement });
+                function tooltip_placement(context, source) {
+                    var $source = $(source);
+                    var $parent = $source.closest('.tab-content')
+                    var off1 = $parent.offset();
+                    var w1 = $parent.width();
+
+                    var off2 = $source.offset();
+                    var w2 = $source.width();
+
+                    if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
+                    return 'left';
+                }
+
+
+                $('.dialogs,.comments').slimScroll({
+                    height: '300px'
+                });
+
+
+                //Android's default browser somehow is confused when tapping on label which will lead to dragging the task
+                //so disable dragging when clicking on label
+                var agent = navigator.userAgent.toLowerCase();
+                if ("ontouchstart" in document && /applewebkit/.test(agent) && /android/.test(agent))
+                    $('#tasks').on('touchstart', function (e) {
+                        var li = $(e.target).closest('#tasks li');
+                        if (li.length == 0) return;
+                        var label = li.find('label.inline').get(0);
+                        if (label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation();
+                    });
+
+                $('#tasks').sortable({
+                    opacity: 0.8,
+                    revert: true,
+                    forceHelperSize: true,
+                    placeholder: 'draggable-placeholder',
+                    forcePlaceholderSize: true,
+                    tolerance: 'pointer',
+                    stop: function (event, ui) {//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
+                        $(ui.item).css('z-index', 'auto');
+                    }
+                }
+                );
+                $('#tasks').disableSelection();
+                $('#tasks input:checkbox').removeAttr('checked').on('click', function () {
+                    if (this.checked) $(this).closest('li').addClass('selected');
+                    else $(this).closest('li').removeClass('selected');
+                });
+
+
+            })
+        </script>
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe9e1d61340ff3d9495a8cca04ebdb49d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
         <!--END-->
     </form>
 </body>
