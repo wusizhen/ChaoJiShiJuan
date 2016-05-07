@@ -346,7 +346,7 @@ color:#FFFFFF;
 border:none;
 }
 .sidebar .nav-list li ul.submenu li a{
-background-color:#66CCCC;
+background-color:rgba(102,204,204,0.7);
 color:#FFFFFF;
 }
 .nav-list>li a>.arrow{
@@ -398,8 +398,8 @@ color:#fff;
 display:inline-block;
 margin:0 0 5px 8px;
 }
-.nav-list .open>a:hover>span,.nav-list .open>a:focus>span{
-	color:#66CCCC;	
+.nav-list .open>a:hover,.nav-list .open>a:focus{
+	background-color:#66CCCC;	
 }
 ul.nav.nav-tabs{
 background-color:#FFFFFF;
