@@ -41,7 +41,7 @@
     src: url('../font/HanHei-SC-thin.woff') format('woff');
 }
 body {
-    font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;
+    font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif!important;
 }
 .navbar{
   background-color:rgb(52,56,60);
