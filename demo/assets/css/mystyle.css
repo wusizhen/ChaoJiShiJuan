@@ -338,6 +338,9 @@ height:100%;
 .navbar .navbar-brand{
 padding:5px 15px;
 }
+.nav-list > li .submenu > li > a {
+   text-align:center
+}
 .sidebar{
 width:93px;
 }
@@ -382,7 +385,7 @@ margin:-8px -20px 0px;
 margin-right:-17px;
 }
 .nav-list>li .submenu>li>a{
-padding:7px 0 9px 15px;
+padding:7px 0 9px 12px;
 }
 .nav-tabs>li>a{
 border-color:#FFFFFF;
