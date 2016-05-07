@@ -5,9 +5,23 @@
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
+    <style>
+        .img {
+            display:none;
+        }
+        @media screen and (max-width: 470px) {
+            .game {
+                display:none;
+            }
+            .img {
+                display:inline;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <img src="images/404-2.jpg" class="img" style="z-index:-100;position:absolute;left:0;top:0;width:100%; height:100%;" />
+    <div class="container-fluid game" >
         <div class="row">
             <div class="col-xs-12">
                 <div style="background:#0078AE;color:#ffffff;margin:-20px -15px 20px;text-align:center;border:1px solid rgb(237,237,237)">
@@ -21,7 +35,7 @@
                 <div>
                     <a class="btn btn-primary" onclick="javascript:history.go(-1);"><span>·µ»Ø</span></a>
                 </div>
-                <div width="100%">
+                <div width="100%" >
                     <object type="application/x-shockwave-flash" name="name" data="demo/pacman.swf" id="flash-404" style="visibility: visible; width:100%;height:500px"></object>
                 </div>
             </div>
