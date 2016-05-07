@@ -7,7 +7,7 @@
     <title>高校在线考试系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- basic styles -->
-    <link rel="shortcut icon" href="demo/LG.png">
+    <link rel="shortcut icon" href="demo/LG.PNG">
 
     <link rel="stylesheet" href="demo/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
@@ -511,7 +511,7 @@
 
                                             <div class="alert alert-info alert-dismissible" role="alert">
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                欢迎进入 <strong>超级试卷</strong> - <span style="font-size: 12px;">高校智能多题型在线考试系统</span>
+                                                欢迎进入 <strong>超级试卷</strong> - <span style="font-size: 13px;">高校智能多题型在线考试系统</span>
                                             </div>
 
                                             <div class="row Int" runat="server" id="studentInt">

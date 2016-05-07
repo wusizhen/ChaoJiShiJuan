@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="demo/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="demo/LG.PNG">
     <!-- mystyle.css-->
     <link rel="stylesheet" href="demo/assets/css/mystyle.css" />
     <title>欢迎登陆超级试卷</title>
