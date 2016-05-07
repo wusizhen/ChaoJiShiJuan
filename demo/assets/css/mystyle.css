@@ -42,7 +42,7 @@
 }
 body {
     font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif!important;
-    font-size:14px;
+    font-size:16px;
 }
 .navbar{
   background-color:rgb(52,56,60);
@@ -238,7 +238,7 @@ background-color:#66CCCC;
 }
 #bbb{
   background-color:rgb(27,31,37);
-  height:50px;
+  height:52px;
   padding-top:5px;
 }
 
@@ -254,6 +254,7 @@ color:#66CCCC;
 }
 .nav-list>li>a{
 color:#333333;
+font-size:16px;
 }
 
 .nav-list>li>a:hover,.nav-list>li>a:focus{
@@ -327,18 +328,22 @@ height:50px;
 }
 .mynavbar-header{
 background-color:rgb(27,31,37)!important;
-width:90px;
+width:98px;
 padding:0 15px;
+height:53px;
 }
 .mynavbar-header a img{
 height:100%;
 }
 .navbar .navbar-brand{
-padding:5px 10px;
+padding:5px 15px;
 }
 .sidebar{
-width:86px;
+width:93px;
 }
+    .sidebar:before {
+        width:93px;
+    }
 .sidebar .nav-list li a{
 background-color:#66CCCC;
 color:#FFFFFF;
@@ -350,11 +355,14 @@ border:none;
 background-color:rgba(102,204,204,0.7);
 color:#FFFFFF;
 }
+.nav-list > li > a {
+    padding:0 12px;
+}
 .nav-list>li a>.arrow{
 color:#FFFFFF;
 }
 .main-content{
-margin-left:86px;
+margin-left:93px;
 }
 .tab-content{
 background-color:rgb(245,245,245);
@@ -397,7 +405,7 @@ margin:10px 17px 0 17px;
 line-height:26px;
 color:#fff;
 display:inline-block;
-margin:0 0 5px 8px;
+margin:0 0 5px 4px;
 }
 .nav-list .open>a:hover,.nav-list .open>a:focus{
 	background-color:#66CCCC;	
@@ -417,6 +425,9 @@ padding:20px;
 border-radius:5px;
 border:1px solid #FFFFFF;
 
+}
+.brand {
+    margin-left:20px;
 }
 .brand a{
 color:#fff;
@@ -451,7 +462,12 @@ display:none;
     .menu-toggler {
        background-color:rgb(27,31,37);
     }
-} 
+}
+@media only screen and (max-width: 991px) {
+    .menu-toggler {
+    width:75px;
+    }
+}
 
 .inform .table-responsive table tbody tr:first-child th{
 background-color:#FFFFFF;
@@ -507,6 +523,13 @@ display:inline-block;
 @media screen and (max-width: 770px) {
     .myWeather {
     display:none;
+    }
+    #bbb {
+      
+        margin-top:-3px;
+    }
+    .mynavbar-header {
+        height:auto;
     }
 }
 /* exam.apsx*/
