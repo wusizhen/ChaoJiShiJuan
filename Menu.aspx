@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="demo/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap.min.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="demo/bootStrap-addTabs/theme/css/bootstrap-addtabs.css" type="text/css" media="screen" />
-    
-    
+
+
     <!--simple cal-->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
-  <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
-    
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
+
     <link rel="stylesheet" href="demo/assets/css/simplecalstyle-personal.css" />
-    
+
 
     <!--[if IE 7]>
 		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
@@ -103,9 +103,9 @@
         function closeMyExam() {
             myClose('tab_我的考试');
         }
-        //关闭练习
+        //关闭作业
         function closeExercise() {
-            myClose('tab_正在练习');
+            myClose('tab_正在作业');
 
         }
         //考试提交
@@ -127,17 +127,15 @@
 </head>
 <body runat="server">
     <form id="form1" runat="server">
-        <div class="navbar navbar-inverse" id="navbar">
-            <script type="text/javascript">
-                try { ace.settings.check('navbar', 'fixed') } catch (e) { }
-            </script>
+        <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+
 
             <div class="navbar-container" id="navbar-container">
                 <div class="row">
                     <div class="col-sm-1">
                         <div class="navbar-header pull-left mynavbar-header">
                             <a class="menu-toggler" id="menu-toggler" href="#"></a>
-                            <a href="#" class="navbar-brand miss">
+                            <a href="www.chaojishijuan.cn:8080" class="navbar-brand miss">
                                 <img src="demo/logo2/Icons11.png" />
                             </a>
                             <!-- /.brand -->
@@ -235,10 +233,6 @@
             </a>
             -->
             <div class="sidebar" id="sidebar">
-                <script type="text/javascript">
-                    try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
-                </script>
-
                 <!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
 
                     <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -271,14 +265,15 @@
 
                         <ul class="submenu">
                             <li>
+                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">班级管理　
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#" data-addtab="用户管理" url="user/UserList.aspx">用户管理　
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">班级管理　
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
 
@@ -339,24 +334,24 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">单选题　
+                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">&nbsp;单选题　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">多选题　
+                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">&nbsp;多选题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">判断题　
+                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">&nbsp;判断题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">填空题　
+                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">&nbsp;填空题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">简答题　
+                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">&nbsp;简答题　
                                 </a>
                             </li>
                         </ul>
@@ -393,7 +388,7 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="练习管理" url="arrange/ExerciseList.aspx">练习管理　
+                                <a href="#" data-addtab="作业管理" url="arrange/ExerciseList.aspx">作业管理　
                                 </a>
                             </li>
 
@@ -421,11 +416,8 @@
                             <li>
                                 <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx">学生成绩　
                                 </a>
-                            </li>
-                            <li>
-                                <a href="#" data-addtab="系统分析" url="score/ExamList.aspx">统计分析（building...）　
-                                </a>
-                            </li>
+                            </li>                
+
                         </ul>
                     </li>
 
@@ -439,7 +431,7 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx">我的练习　
+                                <a href="#" data-addtab="我的作业" url="student/MyExercise.aspx">我的作业　
                                 </a>
                             </li>
 
@@ -453,9 +445,30 @@
                             </li>
                         </ul>
                     </li>
+                    
+                    <li runat="server" id="menu8">
+                        <a href="#" class="dropdown-toggle">
+                            <img src="demo/logo2/Icons3.png" />
+                            <span class="menu-text">错误页面 </span>
 
+
+                        </a>
+
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" data-addtab="404" url="404.html">404游戏
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-addtab="500" url="500.html">500页面
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
 
                 </ul>
+
                 <!-- /.nav-list -->
 
 
@@ -516,7 +529,7 @@
 
                                             <div class="row Int" runat="server" id="studentInt">
                                                 <div class="col-sm-2 col-sm-offset-2 col-xs-4">
-                                                    <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>我的练习　</span></a>
+                                                    <a href="#" data-addtab="我的作业" url="student/MyExercise.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-file"></span><span>我的作业　</span></a>
                                                 </div>
                                                 <div class="col-sm-2 col-sm-offset-1 col-xs-4">
                                                     <a href="#" data-addtab="我的考试" url="student/MyExam.aspx" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>我的考试　</span></a>
@@ -559,55 +572,55 @@
                                                 </div>
                                             </div>
                                             <div class="row ">
-                                                <div class="pan">
-                                                    <div class="col-sm-12 col-xs-12">
-                                                        <div class="inform">
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <div class="page-header myPage-header">
-                                                                        <h3 style="font-family: SimHei">通知公告</h3>
-                                                                    </div>
 
-                                                                    <div class="table-responsive">
-                                                                        <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                                                                            GridLines="None">
-                                                                            <Columns>
-                                                                                <asp:TemplateField HeaderText="序号">
-                                                                                    <ItemTemplate>
-                                                                                        <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
-                                                                                    </ItemTemplate>
+                                                <div class="col-sm-12 col-xs-12">
+                                                    <div class="inform">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border-left: 4px solid #00c344;">
+                                                                <div class="page-header myPage-header">
+                                                                    <h3 style="font-family: SimHei">通知公告</h3>
+                                                                </div>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="发布人">
-                                                                                    <ItemTemplate>
-                                                                                        <span><%# Eval("realname")%></span>
-                                                                                    </ItemTemplate>
+                                                                <div class="table-responsive">
+                                                                    <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
+                                                                        GridLines="None">
+                                                                        <Columns>
+                                                                            <asp:TemplateField HeaderText="序号">
+                                                                                <ItemTemplate>
+                                                                                    <%# Container.DataItemIndex+1+pageSize*(pageIndex-1) %>
+                                                                                </ItemTemplate>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="主题">
-                                                                                    <ItemTemplate>
-                                                                                        <a href="#" onclick="return myAddTab('查看公告　','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a>
-                                                                                    </ItemTemplate>
+                                                                            </asp:TemplateField>
+                                                                            <asp:TemplateField HeaderText="发布人">
+                                                                                <ItemTemplate>
+                                                                                    <span><%# Eval("realname")%></span>
+                                                                                </ItemTemplate>
 
-                                                                                </asp:TemplateField>
-                                                                                <asp:TemplateField HeaderText="时间">
-                                                                                    <ItemTemplate>
-                                                                                        <span><%# Eval("createtime")%></span>
-                                                                                    </ItemTemplate>
+                                                                            </asp:TemplateField>
+                                                                            <asp:TemplateField HeaderText="主题">
+                                                                                <ItemTemplate>
+                                                                                    <a href="#" onclick="return myAddTab('查看公告　','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a>
+                                                                                </ItemTemplate>
 
-                                                                                </asp:TemplateField>
+                                                                            </asp:TemplateField>
+                                                                            <asp:TemplateField HeaderText="时间">
+                                                                                <ItemTemplate>
+                                                                                    <span><%# Eval("createtime")%></span>
+                                                                                </ItemTemplate>
+
+                                                                            </asp:TemplateField>
 
 
-                                                                            </Columns>
-                                                                            <EmptyDataTemplate>
-                                                                                没有返回任何数据！
-                                                                            </EmptyDataTemplate>
+                                                                        </Columns>
+                                                                        <EmptyDataTemplate>
+                                                                            没有返回任何数据！
+                                                                        </EmptyDataTemplate>
 
-                                                                            <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
-                                                                        </asp:GridView>
-                                                                    </div>
-                                                                    <div
-                                                                        data-options="  
+                                                                        <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
+                                                                    </asp:GridView>
+                                                                </div>
+                                                                <div
+                                                                    data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
                                      $('#<%=hfPageIndex.ClientID %>').val(pageIndex);
@@ -619,155 +632,135 @@
                                 pageNumber:<%=pageIndex %>,
                                 pageSize:5  
                             ">
-                                                                    </div>
-                                                                    <div style="display: none;">
-                                                                        <asp:HiddenField ID="hfPageIndex" runat="server" />
-                                                                        <asp:HiddenField ID="hfPageSize" runat="server" />
-                                                                        <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
-                                                                    </div>
                                                                 </div>
-                                                                <div class="col-sm-6 col-xs-12 col-md-6">
-                                                                    
-                                                                        <div class="calendar hidden-print">
-                                                                            <header>
-                                                                                <h2 class="month simplecalh2"></h2>
-                                                                                <a class="btn-prev fontawesome-angle-left simplecala" href="#"></a>
-                                                                                <a class="btn-next fontawesome-angle-right simplecala" href="#"></a>
-                                                                            </header>
-                                                                            <table class="simplecaltable">
-                                                                                <thead class="event-days">
-                                                                                    <tr></tr>
-                                                                                </thead>
-                                                                                <tbody class="event-calendar">
-                                                                                    <tr class="1"></tr>
-                                                                                    <tr class="2"></tr>
-                                                                                    <tr class="3"></tr>
-                                                                                    <tr class="4"></tr>
-                                                                                    <tr class="5"></tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                            <div class="list">
-                                                                                <div class="day-event" date-day="2" date-month="2" date-year="2016" data-number="1">
-                                                                                    <a href="#" class="close fontawesome-remove simplecala"></a>
-                                                                                    <h2 class="simplecalh2 title">Lorem ipsum 1</h2>
-                                                                                    <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok.</p>
-                                                                                    <label class="check-btn">
-                                                                                        <input  type="checkbox" class="save simplecalinput" id="save" name="" value="" />
-                                                                                        <span class="simplecalspan">Save to personal list!</span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
+                                                                <div style="display: none;">
+                                                                    <asp:HiddenField ID="hfPageIndex" runat="server" />
+                                                                    <asp:HiddenField ID="hfPageSize" runat="server" />
+                                                                    <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-5 col-sm-offset-1 col-xs-12" style="padding-top: 35px; background-color: #ffffff; border-left: 4px solid #e83d25;">
+
+                                                                <div class="calendar hidden-print">
+                                                                    <header>
+                                                                        <h2 class="month simplecalh2"></h2>
+                                                                        <a class="btn-prev fontawesome-angle-left simplecala" href="#"></a>
+                                                                        <a class="btn-next fontawesome-angle-right simplecala" href="#"></a>
+                                                                    </header>
+                                                                    <table class="simplecaltable">
+                                                                        <thead class="event-days" style="font-weight: bold;">
+                                                                            <tr></tr>
+                                                                        </thead>
+                                                                        <tbody class="event-calendar" style="color: #000000; font-weight: 600;">
+                                                                            <tr class="1"></tr>
+                                                                            <tr class="2"></tr>
+                                                                            <tr class="3"></tr>
+                                                                            <tr class="4"></tr>
+                                                                            <tr class="5"></tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <div class="list">
+                                                                        <div class="day-event" date-day="2" date-month="2" date-year="2016" data-number="1">
+                                                                            <a href="#" class="close fontawesome-remove simplecala"></a>
+                                                                            <h2 class="simplecalh2 title">Lorem ipsum 1</h2>
+                                                                            <p>Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok.</p>
+                                                                            <label class="check-btn">
+                                                                                <input type="checkbox" class="save simplecalinput" id="save" name="" value="" />
+
+                                                                            </label>
                                                                         </div>
-                                                                    
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
 
-                                                    </div>
-                                                    <!--  <div class="col-sm-12 col-xs-12">
-                                                        <div class="inform">
-
-                                                            <div class="page-header myPage-header">
-                                                                <h3 style="font-family: SimHei">日历</h3>
-                                                            </div>
-                                                            <div class="cal1"></div>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-                                                            <script src="demo/CLNDR/src/clndr.js"></script>
-                                                            <script src="demo/CLNDR/demo.js"></script>
-
-                                                        </div>
-                                                    </div>-->
-                                                    <div class="col-sm-12 col-xs-12" runat="server" id="teacher_static" visible="False">
-                                                        <div class="inform">
-                                                            <div class="page-header myPage-header">
-                                                                <h3 style="font-family: SimHei">教师统计分析</h3>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
-                                                                    <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12 col-xs-12" runat="server" id="admin_static" visible="False">
-                                                        <div class="inform">
-                                                            <div class="page-header myPage-header">
-                                                                <h3 style="font-family: SimHei">管理员统计</h3>
+
+                                                </div>
+                                                <div class="col-sm-12 col-xs-12" runat="server" id="teacher_static" visible="False">
+                                                    <div class="inform inform-sp">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-xs-12" style="text-align: center;">
+                                                                <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
-                                                                    <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12">
-                                                                    <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-12 col-xs-12" runat="server" id="student_static" visible="False">
-                                                        <div class="inform">
-                                                            <div class="page-header myPage-header">
-                                                                <h3 style="font-family: SimHei">学生统计</h3>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6 col-xs-12" style="text-align: center;">
-                                                                    <asp:Literal ID="studentError" runat="server"></asp:Literal>
-                                                                </div>
-                                                                <div class="col-sm-6 col-xs-12 infobox-container">
-                                                                    <div>
-                                                                        <div class="infobox infobox-red  ">
-                                                                            <div class="infobox-icon">
-                                                                                <i class="icon-beaker"></i>
-                                                                            </div>
-
-                                                                            <div class="infobox-data">
-                                                                                <span class="infobox-data-number">3</span>
-                                                                                <div class="infobox-content">最近考试</div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-                                                                    <div>
-                                                                        <div class="infobox infobox-blue infobox-small infobox-dark">
-                                                                            <div class="infobox-chart">
-                                                                                <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
-                                                                            </div>
-
-                                                                            <div class="infobox-data">
-                                                                                <div class="infobox-content">答题成就</div>
-                                                                                <div class="infobox-content">40</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <div class="infobox infobox-green infobox-small infobox-dark">
-                                                                            <div class="infobox-progress">
-                                                                                <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
-                                                                                    <span class="percent">61</span>%
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="infobox-data">
-                                                                                <div class="infobox-content">正答率</div>
-                                                                                <div class="infobox-content">61%</div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-
-
-                                                                </div>
+                                                            <div class="col-sm-6 col-xs-12">
+                                                                <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
                                                             </div>
                                                         </div>
-                                                        <div class="clear"></div>
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-12 col-xs-12" runat="server" id="admin_static" visible="False">
+                                                    <div class="inform inform-sp">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-xs-12" style="text-align: center;">
+                                                                <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
+                                                            </div>
+                                                            <div class="col-sm-6 col-xs-12">
+                                                                <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 col-xs-12" runat="server" id="student_static" visible="False">
+                                                    <div class="inform inform-sp">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-xs-12" style="text-align: center;">
+                                                                <asp:Literal ID="studentError" runat="server"></asp:Literal>
+                                                            </div>
+                                                            <div class="col-sm-6 col-xs-12 infobox-container">
+                                                                <div>
+                                                                    <div class="infobox infobox-red  ">
+                                                                        <div class="infobox-icon">
+                                                                            <i class="icon-beaker"></i>
+                                                                        </div>
+
+                                                                        <div class="infobox-data">
+                                                                            <span class="infobox-data-number">3</span>
+                                                                            <div class="infobox-content">最近考试</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div>
+                                                                    <div class="infobox infobox-blue infobox-small infobox-dark">
+                                                                        <div class="infobox-chart">
+                                                                            <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
+                                                                        </div>
+
+                                                                        <div class="infobox-data">
+                                                                            <div class="infobox-content">答题成就</div>
+                                                                            <div class="infobox-content">40</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="infobox infobox-green infobox-small infobox-dark">
+                                                                        <div class="infobox-progress">
+                                                                            <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                                                                                <span class="percent">61</span>%
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="infobox-data">
+                                                                            <div class="infobox-content">正答率</div>
+                                                                            <div class="infobox-content">61%</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -1072,6 +1065,16 @@
         <script type="text/javascript">
             var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
             document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe9e1d61340ff3d9495a8cca04ebdb49d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script>
+            var $sideBar = $("#sidebar"), $window = $(window), oTop = $sideBar.offset().top, barStyle = $sideBar[0].style, sTop;
+
+            $window.scroll(function () {
+                sTop = $window.scrollTop();
+                sTop > oTop ? barStyle.top = sTop - oTop + "px" : barStyle.top = 0;
+
+            })
+
         </script>
         <!--END-->
     </form>

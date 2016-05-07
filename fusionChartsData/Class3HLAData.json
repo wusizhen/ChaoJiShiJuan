@@ -5,13 +5,14 @@
     "numberprefix": "",
     "showvalues": "1",
     "bgcolor": "FFFFFF",
-    "xaxisname": "班级",
+    "xaxisname": "",
     "yaxisname": "人数",
     "plotgradientcolor": "",
     "showalternatehgridcolor": "0",
     "showplotborder": "0",
     "divlinecolor": "CCCCCC",
-    "canvasborderalpha": "0"
+    "canvasborderalpha": "0",
+    "showBorder": "0"    
   },
   "data": [
     {
@@ -49,7 +50,8 @@
           "showalternatehgridcolor": "0",
           "showplotborder": "0",
           "divlinecolor": "CCCCCC",
-          "canvasborderalpha": "0"
+          "canvasborderalpha": "0",
+          "showBorder": "0"
         },
         "data": [
           {
@@ -87,7 +89,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -123,7 +126,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -159,7 +163,9 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
+
               },
               "data": [
                 {
@@ -198,7 +204,8 @@
           "showalternatehgridcolor": "0",
           "showplotborder": "0",
           "divlinecolor": "CCCCCC",
-          "canvasborderalpha": "0"
+          "canvasborderalpha": "0",
+          "showBorder": "0"
         },
         "data": [
           {
@@ -236,7 +243,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -272,7 +280,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -308,7 +317,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -347,7 +357,8 @@
           "showalternatehgridcolor": "0",
           "showplotborder": "0",
           "divlinecolor": "CCCCCC",
-          "canvasborderalpha": "0"
+          "canvasborderalpha": "0",
+          "showBorder": "0"
         },
         "data": [
           {
@@ -385,7 +396,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -421,7 +433,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
@@ -457,7 +470,8 @@
                 "showalternatehgridcolor": "0",
                 "showplotborder": "0",
                 "divlinecolor": "CCCCCC",
-                "canvasborderalpha": "0"
+                "canvasborderalpha": "0",
+                "showBorder": "0"
               },
               "data": [
                 {
