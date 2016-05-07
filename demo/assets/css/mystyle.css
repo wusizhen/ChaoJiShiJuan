@@ -42,6 +42,7 @@
 }
 body {
     font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif!important;
+    font-size:14px;
 }
 .navbar{
   background-color:rgb(52,56,60);
