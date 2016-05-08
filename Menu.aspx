@@ -1076,7 +1076,6 @@
             $window.scroll(function () {
                 sTop = $window.scrollTop();
                 sTop > oTop ? barStyle.top = sTop - oTop + "px" : barStyle.top = 0;
-
             })
 
         </script>
