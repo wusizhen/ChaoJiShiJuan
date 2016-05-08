@@ -436,6 +436,7 @@ border-radius:5px;
 }
 .inform-sp {
 background-color:#ffffff;
+border:1px solid rgb(237,237,237);
 border-left:4px solid #f6cf12;
 }
 .brand {
@@ -547,7 +548,8 @@ display:inline-block;
 
 @media screen and (min-width: 768px) {
     .marginSp {
-    margin-left:4.3333%!important;
+    margin-left:10px;
+    width:48%;
     }
 
 }

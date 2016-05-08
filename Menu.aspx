@@ -580,7 +580,7 @@
                                                 <div class="col-sm-12 col-xs-12">
                                                     <div class="inform">
                                                         <div class="row">
-                                                            <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border-left: 4px solid #00c344;">
+                                                            <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border:1px solid rgb(237,237,237);border-left: 4px solid #00c344;">
                                                                 <div class="page-header myPage-header">
                                                                     <h3 style="font-family: SimHei">通知公告</h3>
                                                                 </div>
@@ -643,7 +643,7 @@
                                                                     <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-5 col-sm-offset-1 col-xs-12 marginSp" style="padding-top: 35px; background-color: #ffffff; border-left: 4px solid #e83d25;">
+                                                            <div class="col-sm-6 col-xs-12 marginSp" style="padding-top: 35px; background-color: #ffffff;border:1px solid rgb(237,237,237); border-left: 4px solid #e83d25;">
 
                                                                 <div class="calendar hidden-print">
                                                                     <header>
@@ -681,7 +681,7 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="col-sm-12 col-xs-12" runat="server" id="teacher_static" visible="False">
+                                                <div class="col-sm-12 col-xs-12" runat="server" id="teacher_static" visible="False" style="width:98.5%">
                                                     <div class="inform inform-sp">
 
                                                         <div class="row">
