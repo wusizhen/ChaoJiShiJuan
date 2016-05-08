@@ -2,7 +2,9 @@
   "chart": {
     "caption": "访问流量分类统计",
     "subCaption": "总计",
+    "baseFontSize": "15", 
     "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
+    "baseFont": " 'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif",
     "bgColor": "#ffffff",
     "showBorder": "0",
     "use3DLighting": "0",

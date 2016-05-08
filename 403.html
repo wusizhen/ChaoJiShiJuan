@@ -1,15 +1,309 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <title>无权限</title>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1,minimum-scale=1.0,minimal-ui" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <title>403</title>
+    <style>
+        a, a:focus, a:hover {
+            text-decoration: none;
+        }
+
+        :after, :before {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: "Segoe UI","Open Sans","Lucida Grande",FreeSans,Arimo,"Source Sans Pro","Droid Sans","Helvetica Neue",Helvetica,"Microsoft YaHei UI","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #646464;
+            background-color: #f5f5f5;
+            display: table;
+            width: 100%;
+        }
+
+        h1, h2 {
+            margin: 0;
+            font-weight: 600;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        ::-moz-selection {
+            text-shadow: none;
+            background: #b3d4fc;
+        }
+
+        ::selection {
+            text-shadow: none;
+            background: #b3d4fc;
+        }
+
+        .bg-white {
+            background: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #999;
+        }
+
+        .text-city {
+            color: #ff6b6b;
+        }
+
+        a {
+            color: #5c90d2;
+            transition: color .12s ease-out;
+        }
+
+            a:focus, a:hover {
+                color: #3169b1;
+            }
+
+            a:active, a:hover {
+                outline: 0;
+            }
+
+            a:active {
+                color: #5c90d2 !important;
+            }
+
+            a.link-effect {
+                position: relative;
+            }
+
+                a.link-effect:before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    content: "";
+                    background-color: #3169b1;
+                    -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+                    transition: -webkit-transform .12s ease-out;
+                    transition: transform .12s ease-out;
+                    transition: transform .12s ease-out,-webkit-transform .12s ease-out;
+                }
+
+            a:focus.link-effect:before, a:hover.link-effect:before {
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+
+        .animated {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+        }
+
+        @-webkit-keyframes fadeInUp {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(0,100%,0);
+                transform: translate3d(0,100%,0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(0,100%,0);
+                transform: translate3d(0,100%,0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .fadeInUp {
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+        }
+
+        @-webkit-keyframes flipInX {
+            from {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,90deg);
+                transform: perspective(400px) rotate3d(1,0,0,90deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,-20deg);
+                transform: perspective(400px) rotate3d(1,0,0,-20deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,10deg);
+                transform: perspective(400px) rotate3d(1,0,0,10deg);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,-5deg);
+                transform: perspective(400px) rotate3d(1,0,0,-5deg);
+            }
+
+            100% {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px);
+            }
+        }
+
+        @keyframes flipInX {
+            from {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,90deg);
+                transform: perspective(400px) rotate3d(1,0,0,90deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+
+            40% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,-20deg);
+                transform: perspective(400px) rotate3d(1,0,0,-20deg);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,10deg);
+                transform: perspective(400px) rotate3d(1,0,0,10deg);
+                opacity: 1;
+            }
+
+            80% {
+                -webkit-transform: perspective(400px) rotate3d(1,0,0,-5deg);
+                transform: perspective(400px) rotate3d(1,0,0,-5deg);
+            }
+
+            100% {
+                -webkit-transform: perspective(400px);
+                transform: perspective(400px);
+            }
+        }
+
+        .flipInX {
+            -webkit-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+            -webkit-animation-name: flipInX;
+            animation-name: flipInX;
+        }
+
+        body > .wrapper {
+            overflow: hidden;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .brand {
+            height: 64px;
+            background: url(demo/abcd.png) top center no-repeat;
+            background-size: contain;
+            margin-bottom: 18px;
+        }
+
+        .error-container {
+            padding-bottom: 24px;
+        }
+
+        .error-code {
+            font-size: 128px;
+            font-weight: 300;
+        }
+
+        .error-caption {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: .8em;
+        }
+
+        .container > p {
+            margin: 0 0 .3em;
+        }
+
+        .footer {
+            height: 64px;
+            margin-top: 18px;
+        }
+
+        @media (max-width:768px) {
+            .container, .footer {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div style="height: 80px;">
-    </div>
-    <div style="text-align: center;">
-        <img src="images/noprim.gif" /><br />
-        <div style="height: 10px;">
+    <div class="wrapper">
+        <div class="brand animated fadeIn"></div>
+        <div class="container error-container bg-white text-center">
+            <h1 class="error-code animated text-city flipInX">403</h1>
+            <h2 class="error-caption animated fadeInUp">对不起，服务器拒绝执行该请求</h2>
+            <p>[ <a class="link-effect" href="javascript:history.back()">返回主页</a> ] </p>
+            
         </div>
+        <div class="footer text-muted text-center"></div>
     </div>
+
 </body>
 </html>

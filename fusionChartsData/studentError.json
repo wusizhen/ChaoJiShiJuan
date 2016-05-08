@@ -5,6 +5,8 @@
     "yAxisName": "错题数",
     "numberPrefix": "",
     "paletteColors": "#0075c2",
+    "baseFontSize": "15", 
+    "baseFont": " 'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif",
     "bgColor": "#ffffff",
     "showBorder": "0",
     "showCanvasBorder": "0",

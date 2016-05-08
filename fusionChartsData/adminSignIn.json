@@ -6,6 +6,8 @@
     "yAxisName": "访问次数",
     "numberPrefix": "",
     "paletteColors": "#5fc78d",
+    "baseFontSize": "15", 
+    "baseFont": " 'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif",
     "bgColor": "#ffffff",
     "showBorder": "0",
     "showCanvasBorder": "0",

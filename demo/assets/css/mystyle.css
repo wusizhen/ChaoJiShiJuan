@@ -93,7 +93,7 @@ border-color:#FFFFFF;
 /* 2016.3.27 beginning*/
 .btnGroup1{/*2016.3.27*/
 height:50px;
-font-weight:600;
+font-weight:500;
 color:#000000!important;
 background-color:rgb(245,245,245)!important;
 border:3px solid #3098be;
@@ -113,7 +113,7 @@ border:3px solid #3098be;
 }
 .btnGroup2{/*2016.3.27*/
 height:50px;
-font-weight:600;
+font-weight:500;
 color:#000000!important;
 background-color:rgb(245,245,245)!important;
 border:none;
@@ -243,7 +243,9 @@ background-color:#3098be;
   height:52px;
   padding-top:5px;
 }
-
+nav-tabs {
+z-index:99999;
+}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
   border-top-color:#3098be;
   color:#3098be;
@@ -344,6 +346,7 @@ padding:5px 15px;
 
 .sidebar{
 width:93px;
+top:-37px!important;
 }
     .sidebar:before {
         width:93px;
@@ -470,7 +473,7 @@ display:none;
     }
 
     .menu-toggler {
-       background-color:rgb(27,31,37);
+       background-color:rgb(52,56,60);
     }
 }
 @media only screen and (max-width: 991px) {
@@ -540,6 +543,14 @@ display:inline-block;
     .mynavbar-header {
         height:auto;
     }
+}
+
+
+@media screen and (min-width: 768px) {
+    .marginSp {
+    margin-left:4.3333%!important;
+    }
+
 }
 /* exam.apsx*/
 
