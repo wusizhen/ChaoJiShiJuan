@@ -125,7 +125,7 @@
     </style>
 
 </head>
-<body runat="server">
+<body runat="server" style="background-color:rgb(245,245,245)">
     <form id="form1" runat="server">
         <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
 
@@ -577,10 +577,10 @@
                                             </div>
                                             <div class="row ">
 
-                                                <div class="col-sm-12 col-xs-12">
+                                                <div class="col-sm-12 col-xs-12" id="left">
                                                     <div class="inform">
                                                         <div class="row">
-                                                            <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border:1px solid rgb(237,237,237);border-left: 4px solid #00c344;">
+                                                            <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border:1px solid rgb(237,237,237);border-left: 4px solid #00c344;border-radius:5px;">
                                                                 <div class="page-header myPage-header">
                                                                     <h3 style="font-family: SimHei">通知公告</h3>
                                                                 </div>
@@ -643,7 +643,7 @@
                                                                     <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-6 col-xs-12 marginSp" style="padding-top: 35px; background-color: #ffffff;border:1px solid rgb(237,237,237); border-left: 4px solid #e83d25;">
+                                                            <div class="col-sm-6 col-xs-12 marginSp" id="right" style="padding-top: 35px; background-color: #ffffff;border:1px solid rgb(237,237,237); border-left: 4px solid #e83d25;border-radius:5px;">
 
                                                                 <div class="calendar hidden-print">
                                                                     <header>
@@ -688,7 +688,7 @@
                                                             <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                 <asp:Literal ID="class3Comparison" runat="server"></asp:Literal>
                                                             </div>
-                                                            <div class="col-sm-6 col-xs-12">
+                                                            <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                 <asp:Literal ID="techerExamStat" runat="server"></asp:Literal>
                                                             </div>
                                                         </div>
@@ -701,7 +701,7 @@
                                                             <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                 <asp:Literal ID="adminweeksignin" runat="server"></asp:Literal>
                                                             </div>
-                                                            <div class="col-sm-6 col-xs-12">
+                                                            <div class="col-sm-6 col-xs-12" style="text-align: center;">
                                                                 <asp:Literal ID="adminipstatic" runat="server"></asp:Literal>
                                                             </div>
                                                         </div>

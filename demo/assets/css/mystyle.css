@@ -42,7 +42,8 @@
 }
 body {
     font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif!important;
-    font-size:16px;
+    font-size:18px;
+    font-weight:300;
 }
 .navbar{
   background-color:rgb(52,56,60);
@@ -256,6 +257,9 @@ z-index:99999;
 }
 .nav-tabs>li>a:hover{
 color:#3098be;
+}
+.nav.nav-list {
+    font-size:16px;
 }
 .nav-list>li>a{
 color:#333333;
@@ -525,7 +529,6 @@ text-align:right;
         display:none;
     }
 }
-
 .myWeather {
 float:right;
  margin-top:10px;
@@ -553,6 +556,21 @@ display:inline-block;
     }
 
 }
+/*2016.5.9*/
+.simplecalh2 {
+margin-bottom:15px;
+}
+.day-event p {
+padding-bottom:0;
+margin-bottom:0;
+}
+.month.simplecalh2 {
+margin-bottom:4px;
+}
+
+
+
+
 /* exam.apsx*/
 
 
