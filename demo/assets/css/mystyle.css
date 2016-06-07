@@ -41,7 +41,7 @@
     src: url('../font/HanHei-SC-thin.woff') format('woff');
 }
 body {
-    font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif!important;
+    font-family:  'HanHei-SC-thin','Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB',Arial,sans-serif!important;
     font-size:18px;
     font-weight:300;
 }
@@ -338,14 +338,14 @@ height:50px;
 .mynavbar-header{
 background-color:rgb(27,31,37)!important;
 width:134px;
-padding:0 22px;
+padding:0 29px;
 height:53px;
 }
 .mynavbar-header a img{
 height:100%;
 }
 .navbar .navbar-brand{
-padding:5px 22px;
+padding:5px 15px;
 }
 
 .sidebar{
@@ -728,7 +728,7 @@ h4 {
 2016.05.02  
 表格样式
 */
-.table_style{width:100%;height:auto;color:rgb(87,97,109);}
+.table_style{width:100%;height:auto;color:#000000;font-size:18px!important;font-weight:600!important;}
    .table_style tr td{text-align:center;height:30px;line-height:30px;border-color:rgb(237,237,237);}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
 vertical-align:middle;
