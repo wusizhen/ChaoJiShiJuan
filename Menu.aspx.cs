@@ -102,10 +102,13 @@ public partial class _Default : BasePage
     protected void BindData()
     {
         pageTotal = MyUtil.GetCount("tbMessage,tbUser", "tbMessage.userid=tbUser.id", GetWhereSql());
-        gvwData.DataSource = MyUtil.GetListByIndex(5, pageIndex, "tbMessage.*,tbUser.realname", "tbMessage,tbUser", "tbMessage.userid=tbUser.id", GetWhereSql(), "tbMessage.id desc");
+        gvwData.DataSource = MyUtil.GetListByIndex(9, pageIndex, "tbMessage.*,tbUser.realname", "tbMessage,tbUser", "tbMessage.userid=tbUser.id", GetWhereSql(), "tbMessage.id desc");
         gvwData.DataKeyNames = new String[] { "id" };
         gvwData.DataBind();
     }
+
+
+   
 
     private String GetWhereSql()
     {
@@ -115,7 +118,7 @@ public partial class _Default : BasePage
         if (user.usertype == 2)  
         {
             //教师（管理员的公告）
-            sb.Append(" and usertype=1 ");
+            sb.Append(" and (usertype=1 or usertype=2 )");
         }
         if (user.usertype == 3)
         {

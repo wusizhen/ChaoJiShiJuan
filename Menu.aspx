@@ -20,6 +20,15 @@
 
     <link rel="stylesheet" href="demo/assets/css/simplecalstyle-personal.css" />
 
+    <!--easy ui
+    <script src='<%=ResolveClientUrl("~/js/jquery.easyui.min.js") %>' type="text/javascript"></script>
+    <link href="~/js/themes/gray/easyui.css" rel="stylesheet" type="text/css" runat="server" />
+    <link href="~/js/themes/icon.css" rel="stylesheet" type="text/css" runat="server" />
+    <script src='<%=ResolveClientUrl("~/js/jquery.easyui.min.js") %>' type="text/javascript"></script>
+
+    <script src='<%=ResolveClientUrl("~/js/easyui-lang-zh_CN.js") %>' type="text/javascript"></script>
+    
+        -->
 
     <!--[if IE 7]>
 		  <link rel="stylesheet" href="demo/assets/css/font-awesome-ie7.min.css" />
@@ -94,6 +103,7 @@
                 url: url,
                 ajax: $(this).attr('ajax') ? true : false
             });
+            CanClose();
         };
         function myClose(id) {
             var tabid = "tab_" + id;
@@ -122,6 +132,11 @@
         td {
             padding-right: 20px;
         }
+
+        .zhuti{
+            text-align:left!important;
+        }
+        
     </style>
 
 </head>
@@ -388,7 +403,7 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="作业管理" url="arrange/ExerciseList.aspx">>作业管理　
+                                <a href="#" data-addtab="练习管理" url="arrange/ExerciseList.aspx">>练习管理　
                                 </a>
                             </li>
 
@@ -431,7 +446,7 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="我的作业" url="student/MyExercise.aspx">>我的作业　
+                                <a href="#" data-addtab="我的练习" url="student/MyExercise.aspx">>我的练习　
                                 </a>
                             </li>
 
@@ -467,7 +482,6 @@
                                 <a href="#" data-addtab="500" url="500.html">>500页面
                                 </a>
                             </li>
-                            
                            
                         </ul>
                     </li>
@@ -562,7 +576,7 @@
                                                     <a href="#" data-addtab="授课管理" url="subject/GrantList.aspx" class="btn btn-default btnGroup2 btn-block"><span class="glyphicon glyphicon-pencil"></span><span>授课管理　</span></a>
                                                 </div>
                                                 <div class="col-sm-2 col-sm-offset-1 col-xs-4">
-                                                    <a href="#" data-addtab="班级管理" url="user/ClassList.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-list"></span><span>班级管理　</span></a>
+                                                    <a href="#" data-addtab="用户管理" url="user/UserList.aspx" class="btn btn-default btnGroup1 btn-block"><span class="glyphicon glyphicon-list"></span><span>用户管理　</span></a>
                                                 </div>
                                             </div>
                                             <div class="row Int" runat="server" id="oeadminInt">
@@ -578,7 +592,7 @@
                                             </div>
                                             <div class="row ">
 
-                                                <div class="col-sm-12 col-xs-12" id="left">
+                                                <div class="col-sm-12 col-xs-12">
                                                     <div class="inform">
                                                         <div class="row">
                                                             <div class="col-sm-6 col-xs-12" style="background-color: #FFFFFF; border:1px solid rgb(237,237,237);border-left: 4px solid #00c344;border-radius:5px;">
@@ -588,7 +602,7 @@
 
                                                                 <div class="table-responsive">
                                                                     <asp:GridView ID="gvwData" runat="server" AutoGenerateColumns="false" CssClass="table"
-                                                                        GridLines="None">
+                                                                        GridLines="None" >
                                                                         <Columns>
                                                                             <asp:TemplateField HeaderText="序号">
                                                                                 <ItemTemplate>
@@ -602,7 +616,8 @@
                                                                                 </ItemTemplate>
 
                                                                             </asp:TemplateField>
-                                                                            <asp:TemplateField HeaderText="主题">
+                                                                            <asp:TemplateField HeaderText="主题" ItemStyle-CssClass="zhuti">
+                                                                                
                                                                                 <ItemTemplate>
                                                                                     <a href="#" onclick="return myAddTab('查看公告　','message/MessageShow.aspx?id= <%#Eval("id") %>')"><%# GetSmallTitle(Eval("messagetitle").ToString())%></a>
                                                                                 </ItemTemplate>
@@ -624,8 +639,8 @@
                                                                         <EmptyDataRowStyle Font-Size="16px" ForeColor="Red" Font-Bold="true" />
                                                                     </asp:GridView>
                                                                 </div>
-                                                                <div
-                                                                    data-options="  
+                                                                <div class="easyui-pagination" style="background: #efefef; border: 1px solid #ccc;"
+                            data-options="  
                                 total:<%=pageTotal%>,
                                 onSelectPage:function(pageIndex, pageSize){  
                                      $('#<%=hfPageIndex.ClientID %>').val(pageIndex);
@@ -637,14 +652,14 @@
                                 pageNumber:<%=pageIndex %>,
                                 pageSize:5  
                             ">
-                                                                </div>
+                        </div>
                                                                 <div style="display: none;">
                                                                     <asp:HiddenField ID="hfPageIndex" runat="server" />
                                                                     <asp:HiddenField ID="hfPageSize" runat="server" />
                                                                     <asp:Button ID="btnHide" runat="server" Text="" OnClick="btnHide_Click" />
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-6 col-xs-12 marginSp" id="right" style="padding-top: 35px; background-color: #ffffff;border:1px solid rgb(237,237,237); border-left: 4px solid #e83d25;border-radius:5px;">
+                                                            <div class="col-sm-6 col-xs-12 marginSp" style="padding-top: 35px; background-color: #ffffff;border:1px solid rgb(237,237,237); border-left: 4px solid #e83d25;border-radius:5px;">
 
                                                                 <div class="calendar hidden-print">
                                                                     <header>
