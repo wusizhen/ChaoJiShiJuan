@@ -265,11 +265,11 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">班级管理　
+                                <a href="#" data-addtab="班级管理" url="user/ClassList.aspx">>班级管理　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="用户管理" url="user/UserList.aspx">用户管理　
+                                <a href="#" data-addtab="用户管理" url="user/UserList.aspx">>用户管理　
                                 </a>
                             </li>
 
@@ -287,17 +287,17 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="科目管理" url="subject/SubjectList.aspx">科目管理　
+                                <a href="#" data-addtab="科目管理" url="subject/SubjectList.aspx">>科目管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="章节管理" url="subject/ChapterList.aspx">章节管理　
+                                <a href="#" data-addtab="章节管理" url="subject/ChapterList.aspx">>章节管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="授课管理" url="subject/GrantList.aspx">授课管理　
+                                <a href="#" data-addtab="授课管理" url="subject/GrantList.aspx">>授课管理　
                                 </a>
                             </li>
                         </ul>
@@ -313,12 +313,12 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx">发布公告　
+                                <a href="#" data-addtab="发布公告" url="message/MessageAdd.aspx">>发布公告　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="公告列表" url="message/MessageList.aspx">公告列表　
+                                <a href="#" data-addtab="公告列表" url="message/MessageList.aspx">>公告列表　
                                 </a>
                             </li>
                         </ul>
@@ -334,24 +334,24 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">&nbsp;单选题　
+                                <a href="#" data-addtab="单选题" url="library/SingleList.aspx">&nbsp;>单选题　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">&nbsp;多选题　
+                                <a href="#" data-addtab="多选题" url="library/CheckList.aspx">&nbsp;>多选题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">&nbsp;判断题　
+                                <a href="#" data-addtab="判断题" url="library/JudgeList.aspx">&nbsp;>判断题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">&nbsp;填空题　
+                                <a href="#" data-addtab="填空题" url="library/BlankList.aspx">&nbsp;>填空题　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">&nbsp;简答题　
+                                <a href="#" data-addtab="简答题" url="library/AnswerList.aspx">&nbsp;>简答题　
                                 </a>
                             </li>
                         </ul>
@@ -367,12 +367,12 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="添加试卷" url="paper/PaperAdd.aspx">添加试卷　
+                                <a href="#" data-addtab="添加试卷" url="paper/PaperAdd.aspx">>添加试卷　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="试卷列表" url="paper/PaperList.aspx">试卷列表　
+                                <a href="#" data-addtab="试卷列表" url="paper/PaperList.aspx">>试卷列表　
                                 </a>
                             </li>
                         </ul>
@@ -388,12 +388,12 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="作业管理" url="arrange/ExerciseList.aspx">作业管理　
+                                <a href="#" data-addtab="作业管理" url="arrange/ExerciseList.aspx">>作业管理　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="考试管理" url="arrange/ExamList.aspx">考试管理　
+                                <a href="#" data-addtab="考试管理" url="arrange/ExamList.aspx">>考试管理　
                                 </a>
                             </li>
                         </ul>
@@ -409,12 +409,12 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="简答批改" url="score/CorrectList.aspx">简答批改　
+                                <a href="#" data-addtab="简答批改" url="score/CorrectList.aspx">>简答批改　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx">学生成绩　
+                                <a href="#" data-addtab="学生成绩" url="score/ScoreList.aspx">>学生成绩　
                                 </a>
                             </li>                
 
@@ -431,16 +431,16 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="我的作业" url="student/MyExercise.aspx">我的作业　
+                                <a href="#" data-addtab="我的作业" url="student/MyExercise.aspx">>我的作业　
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" data-addtab="我的考试" url="student/MyExam.aspx">我的考试　
+                                <a href="#" data-addtab="我的考试" url="student/MyExam.aspx">>我的考试　
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="我的成绩" url="student/MyScore.aspx">我的成绩　
+                                <a href="#" data-addtab="我的成绩" url="student/MyScore.aspx">>我的成绩　
                                 </a>
                             </li>
                         </ul>
@@ -456,17 +456,18 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="#" data-addtab="403" url="403.html">403页面
+                                <a href="#" data-addtab="403" url="403.html">>403页面
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="404" url="404.html">404游戏
+                                <a href="#" data-addtab="404" url="404.html">>404游戏
                                 </a>
                             </li>
                             <li>
-                                <a href="#" data-addtab="500" url="500.html">500页面
+                                <a href="#" data-addtab="500" url="500.html">>500页面
                                 </a>
                             </li>
+                            
                            
                         </ul>
                     </li>
